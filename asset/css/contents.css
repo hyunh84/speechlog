@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+/*************************************************************************************************************
+	common
+*************************************************************************************************************/
+/* button - large */
+[class^="btnMid"] {}
+
+/* button - tiny */
+[class^="btnTiny"] {}
+
+/* button - share */
+[class^="btnTwt"] {display:inline-block;width:30px;height:30px;border:1px solid #d8dae5;border-radius:5px;background:#fff url('../images/ico_twt.png') no-repeat center;}
+[class^="btnFbook"] {display:inline-block;width:30px;height:30px;border:1px solid #d8dae5;border-radius:5px;background:#fff url('../images/ico_fb.png') no-repeat center;}
+[class^="btnYtb"] {display:inline-block;width:30px;height:30px;border:1px solid #d8dae5;border-radius:5px;background:#fff url('../images/ico_ytb.png') no-repeat center;}
+
+/* form - text */
+[class^="inpText"] {display:inline-block;box-sizing:border-box;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="inpText"] input[type="text"],
+[class^="inpText"] input[type="tel"],
+[class^="inpText"] input[type="password"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 10px;border-radius:5px;background-color:#fff;}
+
+/* form - date */
+[class^="inpDate"] {display:inline-block;position:relative;box-sizing:border-box;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="inpDate"]:after {display:block;content:"";position:absolute;right:8px;top:50%;width:24px;height:24px;background:url('../images/ico_calendar.png') no-repeat center;transform:translate(0, -50%);}
+[class^="inpDate"] input[type="text"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 32px 0 10px;text-align:center;border-radius:5px;background-color:#fff;}
+
+.inpDate .inner {display:flex;justify-content:space-between;padding:0 32px 0 0;}
+.inpDate .inner > span {width:calc(50% - 10px);}
+.inpDate .inner > span input[type="text"] {width:100%;padding:0;}
+.inpDate .inner > span + span {position:relative;}
+.inpDate .inner > span + span:before {display:block;content:"-";position:absolute;left:-20px;top:0;bottom:0;width:20px;line-height:32px;text-align:center;}
+
+/* form - search */
+[class^="inpSrch"] {display:inline-block;box-sizing:border-box;position:relative;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="inpSrch"]:after {display:block;content:"";position:absolute;right:8px;top:50%;width:24px;height:24px;background:url('../images/ico_search.png') no-repeat center;transform:translate(0, -50%);}
+[class^="inpSrch"] input[type="text"],
+[class^="inpSrch"] input[type="tel"],
+[class^="inpSrch"] input[type="password"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 35px 0 10px;border-radius:5px;background-color:#fff;}
+
+/* form - check */
+[class^="checkItem"] {display:inline-block;position:relative;min-height:18px;padding:0 0 0 18px;vertical-align:middle;}
+[class^="checkItem"] input[type="checkbox"] {position:absolute;left:0;top:0;width:18px;height:18px;background-image:url('../images/ico_checkbox.png');background-repeat:no-repeat;background-position:center top;background-size:100% auto;}
+[class^="checkItem"] > label,
+[class^="checkItem"] > span {display:block;margin:0 0 0 5px;line-height:18px;font-size:13px;}
+[class^="checkItem"] input[type="checkbox"]:checked {background-position:center -38px;}
+[class^="checkItem"] input[type="checkbox"]:disabled {background-position:center -76px;}
+[class^="checkItem"] input[type="checkbox"]:checked:disabled {background-position:center -114px;}
+
+/* form - radio */
+[class^="radioItem"] {display:inline-block;position:relative;min-height:18px;padding:0 0 0 18px;vertical-align:middle;}
+[class^="radioItem"] input[type="radio"] {position:absolute;left:0;top:0;width:18px;height:18px;background-image:url('../images/ico_radiobox.png');background-repeat:no-repeat;background-position:center top;background-size:100% auto;}
+[class^="radioItem"] > label,
+[class^="radioItem"] > span {display:block;margin:0 0 0 5px;line-height:18px;font-size:13px;}
+[class^="radioItem"] input[type="radio"]:checked {background-position:center -38px;}
+[class^="radioItem"] input[type="radio"]:disabled {background-position:center -76px;}
+[class^="radioItem"] input[type="radio"]:checked:disabled {background-position:center -114px;}
+
+/* form - select */
+[class^="selectItem"] {display:inline-block;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="selectItem"] select {display:block;height:30px;padding:0 25px 0 10px;border-radius:1px solid #c2c8d8;border-radius:5px;background:url('../images/ico_select_fold.svg') no-repeat calc(100% - 8px) center;background-color:#fff;}
+
+/*************************************************************************************************************
+	tooltip
+*************************************************************************************************************/
+[class="tooltipWrap"] {display:inline-block;position:relative;z-index:1;vertical-align:middle;}
+[class="tooltipWrap"] button {width:18px;height:18px;vertical-align:top;background:url('../images/ico_tooltip.png') no-repeat center;}
+[class="tooltipWrap"] .tooltipBox {display:none;position:absolute;left:-10px;top:18px;padding:8px 0 0;box-sizing:border-box;width:200px;}
+[class="tooltipWrap"] .tooltipBox .tooltipInner {position:relative;padding:10px;border-radius:7px;box-shadow:0 3px 6px 0 rgba(0, 0, 0, 0.16);background-color:rgba(21, 72, 203, 0.8);}
+[class="tooltipWrap"] .tooltipBox .tooltipInner:before {display:block;content:"";position:absolute;left:10px;top:-8px;width:16px;height:8px;background:url('../images/tail_tooltip.png') no-repeat center;}
+[class="tooltipWrap"] .tooltipBox .tooltipMssg {font-size:12px;color:#fff;}
+[class="tooltipWrap"] .tooltipBox .point01 {color:#a5f1ff;}

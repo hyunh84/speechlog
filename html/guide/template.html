@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<h1 class="logo"><a href="#"><img src="../../asset/images/layout/logo.png" alt="Speechlog" /></a></h1>
+
+		<div class="utilH">
+			<div class="alarmUtil">
+				<a href="#" class="alarmItem">지역지 전남일보가 추가 되었습니다.</a>
+			</div>
+			<div class="myinfoUtil">
+				<div class="userName"><strong>정말랑</strong> 님</div>
+				<div class="utilBtnBox">
+					<button type="button" class="shortcut"><em>바로가기설치</em></button>
+					<button type="button" class="manual"><em>사용매뉴얼 </em></button>
+					<button type="button"><em>정보변경</em></button>
+					<button type="button"><em>로그아웃</em></button>
+				</div>
+			</div>
+		</div>
+
+		<nav class="gnbWrap">
+			<h2 class="blind">Main Navigation</h2>
+			<div class="depth01">
+				<ul>
+					<li>
+						<a href="#" class="icoDashboard"><em>대시보드</em></a>
+					</li>
+					<li>
+						<a href="#" class="icoSpeaker"><em>발언자 분석</em></a>
+						<div class="depth02">
+							<ul>
+								<li class="active"><a href="#"><em>발언자 분석</em></a></li>
+								<li><a href="#"><em>발언자 비교분석</em></a></li>
+								<li><a href="#"><em>발언자 검색</em></a></li>
+								<li><a href="#"><em>발언자 파급력 순위</em></a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="icoKeywrod"><em>키워드 분석</em></a>
+						<div class="depth02">
+							<ul>
+								<li><a href="#"><em>키워드 순위</em></a></li>
+								<li><a href="#"><em>키워드 분석</em></a></li>
+								<li><a href="#"><em>키워드 검색</em></a></li>
+								<li><a href="#"><em>키워드 비교검색</em></a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="icoChanel"><em>특성화 채널분석</em></a>
+					</li>
+					<li>
+						<a href="#" class="icoCharacter"><em>인물분석백과</em></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<div class="pageFixedArea">
+			<div class="pageFixedBox">
+				<div class="pageFixedInner">
+
+					<div class="pageTitleBox">
+						<h1 class="pageTitle">발언자분석</h1>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										선택한 발언자의 뉴스, SNS, 유튜브 활동을 분석한 결과입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="srchMssg">
+							<span>'이재명 경기도지사'</span> 분석 결과
+						</span>
+					</div>
+
+					<div class="shareBtnBox">
+						<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+						<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+						<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+					</div>
+
+					<div class="integrSearchBox">
+						<div class="srchRow">
+							<div class="searchWordBox">
+								<div>
+									<span class="inpSrch"><input type="text"/></span>
+								</div>
+							</div>
+							<!-- <div class="searchWordBox">
+								<div><span class="inpSrch"><input type="text"/></span></div>
+								<div><span class="inpSrch"><input type="text"/></span></div>
+								<div><span class="inpSrch"><input type="text"/></span></div>
+							</div> -->
+						</div>
+						<div class="srchRow">
+							<strong class="tit">기간선택</strong>
+							<div class="cont">
+								<span class="inpDate">
+									<span class="inner">
+										<span><input type="text" ></span>
+										<span><input type="text" ></span>
+									</span>
+								</span>
+							</div>
+						</div>
+						
+						<div class="detailSrchRow">
+							<div class="detailBundle">
+								<div class="srchRow">
+									<strong class="tit">기간선택</strong>
+									<div class="cont">
+										<span class="inpDate">
+											<span class="inner">
+												<span><input type="text" ></span>
+												<span><input type="text" ></span>
+											</span>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- contents -->
+		<div class="contents">
+			
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>
