@@ -118,17 +118,26 @@
 /* table list */
 [class^="listTbl"] table {width:100%;border-collapse:collapse;text-align:center;}
 [class^="listTbl"] table thead th {height:26px;padding:5px 16px;font-size:13px;color:#4b4d58;background-color:#f5f6f9;}
-[class^="listTbl"] table tbody td {padding:5px 16px;border-bottom:1px solid #ebedf1;}
-[class^="listTbl"] .num {color:#858995}
+[class^="listTbl"] table tbody td {height:30px;padding:5px 16px;border-bottom:1px solid #ebedf1;}
+[class^="listTbl"] .btnTblItem {min-height:100%;}
+[class^="listTbl"] .btnTblItem:hover {color:#14b3e3;}
+[class^="listTbl"] .fontC01 {color:#000;}
+[class^="listTbl"] .fontC02 {color:#858995;}
+[class^="listTbl"] .fontC03 {color:#00b3e3;}
+[class^="listTbl"] .fontCB01 {color:#000;font-weight:700;}
+[class^="listTbl"] .fontCB02 {color:#858995;font-weight:700;}
+[class^="listTbl"] .fontCB03 {color:#00b3e3;font-weight:700;}
+
+.listTbl02 table tbody td {height:38px;padding:5px 16px;border-bottom:1px solid #ebedf1;}
 
 /*************************************************************************************************************
 	layer popup
 *************************************************************************************************************/
 [class^="layerWrap"] {position:fixed;left:0;top:0;right:0;bottom:0;border:solid 1px #707070;background-color:rgba(0, 0, 0, .4);}
-[class^="layerWrap"] .layerBox {overflow-y:auto;overflow-x:hidden;position:absolute;left:50%;top:50%;box-sizing:border-box;width:560px;max-height:90%;border:2px solid #071c51;background-color:#fff;transform:translate(-50%, -50%);}
+[class^="layerWrap"] .layerBox {position:absolute;left:50%;top:50%;box-sizing:border-box;width:560px;max-height:90%;border:2px solid #071c51;background-color:#fff;transform:translate(-50%, -50%);}
 [class^="layerWrap"] .layerBox .layerHeader {position:absolute;left:0;right:0;top:0;padding:14px 50px 14px 16px;background-color:#071c51;}
 [class^="layerWrap"] .layerBox .layerHeader .layerTit {line-height:20px;font-size:18px;color:#fff;}
-[class^="layerWrap"] .layerBox .layerBody {padding:48px 0 0;}
+[class^="layerWrap"] .layerBox .layerBody {overflow-y:auto;overflow-x:hidden;padding:48px 0 0;}
 [class^="layerWrap"] .layerBox .layerBody .layerConts {padding:30px;}
 [class^="layerWrap"] .layerBox .btnCloseLayer {position:absolute;right:0;top:0;width:48px;height:48px;line-height:20px;font-size:18px;color:#fff;background:url('../images/btn_pop_close.png') no-repeat center;}
 
