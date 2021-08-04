@@ -83,6 +83,7 @@
 	<!-- container -->
 	<section id="container">
 
+		<!-- contents top fixed -->
 		<div class="pageFixedArea">
 			<div class="pageFixedBox">
 				<div class="pageFixedInner">
@@ -102,6 +103,11 @@
 						<span class="srchMssg">
 							<span>'이재명 경기도지사'</span> 분석 결과
 						</span>
+						<span class="srchTagBox">
+							<span class="srchTagItem">이재명 경기도지사 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+							<span class="srchTagItem">윤석열 전 검찰총장 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+							<span class="srchTagItem">이낙연 전 더불어민주당 대표 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+						</span>
 					</div>
 
 					<div class="shareBtnBox">
@@ -112,49 +118,305 @@
 
 					<div class="integrSearchBox">
 						<div class="srchRow">
+							<!-- 검색어 박스 1개 -->
 							<div class="searchWordBox">
-								<div>
+								<div class="searchWordItem">
 									<span class="inpSrch"><input type="text"/></span>
+									<!-- <div class="autoWordCase">
+										
+									</div> -->
 								</div>
 							</div>
+							<!-- 검색어 박스 3개 -->
 							<!-- <div class="searchWordBox">
-								<div><span class="inpSrch"><input type="text"/></span></div>
-								<div><span class="inpSrch"><input type="text"/></span></div>
-								<div><span class="inpSrch"><input type="text"/></span></div>
+								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
+								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
+								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
 							</div> -->
 						</div>
-						<div class="srchRow">
-							<strong class="tit">기간선택</strong>
-							<div class="cont">
-								<span class="inpDate">
-									<span class="inner">
-										<span><input type="text" ></span>
-										<span><input type="text" ></span>
+
+						<div class="detailSrchBundle">
+							<div class="srchRow">
+								<div class="schTit">
+									<strong class="tit">기간선택</strong>
+									<span class="tooltipWrap">
+										<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+										<div class="tooltipBox" aria-hidden="true">
+											<div class="tooltipInner">
+												<p class="tooltipMssg">
+													기간 선택 : 오늘부터 최대 <span class="point01">12개월</span>까지 선택할 수 있습니다.
+												</p>
+											</div>
+										</div>
 									</span>
-								</span>
+								</div>
+								<div class="schCont">
+									<span class="inpDate">
+										<span class="inner">
+											<span><input type="text" title="시작일 입력" ></span>
+											<span><input type="text" title="종료일 입력" ></span>
+										</span>
+									</span>
+									<span class="btnRadioBox">
+										<button type="button" class="active"><em>1주일</em></button>
+										<button type="button"><em>1개월</em></button>
+										<button type="button"><em>3개월</em></button>
+										<button type="button"><em>6개월</em></button>
+										<button type="button"><em>12개월</em></button>
+									</span>
+								</div>
 							</div>
 						</div>
-						
-						<div class="detailSrchRow">
-							<div class="detailBundle">
+						<div class="detailSrchBox" aria-labelledby="integrDetailSearch" aria-hiddne="true">
+							<div class="detailSrchBundle">
 								<div class="srchRow">
-									<strong class="tit">기간선택</strong>
-									<div class="cont">
-										<span class="inpDate">
-											<span class="inner">
-												<span><input type="text" ></span>
-												<span><input type="text" ></span>
+									<div class="schTit">
+										<strong class="tit">채널선택</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														채널선택 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<div class="chanelSelectBox">
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" checked />
+													<span>뉴스기사</span>
+												</label>
 											</span>
+											<span class="chanelItems">
+												<span class="itemTit">SNS</span>
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>트위터</span>
+												</label>
+												<label class="checkItem">
+													<input type="checkbox" checked />
+													<span>블로그</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>유튜브</span>
+												</label>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">제목</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														제목 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="제목을 입력하세요" placeholder="제목를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">발언내용</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														발언내용 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="발언내용을 입력하세요" placeholder="발언내용를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">키워드</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														키워드 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="키워드을 입력하세요" placeholder="키워드를 입력하세요" />
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">기사 분야</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														기사 분야 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>전체</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" checked />
+											<span>정치</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>경제</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" checked />
+											<span>국제</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>문화</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>사회</span>
+										</label>
+
+										<button type="button" class="btnPlus"><em>언론사 지정 선택</em></button>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">언론사 선택</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														언론사 선택 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>전체</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" checked />
+											<span>중앙지</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" checked />
+											<span>방송</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" checked />
+											<span>통신</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>경제</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>인터넷</span>
+										</label>
+										<label class="checkItem">
+											<input type="checkbox" />
+											<span>지역지</span>
+										</label>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">기사 내용</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														기사 내용 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="기사 내용을 입력하세요" placeholder="기사 내용를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">기사명</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														기사명 가이드 문구 노출
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="기사명을 입력하세요" placeholder="기사명를 입력하세요" />
 										</span>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
+						<div class="btnSrchBox">
+							<button type="button" class="btnReset"><em>초기화</em></button>
+							<button type="button" class="btnLarge03"><em>검색</em></button>
+							<button type="button" id="integrDetailSearch" class="btnDetailSrch" aria-expanded="false"><em>상세검색</em></button>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
+		<!-- contents top fixed -->
 
 		<!-- contents -->
 		<div class="contents">

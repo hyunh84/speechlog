@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG - BUTTON</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>
+
+<style type="text/css">
+#wrap {background-color:#fff;}
+.guideTitle {padding:20px;line-height:30px;font-size:25px;}
+.guidSection {padding:30px 20px;}
+.guideGroup {margin:30px 0 0;padding:20px;border:1px solid #ccc;}
+.guideGroup:first-child {margin:0;}
+.guideGroup .guideTit {margin:30px 0 0;line-height:25px;font-size:15px;}
+.guideGroup .guideTit:first-child {margin:0;line-height:25px;font-size:15px;}
+.guideGroup .guideCase {margin:20px 0 0;}
+
+</style>
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<h1 class="guideTitle">BUTTON</h1>
+	
+	<!-- container -->
+	<div class="guidSection">
+		
+		<div class="guideGroup">
+			<h2 class="guideTit">- TABLE LIST</h2>
+			<div class="guideCase">
+				
+				<div class="listTbl">
+					<table>
+						<caption>번호, 발언자을(를) 포함하는 표</caption>
+						<colgroup>
+							<col style="width:60px" />
+							<col style="width:auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>발언자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지사</button></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지2</button></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지사</button></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지2</button></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지3</button></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지4</button></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지5</button></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지6</button></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지7</button></td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td class="txtAL"><button type="button" class="btnSpchItem">이재명 경기도지8</button></td>
+							</tr>
+							<!-- <tr>
+								<td colspan="2">10000000</td>
+							</tr>
+							<tr>
+								<td rowspan="2">20000000</td>
+								<td><button type="button" class="btnSpchItem">이재명 경기도지사</button></td>
+							</tr>
+							<tr>
+								<td><button type="button" class="btnSpchItem">이재명 경기도지사</button></td>
+							</tr> -->
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<div class="guideCase">
+				
+				<div class="listTbl">
+					<table>
+						<caption>순위, 연관 키워드, 건수을(를) 포함하는 표</caption>
+						<colgroup>
+							<col style="width:60px" />
+							<col style="width:auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순위</th>
+								<th scope="col" class="txtAL">연관 키워드</th>
+								<th scope="col" class="txtAR">건수</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td class="txtAL">이재명</td>
+								<td class="color txtAR">2,099</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+
+
+	</div>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<!-- <script>
+
+$('.inpDate input[type="text"]').datepicker({'dateFormat' : 'yy.mm.dd'});
+
+</script> -->
+
+</body>
+</html>
