@@ -16,7 +16,7 @@ fieldset {display:block; margin:0; padding:0; border:0;}
 legend {position:absolute; visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
 form {margin:0; padding:0;}
 
-a, a:link, a:visited, a:active, a:hover {text-decoration:none; color:#2b2c33; outline:none;}
+a, a:link, a:visited, a:active, a:hover {text-decoration:none; color:#2b2c33;}
 
 input, button {padding:0; margin:0; border:0; font-size:14px; vertical-align:middle; background:none; font-family:"NanumBarunGothic","Malgun Gothic","맑은 고딕","Helvetica","sans-serif";appearance:none;-webkit-appearance:none;}
 button, label {cursor:pointer;}

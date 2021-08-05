@@ -122,16 +122,63 @@
 							<div class="searchWordBox">
 								<div class="searchWordItem">
 									<span class="inpSrch"><input type="text"/></span>
-									<!-- <div class="autoWordCase">
-										
-									</div> -->
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
 								</div>
 							</div>
 							<!-- 검색어 박스 3개 -->
 							<!-- <div class="searchWordBox">
-								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
-								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
-								<div class="searchWordItem"><span class="inpSrch"><input type="text"/></span></div>
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text"/></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text"/></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text"/></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
 							</div> -->
 						</div>
 
@@ -315,7 +362,7 @@
 											<span>사회</span>
 										</label>
 
-										<button type="button" class="btnPlus"><em>언론사 지정 선택</em></button>
+										<button type="button" class="btnPlus" onclick="layerOpenFn('#mediaSelectPop', this);"><em>언론사 지정 선택</em></button>
 									</div>
 								</div>
 								<div class="srchRow">
@@ -420,7 +467,381 @@
 
 		<!-- contents -->
 		<div class="contents">
-			
+
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">발언자 활동량</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="speakerActiveBox">
+					<div class="inner">
+						<div class="itemCaseNews">
+							<div class="itemRow">
+								<span class="tit">뉴스발언량</span>
+								<span class="count">2,099</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">뉴스기사량</span>
+								<span class="count">3,942</span>
+							</div>
+						</div>
+						<div class="itemCaseSns">
+							<div class="itemRow">
+								<span class="tit">SNS</span>
+								<span class="count">51</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">RT</span>
+								<span class="count">100</span>
+							</div>
+						</div>
+						<div class="itemCaseYtb">
+							<div class="itemRow">
+								<span class="tit">유튜브</span>
+								<span class="count">19</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">조회수</span>
+								<span class="count">243</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<img src="../../asset/images/temp/temp_graph01_01.png" alt="임시 그래프 이미지" style="width:100%;" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">연관 키워드</h2>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										발언자의 활동을 분석한 결과 연관도가 높은 키워드 리스트입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="bundleL">
+						<div class="listTbl">
+							<table>
+								<caption>순위, 연관 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:7%">
+									<col style="width:auto">
+									<col style="width:10%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">연관 키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="fontCB01">1</td>
+										<td class="txtAL fontC01">이재명</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">2</td>
+										<td class="txtAL fontC01">윤석열</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">3</td>
+										<td class="txtAL fontC01">민주당</td>
+										<td class="fontC02">99</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">4</td>
+										<td class="txtAL fontC01">발언</td>
+										<td class="fontC02">9</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">5</td>
+										<td class="txtAL fontC01">후보</td>
+										<td class="fontC02">199</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">6</td>
+										<td class="txtAL fontC01">이낙연</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">7</td>
+										<td class="txtAL fontC01">기본소득</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">8</td>
+										<td class="txtAL fontC01">대선</td>
+										<td class="fontC02">299</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">9</td>
+										<td class="txtAL fontC01">경선</td>
+										<td class="fontC02">299</td>
+									</tr>
+									<tr>
+										<td class="fontCB01">10</td>
+										<td class="txtAL fontC01">이재명</td>
+										<td class="fontC02">299</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="graphBox">
+						<div class="graphCase">
+							<img src="../../asset/images/temp/temp_graph01_02.png" alt="임시 그래프 이미지" style="width:100%;" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">연관 발언자</h2>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										발언자와 언론에서 함께 다뤄지는 빈도가 높은 발언자 리스트입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="bundleL">
+						<div class="listTbl">
+							<table>
+								<caption>순위, 연관 발언자, 비교분석을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:7%">
+									<col style="width:auto">
+									<col style="width:10%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">연관 발언자</th>
+										<th scope="col">비교분석</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="fontCB01">1</td>
+										<td class="txtAL fontC01">이낙연 더불어민주당 전 대표</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">2</td>
+										<td class="txtAL fontC01">박용진 더불어민주당 의원</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">3</td>
+										<td class="txtAL fontC01">정세균 전 국무총리</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">4</td>
+										<td class="txtAL fontC01">윤석열 전 검찰총장</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">5</td>
+										<td class="txtAL fontC01">이준석 국민의힘 당대표</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">6</td>
+										<td class="txtAL fontC01">송영길 더불어민주당 대표</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">7</td>
+										<td class="txtAL fontC01">추미애 전 법무부장관</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">8</td>
+										<td class="txtAL fontC01">홍준표 국민의힘 의원</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">9</td>
+										<td class="txtAL fontC01">윤희숙 국민의힘 의원</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+									<tr>
+										<td class="fontCB01">10</td>
+										<td class="txtAL fontC01">하태경 국민의힘 의원</td>
+										<td><a href="#" class="aLink">비교</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="graphBox">
+						<div class="graphCase">
+							<img src="../../asset/images/temp/temp_graph01_03.png" alt="임시 그래프 이미지" style="width:100%;" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">발언 순위</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="listTbl02">
+					<table>
+						<caption>순위, 발언, 키워드, 기사량, 일자을(를) 포함하는 표</caption>
+						<colgroup>
+							<col style="width:6%">
+							<col style="width:35%">
+							<col style="width:auto">
+							<col style="width:12%">
+							<col style="width:12%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순위</th>
+								<th scope="col">발언</th>
+								<th scope="col">키워드</th>
+								<th scope="col">기사량</th>
+								<th scope="col">일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="fontC03">1</td>
+								<td class="txtAL">정치가 검은돈 앞에 작아지지 않게 해 달라. 두려움 없이 기득권에 맞설 수 있게 해달라</td>
+								<td class="txtAL">이재명, 이틀만, 후원금, 96.1, 출마한, 절반, 모금한</td>
+								<td class="fontC02">57,654</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="fontC03">2</td>
+								<td class="txtAL">후보의 가족도 독립된 인격체</td>
+								<td class="txtAL">영상, 이재명, 김건희, 검증, 결혼, 남편, 심해</td>
+								<td class="fontC02">25,564</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="fontC03">3</td>
+								<td class="txtAL">안타깝고 아픈 일이 발생했기 때문에 정확한 원인과 상황을 밝히는 것이 중요하다</td>
+								<td class="txtAL">이재명, 청소노동자, 사망, 현장, 진상규명, 서울대, 눈가</td>
+								<td class="fontC02">11,549</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">4</td>
+								<td class="txtAL">결혼하기 전에 있었던 일을 결혼한 분의 남편이 책임을 지게 하면 그것은 좀 심하지 않나?(생각합니다)</td>
+								<td class="txtAL">민주당, 경선, 레이스, 개막, 단일화, 결선투표, 관심사, 이재명</td>
+								<td class="fontC02">9,432</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">5</td>
+								<td class="txtAL">가급적이면 검증은 후보자 본인의 문제로 제한해야 한다</td>
+								<td class="txtAL">이재명, 정세균,  추미애, 철저, 검증, 이재명, 김건희</td>
+								<td class="fontC02">8,321</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">6</td>
+								<td class="txtAL">경선은 포지션을 정하는 과정이고 국가대항전이 아니라 원팀 정신으로 서로 역량을 보존하고 키워나가는 과정</td>
+								<td class="txtAL">이재명, 원팀, 강조, 이낙연, 정세균, 협력, 단일화</td>
+								<td class="fontC02">7,902</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">7</td>
+								<td class="txtAL">여러분의 작은 힘이 새로운 대한민국을 만든다</td>
+								<td class="txtAL">후원금, 호소한, 이재명, 페이스북, 김민정, 대한민국, 후원</td>
+								<td class="fontC02">5,789</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">8</td>
+								<td class="txtAL">과반을 확신할 순 없지만, 여론조사 격차만큼 벌어졌을 것</td>
+								<td class="txtAL">컷오프, 깡깡이, 아전인수식, 기선제압, 여론전, 후보, 후보별</td>
+								<td class="fontC02">1,470</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">9</td>
+								<td class="txtAL">경선은 포지션을 정하는 과정이고 국가대항전이 아니라 원팀 정신으로 서로 역량을 보존하고 키워나…</td>
+								<td class="txtAL">원팀, 품격, 신뢰, 이재명, 이낙연, 경선, 컷오프</td>
+								<td class="fontC02">704</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+							<tr>
+								<td class="bold7">10</td>
+								<td class="txtAL">학교측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 많은 분이 동의 할 수 있을 것</td>
+								<td class="txtAL">서울대, 청소노동자, 유족, 이재명, 눈물, 여동생, 청소</td>
+								<td class="fontC02">36</td>
+								<td class="fontC02">2021.06.12</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div></div>
+
+
 		</div>
 		<!-- //contents -->
 	</section>
@@ -433,6 +854,390 @@
 	<!-- //footer -->
 </div>
 <!-- //wrap -->
+
+<!-- 발언자 찾기 -->
+<article id="searchSpeakersPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">발언자 찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="spchsrchCopy">
+					발언자 목록에서 검색하실 발언자를 선택하세요. <br />
+					발언자를 찾을 수 없다면 발언자 등록을 요청을 해주세요.
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>발언자 등록 요청하기</em></a>
+					</div>
+				</div>
+				
+				<div class="spchSrchBox">
+					<span class="inpSrch" style="width:100%;">
+						<input type="text" title="발언자명을 입력하세요" placeholder="발언자를 검색하세요" />
+					</span>
+
+					<div class="listTbl">
+						<table>
+							<caption>번호, 발언자을(를) 포함하는 표</caption>
+							<colgroup>
+								<col style="width:15%" />
+								<col style="width:auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">발언자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="fontCB01">1</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">2</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">3</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">4</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">5</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지3</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">6</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지4</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">7</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지5</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">8</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지6</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">9</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지7</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">10</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지8</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<a href="#"><em>1</em></a>
+					<a href="#"><em>2</em></a>
+					<a href="#"><em>3</em></a>
+					<a href="#"><em>4</em></a>
+					<a href="#"><em>5</em></a>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+
+				<!-- PAGING button type -->
+				<!-- <div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div> -->
+				<!-- // PAGING button type -->
+
+
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 발언자 찾기 -->
+
+<!-- 언론사 지정선택 -->
+<article id="mediaSelectPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">언론사 지정선택</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="mediaSlctCopy">
+					지정하실 언론사를 선택하세요. <br />
+					찾으시는 언론사가 없으시면 언론사 추가 요청을 해 주시기 바랍니다.<br />
+					언론사 추가에는 추가비용이 발생할 수 있습니다. 
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>언론사 추가 요청하기</em></a>
+					</div>
+				</div>
+
+				<div class="mediaSlctBox">
+					<ul>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>중앙지 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>경향신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>국민일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>내일신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>동아일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>문화일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>세계일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>조선일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>중앙일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한겨레</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국일보</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>방송 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>JTBC</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>KBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>KTV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>MBC</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>MBN</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>SBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>TBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>YTN</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>연합뉴스TV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>채널A</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제TV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>TV조선</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>통신 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>뉴스1</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>뉴시스</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>연합뉴스</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>경제 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>이데일리</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>인터넷 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>이데일리</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>지역지 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- //언론사 지정선택 -->
 
 </body>
 </html>

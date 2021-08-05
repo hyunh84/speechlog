@@ -3,12 +3,13 @@
 /*************************************************************************************************************
 	layout
 *************************************************************************************************************/
+body.isPop {overflow:hidden;}
 #wrap {overflow:hidden;box-sizing:border-box;min-width:1240px;height:auto;min-height:100%;background-color:#f1f3f4;}
 
 #header {position:fixed;left:0;top:0;bottom:0;box-sizing:border-box;width:252px;padding:30px;background-color:#071c51;box-shadow: 4px 1px 4px 0 rgba(0, 31, 160, 0.06);z-index:100;}
 #header .logo {padding:0 0 0 10px;}
 #header .logo a {display:block;}
-#header .utilH {position:fixed;left:252px;top:0;right:0;min-width:1312px;padding:16px 0 12px 36px;background-color:#f7f7f9;}
+#header .utilH {position:fixed;left:252px;top:0;right:0;min-width:952px;padding:16px 0 12px 36px;background-color:#f7f7f9;}
 #header .utilH:after {display:block;content:"";clear:both;overflow:hidden;width:0;height:0;margin:0;padding:0;line-height:0;font-size:1px;}
 #header .utilH .alarmUtil {float:left;}
 #header .utilH .alarmUtil .alarmItem {display:block;position:relative;padding:6px 0 6px 30px;line-height:20px;color:#071c51;}
@@ -46,13 +47,14 @@
 #header .gnbWrap .depth02 > ul > li.active > a {background-color:rgba(0, 0, 0, .24);}
 #header .gnbWrap .depth02 > ul > li.active > a em {font-weight:700;color:#00b3e3;}
 
-#container {padding:60px 0 0 288px;}
+#container {padding:60px 0 60px 288px;}
+#container .contents {padding:46px 0 0;}
 
 /*************************************************************************************************************
 	CONTENT 상단 고정영역
 *************************************************************************************************************/
 /* PAGE TITLE */
-[class^="pageFixedArea"] .pageFixedBox {position:fixed;left:252px;top:60px;right:0;min-width:1348px;background-color:#fff;box-shadow:0 3px 6px 0 rgba(52, 85, 159, 0.06);z-index:100;}
+[class^="pageFixedArea"] .pageFixedBox {position:fixed;left:252px;top:60px;right:0;min-width:988px;background-color:#fff;box-shadow:0 3px 6px 0 rgba(52, 85, 159, 0.06);z-index:100;}
 [class^="pageFixedArea"] .pageFixedBox .pageFixedInner {position:relative;padding:22px 0 18px 36px;max-width:1312px;}
 [class^="pageFixedArea"] .pageTitleBox .pageTitle {display:inline-block;position:relative;padding:0 0 0 32px;line-height:32px;font-size:22px;font-weight:700;vertical-align:middle;}
 [class^="pageFixedArea"] .pageTitleBox .pageTitle:before {display:block;content:"";position:absolute;left:0;top:0;width:32px;height:32px;background:url('../images/layout/ico_page_title.png') no-repeat center;}
@@ -70,9 +72,16 @@
 [class^="pageFixedArea"] .integrSearchBox {margin:22px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox {display:flex;margin:0 -80px 0 0;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {width:100%;max-width:670px;padding:0 80px 0 0;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {position:relative;width:100%;max-width:670px;padding:0 80px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpText,
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpSrch {width:100%;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase {display:none;position:absolute;left:0;right:80px;top:100%;padding:0 13px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li {margin:0 -13px;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button {width:100%;padding:10px 13px;line-height:20px;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button em {display:block;text-align:left;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button:hover,
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button:focus {background-color:#f2fbfe;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase .moreBox {border-top:1px solid #c2c8d8;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle {margin:15px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle .srchRow {margin:15px 0 0;}

@@ -1,37 +1,39 @@
 /* GLOBAL VAR */
 var pageFixedFnc;
+var winH = window.innerHeight;
 
 /* DOM Ready */
 $(document).ready(function() {
 	if($('.pageFixedArea').length) pageFixedFnc = new pageFixedFn();
 
-	$('.inpDate input[type="text"]').datepicker({'dateFormat' : 'yy.mm.dd'});
+	if($('.inpDate input[type="text"]').length) $('.inpDate input[type="text"]').datepicker({'dateFormat' : 'yy.mm.dd'});
 });
 
 /* DOM Click */
 $(document).on('click', function() {
 	// 리셋 툴팁 팝업
-	var _tooltipWrap = $('[class^="tooltipWrap"]');
-	var _tooltipBtn = $('> button', _tooltipWrap);
-	var _tooltipBox = $('.tooltipBox', _tooltipWrap);
-	_tooltipWrap.css('z-index' , '0');
-	_tooltipBox.attr('aria-hidden', 'true').hide();
-	_tooltipBtn.attr('aria-expanded', 'false');
+	resetTooltipFn();
+
+	// 리셋 검색어 자동완성기능
+	resetAutoWordFn();
 });
 
-/* 툴팁 팝업 */
+/* DOM Focusin */
+$(document).on('focusin', function() {
+	// 리셋 검색어 자동완성기능
+	resetAutoWordFn();
+});
+
+/******************************************************************************************
+	툴팁 팝업
+******************************************************************************************/
 $(document).on('click', '[class^="tooltipWrap"] > button', function(e) {e.stopPropagation();
 	var _this = $(this);
 	var _tooltipWrap = _this.closest('[class^="tooltipWrap"]');
 	var _tooltipBox = $('.tooltipBox', _tooltipWrap);
 
 	// S : 툴팁 클릭시 다른 툴팁 초기화
-	var _tooltipWrapG = $('[class^="tooltipWrap"]');
-	var _tooltipBtnG = $('> button', _tooltipWrapG);
-	var _tooltipBoxG = $('.tooltipBox', _tooltipWrapG);
-	_tooltipWrapG.css('z-index' , '0');
-	_tooltipBoxG.attr('aria-hidden', 'true').hide();
-	_tooltipBtnG.attr('aria-expanded', 'false');
+	resetTooltipFn();
 	// E : 툴팁 클릭시 다른 툴팁 초기화
 
 	if(_tooltipBox.is(':hidden')) {
@@ -44,8 +46,19 @@ $(document).on('click', '[class^="tooltipWrap"] > button', function(e) {e.stopPr
 		_this.attr('aria-expanded', 'false');
 	}
 });
+// 리셋함수 - 툴팁 팝업
+var resetTooltipFn = function() {
+	var _tooltipWrap = $('[class^="tooltipWrap"]');
+	var _tooltipBtn = $('> button', _tooltipWrap);
+	var _tooltipBox = $('.tooltipBox', _tooltipWrap);
+	_tooltipWrap.css('z-index' , '0');
+	_tooltipBox.attr('aria-hidden', 'true').hide();
+	_tooltipBtn.attr('aria-expanded', 'false');
+}
 
-/* button type radio */
+/******************************************************************************************
+	button type radio
+******************************************************************************************/
 $(document).on('click', '[class^="btnRadioBox"] button', function() {
 	var _this = $(this);
 	var _wrap = _this.closest('[class^="btnRadioBox"]');
@@ -53,6 +66,49 @@ $(document).on('click', '[class^="btnRadioBox"] button', function() {
 		$('button', _wrap).removeClass('active');
 		_this.addClass('active');
 	}
+});
+
+/******************************************************************************************
+	검색어 자동완성기능
+******************************************************************************************/
+$(document).on('keyup', '.searchWordItem .inpSrch input[type="text"], .searchWordItem .inpText input[type="text"]', function() {
+	// console.log('.searchWordItem .inpSrch input[type="text"], .searchWordItem .inpText input[type="text"] - keyup change');
+	var _this = $(this);
+	var _val = _this.val();
+	var _searchWordItem = _this.closest('[class^="searchWordItem"]');
+	var _autoWordCase = $('.autoWordCase', _searchWordItem);
+
+	if(_val !== '') {
+		_searchWordItem.css({'z-index' : '10'});
+		_autoWordCase.attr('aria-hidden', 'false').show();
+	}else{
+		_searchWordItem.css({'z-index' : '0'});
+		_autoWordCase.attr('aria-hidden', 'ture').hide();
+	}
+});
+$(document).on('click', '.searchWordItem .autoWordCase .btnMore', function() {
+	var _this = $(this);
+	var _searchWordItem = _this.closest('[class^="searchWordItem"]');
+	var _inpTxt = $('.inpSrch input[type="text"], .inpText input[type="text"]', _searchWordItem);
+	layerOpenFn('#searchSpeakersPop', _inpTxt);
+});
+// 리셋함수 - 검색어 자동완성기능
+var resetAutoWordFn = function() {
+	var _searchWordItem = $('.integrSearchBox .searchWordItem, .integrSearchBox .searchWordItem');
+	var _autoWordCase = $('.autoWordCase', _searchWordItem);
+	_searchWordItem.css({'z-index' : '0'});
+	_autoWordCase.attr('aria-hidden', 'ture').hide();
+}
+/* 검색어 자동완성기능 상위 이벤트 해제 */
+$(document).on('click focusin', '.searchWordItem .inpSrch input[type="text"], .searchWordItem .inpText input[type="text"]', function(e) {e.stopPropagation();
+	console.log('focusin');
+	resetAutoWordFn()
+});
+$(document).on('focusin', '.searchWordItem .autoWordCase button', function(e) {e.stopPropagation();
+	console.log('.searchWordItem .autoWordCase button - focusin');
+});
+$(document).on('focusin', '#searchSpeakersPop *', function(e) {e.stopPropagation();
+	console.log('#searchSpeakersPop * - focusin');
 });
 
 /******************************************************************************************
@@ -99,4 +155,81 @@ var pageFixedFn = function() {
 			_changeH();
 		}
 	}
+}
+
+
+/******************************************************************************************
+	LAYER POPUP
+******************************************************************************************/
+var layerOpenFn = function(target, clickTarget) {
+	var _layerWrap = $(target);
+	var _layerBox = $('.layerBox', _layerWrap).attr('tabindex', 0);
+	var _btnCloseLayer = $('.btnCloseLayer', _layerBox);
+	var _accessible01;
+	var _accessible02;
+	var _layerCalckSizeH = function() {
+		console.log('layerCalckSizeH');
+		winH = window.innerHeight;
+		var _layerHeader = $('.layerHeader', _layerBox);
+		var _layerHeaderH = _layerHeader.outerHeight()
+		var _layerBody = $('.layerBody', _layerBox);
+		var _layerFoot = $('.layerFoot', _layerBox);
+		var _layerFootH = _layerFoot.outerHeight();
+	
+		if(parseInt(_layerBox.css('padding-top'), 10) !== _layerHeaderH) _layerBox.css({'padding-top' : _layerHeaderH});
+		
+		if(_layerFootH) {
+			_layerBody.css({'max-height' : (winH*0.8) -_layerHeaderH - _layerFootH});
+		}else{
+			_layerBody.css({'max-height' : (winH*0.8) -_layerHeaderH});
+		}
+	}
+	
+	_layerWrap.data('click-target', clickTarget);
+	_layerWrap.attr('aria-hidden', false);
+	_layerWrap.prepend('<div class="AccessibilityHtml1 blind" tabindex="0" aria-hidden="true"></div>');
+	_layerWrap.prepend('<div class="layerMask" aria-hidden="true"></div>');
+	_layerWrap.append('<div class="AccessibilityHtml2 blind" tabindex="0" aria-hidden="true"></div>');
+	_accessible01 = $('.AccessibilityHtml1', _layerWrap);
+	_accessible02 = $('.AccessibilityHtml2', _layerWrap);
+	$('body').addClass('isPop');
+	_layerWrap.show();
+	_layerBox.focus();
+	_layerCalckSizeH()
+
+	_btnCloseLayer.off('click').on('click', function() {
+		layerCloseFn(target, _layerCalckSizeH);
+	});
+	_accessible01.off('focusin').on('focusin', function() {
+		console.log(_btnCloseLayer.is(':hidden') || !_btnCloseLayer.length);
+		if(_btnCloseLayer.is(':hidden') || !_btnCloseLayer.length) {
+			_layerBox.focus();
+		}else{
+			_btnCloseLayer.focus();
+		}
+	});
+	_accessible02.off('focusin').on('focusin', function() {
+		_layerBox.focus();
+	});
+	window.addEventListener('resize', _layerCalckSizeH);
+}
+
+var layerCloseFn = function(target, layerCalckSizeH) {
+	var _layerWrap = $(target);
+	var _layerBox = $('.layerBox', _layerWrap);
+	var _clickTarget = _layerWrap.data('click-target');
+	var _accessible01 = $('.AccessibilityHtml1', _layerWrap);
+	var _accessible02 = $('.AccessibilityHtml2', _layerWrap);
+	var _layerMask = $('.layerMask', _layerWrap);
+
+	$('body').removeClass('isPop');
+	_accessible01.remove();
+	_accessible02.remove();
+	_layerMask.remove();
+	_layerWrap.attr('aria-hidden', true);
+	_layerWrap.hide();
+	if(_layerWrap.hasClass('floatB')) _layerBox.hide();
+	_layerBox.removeAttr('tabindex');
+	$(_clickTarget).focus();
+	window.removeEventListener('resize', layerCalckSizeH);
 }
