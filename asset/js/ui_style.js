@@ -112,6 +112,19 @@ $(document).on('focusin', '#searchSpeakersPop *', function(e) {e.stopPropagation
 });
 
 /******************************************************************************************
+	table click event
+******************************************************************************************/
+$(document).on('click', '[class^="listTbl"].evClick tbody tr', function() {
+	var _this = $(this);
+	var _tbody = _this.closest('tbody');
+
+	if(!_this.hasClass('active')) {
+		$('tr', _tbody).removeClass('active');
+		_this.addClass('active');
+	}
+});
+
+/******************************************************************************************
 	컨텐츠 상단 고정영역 (페이지 타이틀, 통합검색)
 	페이지 시작시 pageFixedFnc 변수에 함수 실행 후 저장
 	pageFixedFnc.changeH();//높이변경시 고정영역 높이 만큼 페이지 상단 여백변경

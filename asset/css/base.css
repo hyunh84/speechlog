@@ -75,7 +75,9 @@ noscript p {margin:0;}
 .vAlignB{vertical-align:bottom !important}
 
 /* clipping */
-.clipping{white-space:nowrap; text-overflow:ellipsis; overflow:hidden}
+.clipping {display:block !important;overflow:hidden !important;width:100%;white-space:nowrap !important;text-overflow:ellipsis !important;}
+.clipping02 {display:-webkit-box;-webkit-line-clamp:2 !important;-webkit-box-orient:vertical !important;overflow:hidden !important;text-overflow:ellipsis !important;}
+.clipping03 {display:-webkit-box;-webkit-line-clamp:3 !important;-webkit-box-orient:vertical !important;overflow:hidden !important;text-overflow:ellipsis !important;}
 
 /* font weight */
 .bold4 {font-weight:400 !important;}
