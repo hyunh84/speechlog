@@ -3,6 +3,34 @@
 /*************************************************************************************************************
 	common
 *************************************************************************************************************/
+/* flag */
+[class^="flagItem"] {display:inline-block;padding:0 8px;line-height:22px;font-size:12px;color:#727daa;border:1px solid #d8dae5;border-radius:11px;background-color:#fff;}
+
+/* icon flag - 뉴스 */
+.flagNews {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagNews:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_news.png') no-repeat center;}
+.flagNews em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 트윗터 */
+.flagTwt {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagTwt:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_twt.png') no-repeat center;}
+.flagTwt em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 블로그 */
+.flagBlog {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagBlog:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_blog.png') no-repeat center;}
+.flagBlog em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 유튜브 */
+.flagYtb {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagYtb:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_ytb.png') no-repeat center;}
+.flagYtb em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 커뮤니티 */
+.flagCommunity {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagCommunity:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_community.png') no-repeat center;}
+.flagCommunity em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+
+/* link 새창보기 */
+a[target="_blank"] {display:inline-block;position:relative;min-height:16px;padding:0 0 0 20px;line-height:20px;font-size:12px;}
+a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top:2px;width:16px;height:16px;background:url('../images/ico_link_blank.png') no-repeat center;}
+
 /* button - large */
 [class^="btnLarge"] {display:inline-block;box-sizing:border-box;min-width:80px;padding:0 10px;text-align:center;border:1px solid #071c51;border-radius:4px;background-color:#fff;}
 [class^="btnLarge"] em {display:inline-block;padding:9px 0;line-height:20px;font-size:16px;color:#2b2c33;}
@@ -46,6 +74,7 @@
 [class^="btnMore"] {display:inline-block;box-sizing:border-box;text-align:center;}
 [class^="btnMore"] em {display:inline-block;position:relative;padding:9px 0 9px 20px;line-height:20px;font-size:14px;color:#14b3e3;}
 [class^="btnMore"] em:before {display:block;content:"";position:absolute;left:0;top:50%;width:17px;height:17px;margin:-8px 0 0;background:url('../images/btn_more.png') no-repeat center;}
+[class^="btnReport"] {display:inline-block;width:32px;height:32px;background:#fff url('../images/ico_report.png') no-repeat center;}
 
 /* button case */
 [class^="btnBundleBox"] {text-align:center;}
@@ -103,7 +132,7 @@
 /* form - button type radio */
 [class^="btnRadioBox"] {display:inline-block;vertical-align:middle;}
 [class^="btnRadioBox"]:after {display:block;content:"";clear:both;overflow:hidden;width:0;height:0;padding:0;margin:0;line-height:0;font-size:1;}
-[class^="btnRadioBox"] button {float:left;position:relative;padding:0 8px;margin:0 -1px 0 0;border:1px solid #c2c8d8;background-color:#fff;}
+[class^="btnRadioBox"] button {float:left;position:relative;min-width:50px;padding:0 6px;margin:0 -1px 0 0;border:1px solid #c2c8d8;background-color:#fff;}
 [class^="btnRadioBox"] button:first-child {border-radius:4px 0 0 4px;}
 [class^="btnRadioBox"] button:last-child {margin:0;border-radius:0 4px 4px 0;}
 [class^="btnRadioBox"] button > em {display:block;padding:6px 0;line-height:18px;font-size:11px;color:#858995;}
@@ -128,6 +157,8 @@
 [class^="listTbl"] .fontCB03 {color:#00b3e3;font-weight:700;}
 [class^="listTbl"] .aLink {display:inline-block;color:#858995;text-decoration:underline;}
 
+[class^="subTitleWrap"] + [class^="listTbl"] {margin:12px 0 0;}
+
 .listTbl02 table tbody td {height:20px;}
 
 /* table tr click event */
@@ -148,17 +179,20 @@
 
 /* title */
 [class^="sTitle"] {display:block;line-height:32px;font-size:22px;}
-.sTitle02 {font-size:22px;color:#2b2c33;}
+.sTitle02 {line-height:20px;font-size:16px;color:#4b4d58;}
 
 /* title box */
 [class^="subTitleWrap"] {margin:65px 0 0;}
 [class^="subTitleWrap"]:first-child {margin:0;}
 [class^="subTitleWrap"] [class^="sTitle"] {display:inline-block;vertical-align:middle;}
-[class^="subTitleWrap"] .totalNum {display:inline-block;margin:0 0 0 5px;line-height:20px;font-size:22px;font-weight:700;color:#00b3e3;vertical-align:middle;}
-[class^="subTitleWrap"] .totalNum em {display:inline-block;font-size:14px;font-weight:400;color:#858995;vertical-align:middle;}
+[class^="subTitleWrap"] [class^="totalNum"] {display:inline-block;margin:0 0 0 5px;line-height:24px;font-size:22px;font-weight:700;color:#00b3e3;vertical-align:middle;}
+[class^="subTitleWrap"] [class^="totalNum"] em {display:inline-block;font-size:14px;font-weight:400;color:#858995;vertical-align:middle;}
+[class^="subTitleWrap"] .totalNum02 {line-height:20px;font-size:16px;}
+[class^="subTitleWrap"] .btnRadioBox {margin:0 0 0 30px;}
 [class^="subTitleWrap"] [class^="flexInner"] {display:flex;justify-content:space-between;}
 
-.subTitleWrap02 {min-width:100%;max-width:100%;margin:40px 0 0;}
+.subTitleWrap02 {margin:40px 0 0;}
+.subTitleWrap03 {margin:30px 0 0;}
 
 /* bundle float Wrap */
 [class^="bundleFlexBox"] {display:flex;justify-content:space-between;margin:65px 0 0;}
@@ -182,38 +216,39 @@
 .graphBundleBox02 > .graphBox {width:813px;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
-[class^="newsCardBox"] {position:relative;min-height:40px;padding:16px 33px 16px 66px;}
-[class^="newsCardBox"]:before {display:block;content:"";position:absolute;left:16px;top:16px;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background-image:url('../images/ico_media_story_news.png');background-position:center;background-repeat:no-repeat;}
+[class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}
+[class^="newsCardBox"] .flagNews,
+[class^="newsCardBox"] .flagTwt,
+[class^="newsCardBox"] .flagBlog,
+[class^="newsCardBox"] .flagYtb,
+[class^="newsCardBox"] .flagCommunity {position:absolute;left:16px;top:16px;}
 [class^="newsCardBox"] .newsTitle .tit {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:20px;font-size:15px;font-weight:700;text-overflow:ellipsis;}
 [class^="newsCardBox"] .hasTag {margin:10px 0 0;}
 [class^="newsCardBox"] .hasTag button {margin:0 4px 0 0;}
 [class^="newsCardBox"] .hasTag button:last-child {margin:0;}
-
-[class^="newsCardBox"] .newsInfo .itemChanel {display:inline-block;font-size:13px;}
-[class^="newsCardBox"] .newsInfo .itemChanel [class^="itemCol"] 
-[class^="newsCardBox"] .newsInfo .itemChanel [class^="itemCol"]:after {}
-[class^="newsCardBox"] .newsInfo .itemDate {display:inline-block;font-size:13px;color:#858995;}
-/* [class^="newsCardBox"] .newsInfo [class^="item"]:last-child {margin:0;}
-[class^="newsCardBox"] .newsInfo .item {font-size:14px;color:#858995;}
-[class^="newsCardBox"] .newsInfo .item02 {font-weight:bold;}
-[class^="newsCardBox"] .newsInfo .item03 {color:#858995;}
-[class^="newsCardBox"] .newsInfo .itemDate {color:#858995;} */
-
+[class^="newsCardBox"] .newsInfo {font-size:13px;color:#858995;}
+[class^="newsCardBox"] .newsInfo span {display:inline-block;margin:0 0 0 4px;}
+[class^="newsCardBox"] .newsInfo span:first-child {margin:0;}
+[class^="newsCardBox"] .newsInfo .point01 {font-weight:700;color:#2b2c33;}
+[class^="newsCardBox"] .newsInfo .itemDate {display:inline-block;position:relative;margin:0 0 0 6px;padding:0 0 0 10px;font-size:13px;color:#858995;}
+[class^="newsCardBox"] .newsInfo .itemDate:after {display:block;content:"";position:absolute;left:0;top:50%;width:1px;height:10px;background-color:#d8dae5;transform:translate(0, -50%);}
+[class^="newsCardBox"] .newsInfo .itemDate:first-child {margin:0;padding:0;}
+[class^="newsCardBox"] .newsInfo .itemDate:first-child:after {display:none;}
 [class^="newsCardBox"] .flexInner {display:flex;justify-content:space-between;width:100%;}
 [class^="newsCardBox"] .flexInner .boxL {width:calc(100% - 370px);}
 [class^="newsCardBox"] .flexInner .boxR {max-width:350px;}
-/* 뉴스카드 - 트윗터 */
-.newsCardBox02:before {background-image:url('../images/ico_media_story_twt.png');}
-/* 뉴스카드 - 블로그 */
-.newsCardBox03:before {background-image:url('../images/ico_media_story_blog.png');}
-/* 뉴스카드 - 유튜브 */
-.newsCardBox04:before {background-image:url('../images/tco_media_story_ytb.png');}
-/* 뉴스카드 - 커뮤니티 */
-.newsCardBox05:before {background-image:url('../images/ico_media_story_community.png');}
+
+.newsCardBox02 {min-height:100%;padding:16px 165px 16px 100px;}
+.newsCardBox02 .flagItem {position:absolute;left:20px;top:50%;transform:translate(0, -50%);}
+.newsCardBox02 .linkTit {overflow:hidden;width:100%;line-height:20px;font-size:16px;white-space:nowrap;text-overflow:ellipsis;}
+.newsCardBox02 .date {position:absolute;right:20px;top:50%;color:#858995;transform:translate(0, -50%);}
 
 /* 뉴스 LIST */
 [class^="newsListWrap"] ul li {border-top:1px solid #ebedf1;}
 [class^="newsListWrap"] ul li:first-child {border-top:none;}
+
+[class^="subTitleWrap"] + [class^="newsListWrap"] {margin:12px 0 0;}
+
 
 /* PAGING */
 [class^="pagingBox"] {margin:30px 0 0;text-align:center;}
@@ -275,6 +310,8 @@
 .emotionAnalysisBanner > button {position:absolute;right:50px;top:50%;padding:0 30px;border:1px solid #071c51;border-radius:22px;transform:translate(0, -50%);}
 .emotionAnalysisBanner > button em {display:block;line-height:44px;color:#071c51;}
 
+/* 뉴스리스트 */
+
 /*************************************************************************************************************
 	tooltip
 *************************************************************************************************************/
@@ -299,10 +336,14 @@
 [class^="layerWrap"] .layerBox .layerFoot {padding:30px 0 24px;}
 [class^="layerWrap"] .layerBox .btnCloseLayer {position:absolute;right:0;top:0;width:48px;height:48px;line-height:20px;font-size:18px;color:#fff;background:url('../images/btn_pop_close.png') no-repeat center;}
 
+/* wide box */
+[class^="layerWrap"].wide .layerBox {width:1040px;}
+
 /* 발언자 찾기 */
 .spchsrchCopy {position:relative;box-sizing:border-box;min-height:44px;padding:2px 0 2px 66px;line-height:20px;font-size:14px;color:#2b2c33;}
 .spchsrchCopy:before {display:block;content:"";position:absolute;left:0;top:0;width:44px;height:44px;border-radius:100%;background:#e4e8f0 url('../images/ico_speach.png') no-repeat center;}
 .spchsrchCopy .btnCase {margin:5px 0 0;text-align:right;}
+
 .spchSrchBox {margin:12px 0 0;}
 .spchSrchBox .listTbl {margin:24px 0 0;}
 .spchSrchBox .listTbl:first-child {margin:0;}
@@ -310,6 +351,7 @@
 /* 언론사 지정선택 */
 .mediaSlctCopy {box-sizing:border-box;line-height:20px;font-size:14px;color:#2b2c33;}
 .mediaSlctCopy .btnCase {margin:5px 0 0;text-align:right;}
+
 .mediaSlctBox {margin:13px 0 0;}
 .mediaSlctBox ul {border-bottom:1px solid #c2c7d8;}
 .mediaSlctBox ul li {overflow:hidden;border-top:1px solid #c2c7d8;}
@@ -319,3 +361,29 @@
 .mediaSlctBox ul li .mediaSlctCase02 {padding:10px 12px;margin:-15px -20px 0 0;}
 .mediaSlctBox ul li .mediaSlctCase02 [class^="checkItem"],
 .mediaSlctBox ul li .mediaSlctCase02 [class^="checkItem"] {margin:15px 15px 0 0;}
+
+/* 뉴스기사 상세 - 상세정보 */
+/* .newsDetailInfoWrap {position:fixed;top:48px;left:0;right:0;display:flex;justify-content:space-between;padding:30px;background-color:#eceef4;} */
+.newsDetailInfoWrap {display:flex;justify-content:space-between;margin:-30px -30px 0;padding:30px;background-color:#eceef4;}
+.newsDetailInfoWrap .mediaInfo {width:180px;}
+.newsDetailInfoWrap .mediaInfo .field {margin:12px 0 0;}
+.newsDetailInfoWrap .mediaInfo .field span {display:inline-block;margin:0 4px 0 0;vertical-align:middle;}
+.newsDetailInfoWrap .mediaInfo .field span:last-child {margin:0;}
+.newsDetailInfoWrap .newsInfo {width:calc(100% - 200px);}
+.newsDetailInfoWrap .newsInfo .title {display:block;line-height:24px;font-size:20px;}
+.newsDetailInfoWrap .newsInfo .writer {margin:12px 0 0;line-height:20px;}
+.newsDetailInfoWrap .newsInfo .writer span {display:inline-block;position:relative;padding:0 12px 0 0;margin:0 8px 0 0;color:#858995;}
+.newsDetailInfoWrap .newsInfo .writer span:after {display:block;content:"";position:absolute;right:0;top:50%;width:1px;height:11px;background-color:#c2c5d1;transform:translate(0, -50%);}
+.newsDetailInfoWrap .newsInfo .writer span:last-child {margin:0;padding:0;}
+.newsDetailInfoWrap .newsInfo .writer span:last-child:after {display:none;}
+.newsDetailInfoWrap .newsInfo .hasTag {margin:12px 0 0;}
+
+/* 리포트 제작 */
+.reportCopy {position:relative;box-sizing:border-box;min-height:44px;padding:2px 0 2px 66px;line-height:20px;font-size:14px;color:#2b2c33;}
+.reportCopy:before {display:block;content:"";position:absolute;left:0;top:0;width:44px;height:44px;border-radius:100%;background:#e4e8f0 url('../images/ico_report.png') no-repeat center;}
+
+.reportSelectBox {margin:12px 0 0;}
+.reportSelectBox ul {box-sizing:border-box;overflow:auto;overflow-x:hidden;height:162px;border-top:1px solid #c2c7d8;border-bottom:1px solid #c2c7d8;}
+.reportSelectBox ul li button {overflow:hidden;width:100%;height:40px;padding:0 12px;text-align:left;white-space:nowrap;text-overflow:ellipsis;}
+.reportSelectBox ul li button.active {background-color:#e4f4f9;}
+.reportSelectBox .inpText {margin:12px 0 0;}

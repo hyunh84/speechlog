@@ -87,7 +87,7 @@ body.isPop {overflow:hidden;}
 [class^="pageFixedArea"] .integrSearchBox {margin:22px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox {display:flex;margin:0 -80px 0 0;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {position:relative;width:100%;max-width:721px;padding:0 80px 0 0;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {position:relative;width:100%;max-width:745px;padding:0 80px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpText,
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpSrch {width:100%;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase {display:none;position:absolute;left:0;right:80px;top:100%;padding:0 13px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}

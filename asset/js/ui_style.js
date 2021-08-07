@@ -25,6 +25,18 @@ $(document).on('focusin', function() {
 });
 
 /******************************************************************************************
+	button type radio
+******************************************************************************************/
+$(document).on('click', '[class^="btnRadioBox"] button', function() {
+	var _this = $(this);
+	var _wrap = _this.closest('[class^="btnRadioBox"]');
+	if(!_this.hasClass('active')) {
+		$('button', _wrap).removeClass('active');
+		_this.addClass('active');
+	}
+});
+
+/******************************************************************************************
 	툴팁 팝업
 ******************************************************************************************/
 $(document).on('click', '[class^="tooltipWrap"] > button', function(e) {e.stopPropagation();
@@ -55,18 +67,6 @@ var resetTooltipFn = function() {
 	_tooltipBox.attr('aria-hidden', 'true').hide();
 	_tooltipBtn.attr('aria-expanded', 'false');
 }
-
-/******************************************************************************************
-	button type radio
-******************************************************************************************/
-$(document).on('click', '[class^="btnRadioBox"] button', function() {
-	var _this = $(this);
-	var _wrap = _this.closest('[class^="btnRadioBox"]');
-	if(!_this.hasClass('active')) {
-		$('button', _wrap).removeClass('active');
-		_this.addClass('active');
-	}
-});
 
 /******************************************************************************************
 	검색어 자동완성기능
@@ -109,6 +109,19 @@ $(document).on('focusin', '.searchWordItem .autoWordCase button', function(e) {e
 });
 $(document).on('focusin', '#searchSpeakersPop *', function(e) {e.stopPropagation();
 	console.log('#searchSpeakersPop * - focusin');
+});
+
+/******************************************************************************************
+	리포트 제작 - 리포트 선택
+******************************************************************************************/
+$(document).on('click', '.reportSelectBox button', function() {
+	var _this = $(this);
+	var _ulBox = _this.closest('ul');
+	
+	if(!_this.hasClass('active')) {
+		$('button', _ulBox).removeClass('active');
+		_this.addClass('active');
+	}
 });
 
 /******************************************************************************************
@@ -181,7 +194,6 @@ var layerOpenFn = function(target, clickTarget) {
 	var _accessible01;
 	var _accessible02;
 	var _layerCalckSizeH = function() {
-		console.log('layerCalckSizeH');
 		winH = window.innerHeight;
 		var _layerHeader = $('.layerHeader', _layerBox);
 		var _layerHeaderH = _layerHeader.outerHeight()
@@ -192,9 +204,9 @@ var layerOpenFn = function(target, clickTarget) {
 		if(parseInt(_layerBox.css('padding-top'), 10) !== _layerHeaderH) _layerBox.css({'padding-top' : _layerHeaderH});
 		
 		if(_layerFootH) {
-			_layerBody.css({'max-height' : (winH*0.8) -_layerHeaderH - _layerFootH});
+			_layerBody.css({'max-height' : (winH*0.9) -_layerHeaderH - _layerFootH});
 		}else{
-			_layerBody.css({'max-height' : (winH*0.8) -_layerHeaderH});
+			_layerBody.css({'max-height' : (winH*0.9) -_layerHeaderH});
 		}
 	}
 	
