@@ -209,6 +209,12 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="graphBundleBox"] {margin:50px 0 0;}
 [class^="graphBundleBox"]:first-child {margin:0;}
 .subTitleWrap02 + [class^="graphBundleBox"] {margin:20px 0 0;}
+[class^="graphBundleBox"] .graphBox {position:relative;}
+[class^="graphBundleBox"] .graphBox .graphLegendBox {position:absolute;right:0;top:50%;transform:translate(0 , -50%);}
+[class^="graphBundleBox"] .graphBox .graphLegendBox ul li {position:relative;margin:15px 0 0;padding:0 0 0 17px;}
+[class^="graphBundleBox"] .graphBox .graphLegendBox ul li:first-child {margin:0;}
+[class^="graphBundleBox"] .graphBox .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
+[class^="graphBundleBox"] .graphBox .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
 
 .graphBundleBox02 {display:flex;justify-content:space-between;}
 .graphBundleBox02 > .bundleL {width:calc(100% - 843px);}
