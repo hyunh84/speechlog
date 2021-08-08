@@ -4,7 +4,8 @@ var lineChartFn = function(target, options) {
 	var options = options || {};
 	// line color
 	var charLineColor = ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
-	// var labelName = [];
+
+	// 범례 그리기 함수
 	var creatLegendFn = function() {
 		var labelItems = chartSet.options.plugins.legend.labels.generateLabels(chartSet);
 		var html = '<div class="graphLegendBox"><ul>';
@@ -22,10 +23,11 @@ var lineChartFn = function(target, options) {
 	for(var i = 0; i < options.datasets.length; i++){
 		options.datasets[i]['backgroundColor'] = charLineColor[i];
 		options.datasets[i]['borderColor'] = charLineColor[i];
-		options.datasets[i]['pointBackgroundColor'] = 'transparent';
-		options.datasets[i]['pointBorderColor'] = 'transparent';
+		options.datasets[i]['pointBackgroundColor'] = charLineColor[i];
+		options.datasets[i]['pointBorderColor'] = charLineColor[i];
 	}
 
+	//chart lib
 	var chartSet = new Chart(
 		document.getElementById(target),
 		{
@@ -45,7 +47,7 @@ var lineChartFn = function(target, options) {
 		}
 	);
 	
-	if(options.legend) {
+	if(options.legend) {//범례 생성
 		creatLegendFn();
 	
 		_wrap.on('click', '.graphLegendBox button', function() {
