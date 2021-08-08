@@ -43,12 +43,14 @@ $(document).on('click', '[class^="tooltipWrap"] > button', function(e) {e.stopPr
 	var _this = $(this);
 	var _tooltipWrap = _this.closest('[class^="tooltipWrap"]');
 	var _tooltipBox = $('.tooltipBox', _tooltipWrap);
+	var _isHide = _tooltipBox.is(':hidden');
 
 	// S : 툴팁 클릭시 다른 툴팁 초기화
 	resetTooltipFn();
 	// E : 툴팁 클릭시 다른 툴팁 초기화
 
-	if(_tooltipBox.is(':hidden')) {
+	console.log(_isHide);
+	if(_isHide) {
 		_tooltipWrap.css('z-index' , '1');
 		_tooltipBox.attr('aria-hidden', 'false').show();
 		_this.attr('aria-expanded', 'true');

@@ -14,6 +14,8 @@
 	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/lineChartUi.js"></script>
 
 	<!-- 퍼블용입니다. 개발시 제외하세요 -->
 	<script type="text/javascript" src="../guide/js/layout.js"></script>
@@ -270,7 +272,8 @@
 				<div class="graphBundleBox">
 					<div class="graphBox">
 						<div class="graphCase">
-							<img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" />
+							<canvas id="compareSpeakerActive01"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
 						</div>
 					</div>
 				</div>
@@ -280,7 +283,8 @@
 				<div class="graphBundleBox">
 					<div class="graphBox">
 						<div class="graphCase">
-							<img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" />
+							<canvas id="compareSpeakerActive02"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
 						</div>
 					</div>
 				</div>
@@ -290,7 +294,8 @@
 				<div class="graphBundleBox">
 					<div class="graphBox">
 						<div class="graphCase">
-							<img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" />
+							<canvas id="compareSpeakerActive03"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
 						</div>
 					</div>
 				</div>
@@ -1325,7 +1330,8 @@
 				<div class="graphBundleBox">
 					<div class="graphBox">
 						<div class="graphCase">
-							<img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" />
+							<canvas id="speakerEffect"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_04.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
 						</div>
 					</div>
 				</div>
@@ -1717,6 +1723,101 @@
 	</div>
 </article>
 <!-- //언론사 지정선택 -->
+
+<script type="text/javascript">
+var compareSpeakerActive01 = lineChartFn('compareSpeakerActive01', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var compareSpeakerActive02 = lineChartFn('compareSpeakerActive02', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var compareSpeakerActive03 = lineChartFn('compareSpeakerActive03', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var speakerEffect = lineChartFn('speakerEffect', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '뉴스기사량 3,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '뉴스발언량 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+</script>
 
 </body>
 </html>
