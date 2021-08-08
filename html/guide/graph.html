@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<h1 class="logo"><a href="#"><img src="../../asset/images/layout/logo.png" alt="Speechlog" /></a></h1>
+
+		<div class="utilH">
+			<div class="alarmUtil">
+				<a href="#" class="alarmItem">지역지 전남일보가 추가 되었습니다.</a>
+			</div>
+			<div class="myinfoUtil">
+				<div class="userName"><strong>정말랑</strong> 님</div>
+				<div class="utilBtnBox">
+					<button type="button" class="shortcut"><em>바로가기설치</em></button>
+					<button type="button" class="manual"><em>사용매뉴얼 </em></button>
+					<button type="button"><em>정보변경</em></button>
+					<button type="button"><em>로그아웃</em></button>
+				</div>
+			</div>
+		</div>
+
+		<nav class="gnbWrap">
+			<h2 class="blind">Main Navigation</h2>
+			<div class="depth01">
+				<ul>
+					<li>
+						<a href="#" class="icoDashboard"><em>대시보드</em></a>
+					</li>
+					<li>
+						<a href="#" class="icoSpeaker"><em>발언자 분석</em></a>
+						<div class="depth02">
+							<ul>
+								<li class="active"><a href="#"><em>발언자 분석</em></a></li>
+								<li><a href="#"><em>발언자 비교분석</em></a></li>
+								<li><a href="#"><em>발언자 검색</em></a></li>
+								<li><a href="#"><em>발언자 파급력 순위</em></a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="icoKeywrod"><em>키워드 분석</em></a>
+						<div class="depth02">
+							<ul>
+								<li><a href="#"><em>키워드 순위</em></a></li>
+								<li><a href="#"><em>키워드 분석</em></a></li>
+								<li><a href="#"><em>키워드 검색</em></a></li>
+								<li><a href="#"><em>키워드 비교검색</em></a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#" class="icoChanel"><em>특성화 채널분석</em></a>
+					</li>
+					<li>
+						<a href="#" class="icoCharacter"><em>인물분석백과</em></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+
+		<!-- contents -->
+		<div class="contents">
+
+			<!-- 발언자 활동량 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">발언자 활동량</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="speakerActiveBox">
+					<div class="inner">
+						<div class="itemCaseNews">
+							<div class="itemRow">
+								<span class="tit">뉴스발언량</span>
+								<span class="count">2,099</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">뉴스기사량</span>
+								<span class="count">3,942</span>
+							</div>
+						</div>
+						<div class="itemCaseSns">
+							<div class="itemRow">
+								<span class="tit">SNS</span>
+								<span class="count">51</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">RT</span>
+								<span class="count">100</span>
+							</div>
+						</div>
+						<div class="itemCaseYtb">
+							<div class="itemRow">
+								<span class="tit">유튜브</span>
+								<span class="count">19</span>
+							</div>
+							<div class="itemRow">
+								<span class="tit">조회수</span>
+								<span class="count">243</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="speakerActive"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 발언자 활동량 -->
+
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<div class="footInner">
+			<div class="fUtilBox">
+				<a href="#"><em>스피치로그소개</em></a>
+				<a href="#"><em>공지사항</em></a>
+				<a href="#"><em>서비스 문의</em></a>
+			</div>
+			<address class="corpAddrBox">
+				04313 서울시 용산구 청파로47길 11, 4층(청파동 3가 21-7) ｜
+				대표 : 주재선 (사업자번호 : 122-88-01743)
+				<br />
+				Tel.02.702-0310 ｜
+				Fax.02-702-0310 ｜
+				E-mail : speechlog@speechlog.co.kr
+			</address>
+			<p class="copyright">COPYRIGHT (C) SPEEACHLOG. ALL RIGHT RESERVED</p>
+		</div>
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<script type="text/javascript">
+var charLineColor = [
+	'#ffc14a',
+	'#20bac2',
+	'#6952db',
+	'#001a5c',
+	'#0ebb59',
+	'#d7c7fe',
+	'#fd9c94',
+	'#5c0931',
+	'#8eddcf',
+	'#166440',
+	'#e6e6e6',
+	'#7394ff',
+	'#8b21a6',
+	'#bdbdbd',
+	'#f56813'
+]
+// 발언자 활동량
+var speakerActiveGraph = new Chart(
+	document.getElementById('speakerActive'),
+	{
+		type: 'line',
+		data : {
+			labels: [
+				'1:12:03',
+				'1:12:04',
+				'1:12:05',
+				'1:12:06',
+				'1:12:07',
+				'1:12:08',
+				'1:12:09',
+				'1:12:10',
+				'1:12:11'
+			],
+			datasets: [
+				{
+					label: '전체',
+					backgroundColor: charLineColor[0],
+					borderColor: charLineColor[0],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [600, 650, 215, 342, 200, 1130, 945, 600, 217],
+				},
+				{
+					label: '뉴스기사량',
+					backgroundColor: charLineColor[1],
+					borderColor: charLineColor[1],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+				},
+				{
+					label: '뉴스발언량',
+					backgroundColor: charLineColor[2],
+					borderColor: charLineColor[2],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+				},
+				{
+					label: 'SNS',
+					backgroundColor: charLineColor[3],
+					borderColor: charLineColor[3],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [500, 250,915, 1142, 1000, 930, 805, 750, 317],
+				},
+				{
+					label: '유튜브',
+					backgroundColor: charLineColor[4],
+					borderColor: charLineColor[4],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [1100, 1050, 415, 742, 1180, 1030, 345, 550, 1117],
+				},
+				{
+					label: '보도자료',
+					backgroundColor: charLineColor[5],
+					borderColor: charLineColor[5],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+				},
+
+			]
+		},
+		options: {
+			scales: {
+				y: {
+					min: 0,
+					max: 1200,
+				}
+			},
+			plugins : {
+				legend : {
+					// display : false
+					position : 'right',
+					labels : {
+						boxWidth : 12,
+						boxHeight : 12,
+						color : '#333',
+						font : 13
+					}
+				}
+			}
+		}
+		
+	}
+);
+</script>
+</body>
+</html>
