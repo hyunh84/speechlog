@@ -147,6 +147,123 @@
 			</div>
 			<!-- // 발언자 활동량 -->
 
+			<!-- 기사량 순위 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">기사량 순위</h2>
+						<span class="btnRadioBox">
+							<button type="button" class="active"><em>전체</em></button>
+							<button type="button"><em>정치</em></button>
+							<button type="button"><em>경제</em></button>
+							<button type="button"><em>국제</em></button>
+							<button type="button"><em>문화</em></button>
+							<button type="button"><em>사회</em></button>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="newsLank"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_07.png" alt="임시 그래프 이미지" style="width:100%;"> -->
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="listTbl02">
+							<table>
+								<caption>일자, 발언자, 분석, 검색을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:13%">
+									<col style="width:auto">
+									<col style="width:13%">
+									<col style="width:13%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">발언자</th>
+										<th scope="col">분석</th>
+										<th scope="col">검색</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td><div class="clipping txtAL">이낙연 더불어민주당 전 대표이낙연 더불어민주당 전 대표이낙연 더불어민주당 전 대표</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td><div class="clipping txtAL">박용진 더불어민주당 의원</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td><div class="clipping txtAL">정세균 전 국무총리</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td><div class="clipping txtAL">재판부</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td><div class="clipping txtAL">이낙연 더불어민주당 전 대표</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td><div class="clipping txtAL">송영길 더불어민주당 대표</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td><div class="clipping txtAL">추미애 전 법무부장관</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td><div class="clipping txtAL">홍준표 국민의힘 의원</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td><div class="clipping txtAL">윤희숙 국민의힘 의원</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td><div class="clipping txtAL">하태경 국민의힘 의원</div></td>
+										<td><a href="#" class="aLink">분석</a></td>
+										<td><a href="#" class="aLink">검색</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 기사량 순위 -->
+
+
 		</div>
 		<!-- //contents -->
 	</section>
@@ -279,6 +396,67 @@ var speakerActiveGraph = new Chart(
 						color : '#333',
 						font : 13
 					}
+				}
+			}
+		}
+		
+	}
+);
+
+// 기사량 순위
+var speakerActiveGraph = new Chart(
+	document.getElementById('newsLank'),
+	{
+		type: 'line',
+		data : {
+			labels: [
+				'1:12:03',
+				'1:12:04',
+				'1:12:05',
+				'1:12:06',
+				'1:12:07',
+				'1:12:08',
+				'1:12:09',
+				'1:12:10',
+				'1:12:11'
+			],
+			datasets: [
+				{
+					label: '전체',
+					backgroundColor: charLineColor[0],
+					borderColor: charLineColor[0],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [600, 650, 215, 342, 200, 1130, 945, 600, 217],
+				},
+				{
+					label: '뉴스기사량',
+					backgroundColor: charLineColor[1],
+					borderColor: charLineColor[1],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+				},
+				{
+					label: '뉴스발언량',
+					backgroundColor: charLineColor[2],
+					borderColor: charLineColor[2],
+					pointBackgroundColor : 'transparent',
+					pointBorderColor : 'transparent',
+					data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+				}
+			]
+		},
+		options: {
+			scales: {
+				y: {
+					min: 0,
+					max: 1200,
+				}
+			},
+			plugins : {
+				legend : {
+					display : false
 				}
 			}
 		}
