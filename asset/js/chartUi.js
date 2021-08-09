@@ -17,7 +17,7 @@ var lineChartFn = function(target, options) {
 
 		_wrap.prepend(html);
 		_legendBox = $('.graphLegendBox', _wrap);
-		_wrap.css({'padding-right' : _legendBox.outerWidth() + 50});
+		_wrap.css({'padding-right' : options.legendGap != undefined ? _legendBox.outerWidth() + options.legendGap : _legendBox.outerWidth() + 50});
 	}
 
 	for(var i = 0; i < options.datasets.length; i++){
@@ -73,7 +73,7 @@ var lineChartFn = function(target, options) {
 
 /* AMCHART TREEMAP */
 var treeMapFn = function(target, options) {
-	var _target = $(target);
+	var _target = $('#'+target);
 	var _options = options || {};
 	// Themes begin
 	if(_options.theme === 'dataviz') am4core.useTheme(am4themes_dataviz);
@@ -125,4 +125,20 @@ var treeMapFn = function(target, options) {
 	bullet1.label.fill = am4core.color("#ffffff");
 
 	chart.maxLevels = 2;
+}
+
+/* jQCloud */
+var jqcloudFn = function(target, options) {
+	var _target = $('#'+target);
+	var _options = options || {};
+
+	_target.jQCloud(_options.data, {
+		height : 355,
+		autoResize: true,
+		colors: ["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc"],
+		fontSize: {
+			from: 0.12,
+			to:0
+		}
+	});
 }

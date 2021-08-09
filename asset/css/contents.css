@@ -3,6 +3,13 @@
 /*************************************************************************************************************
 	common
 *************************************************************************************************************/
+/* rank icon */
+[class^="rankUp"] {display:inline-block;position:relative;box-sizing:border-box;padding:0 0 0 15px;}
+[class^="rankUp"]:before {display:block;content:"";position:absolute;left:0;top:50%;border-bottom:10px solid #ea5845;border-left:6px solid transparent;border-right:6px solid transparent;transform:translate(0, -50%);}
+[class^="rankDown"] {display:inline-block;position:relative;box-sizing:border-box;padding:0 0 0 15px;}
+[class^="rankDown"]:before {display:block;content:"";position:absolute;left:0;top:50%;border-top:10px solid #14b3e3;border-left:6px solid transparent;border-right:6px solid transparent;transform:translate(0, -50%);}
+[class^="rankNew"] {display:inline-block;box-sizing:border-box;font-weight:700;color:#14b3e3;}
+
 /* flag */
 [class^="flagItem"] {display:inline-block;padding:0 8px;line-height:22px;font-size:12px;color:#727daa;border:1px solid #d8dae5;border-radius:11px;background-color:#fff;}
 
@@ -157,6 +164,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="srchTagItem"] button {position:absolute;right:8px;top:50%;width:16px;height:16px;margin:-8px 0 0;background:url('../images/ico_search_tag_delete.png') no-repeat center;}
 
 /* table list */
+[class^="listTbl"] {position:relative;}
 [class^="listTbl"] table {table-layout:fixed;width:100%;border-collapse:collapse;text-align:center;word-break:break-all;}
 [class^="listTbl"] table thead th {height:20px;padding:8px 10px;font-size:13px;color:#4b4d58;background-color:#f5f6f9;}
 [class^="listTbl"] table tbody td {height:28px;padding:10px;border-bottom:1px solid #ebedf1;}
@@ -193,6 +201,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 /* title */
 [class^="sTitle"] {display:block;line-height:32px;font-size:22px;}
 .sTitle02 {line-height:20px;font-size:16px;color:#4b4d58;}
+.sTitle03 {line-height:20px;font-size:18px;}
 
 /* title box */
 [class^="subTitleWrap"] {margin:65px 0 0;}
@@ -223,12 +232,12 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="graphBundleBox"] {margin:50px 0 0;}
 [class^="graphBundleBox"]:first-child {margin:0;}
 .subTitleWrap02 + [class^="graphBundleBox"] {margin:20px 0 0;}
-[class^="graphBundleBox"] .graphBox {position:relative;}
-[class^="graphBundleBox"] .graphBox .graphLegendBox {position:absolute;right:0;top:50%;transform:translate(0 , -50%);}
-[class^="graphBundleBox"] .graphBox .graphLegendBox ul li {position:relative;margin:15px 0 0;padding:0 0 0 17px;}
-[class^="graphBundleBox"] .graphBox .graphLegendBox ul li:first-child {margin:0;}
-[class^="graphBundleBox"] .graphBox .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
-[class^="graphBundleBox"] .graphBox .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
+[class^="graphBundleBox"] [class^="graphBox"] .graphCase {position:relative;}
+[class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox {position:absolute;right:0;top:50%;transform:translate(0 , -50%);}
+[class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li {position:relative;margin:15px 0 0;padding:0 0 0 17px;}
+[class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li:first-child {margin:0;}
+[class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
+[class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
 [class^="searchWordBox"] + [class^="graphBundleBox"] {margin:12px 0 0;}
 
 .graphBundleBox02 {display:flex;justify-content:space-between;}
@@ -237,6 +246,16 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .graphBundleBox02 > .graphBox {width:813px;}
 .graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
 .graphBundleBox02 > .graphBox .bubbleGraph {width:100%;height:856px;}
+
+.graphBundleBox03 {display:flex;justify-content:space-between;}
+.graphBundleBox03 > .bundleL {width:410px;}
+.graphBundleBox03 > .bundleR {width:815px;}
+.graphBundleBox03 [class^="graphBox"] {padding:30px;border:1px solid #ebedf1;}
+.graphBundleBox03 [class^="subTitleWrap"] + [class^="graphBox"] {margin:12px 0 0;}
+.graphBundleBox03 [class^="rankUp"] {width:100%;text-align:right;}
+.graphBundleBox03 [class^="rankDown"] {width:100%;text-align:right;}
+.graphBundleBox03 [class^="rankNew"] {width:100%;}
+.graphBundleBox03 .graphBox .wordsCloud {position:relative;width:100%;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
 [class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}
@@ -333,8 +352,6 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .emotionAnalysisBanner > button {position:absolute;right:50px;top:50%;padding:0 30px;border:1px solid #071c51;border-radius:22px;transform:translate(0, -50%);}
 .emotionAnalysisBanner > button em {display:block;line-height:44px;color:#071c51;}
 
-/* 뉴스리스트 */
-
 /*************************************************************************************************************
 	tooltip
 *************************************************************************************************************/
@@ -345,6 +362,15 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class="tooltipWrap"] .tooltipBox .tooltipInner:before {display:block;content:"";position:absolute;left:10px;top:-8px;width:16px;height:8px;background:url('../images/tail_tooltip.png') no-repeat center;}
 [class="tooltipWrap"] .tooltipBox .tooltipMssg {font-size:12px;color:#fff;}
 [class="tooltipWrap"] .tooltipBox .point01 {color:#a5f1ff;}
+
+/* 관련 발언자 리스트 툴팁 */
+.relateSpeakerTip {display:none;position:absolute;top:0;left:100%;width:200px;border:2px solid #071c51;background-color:#fff;z-index:2;box-shadow:6px 12px 12px rgba(0, 0, 0, 0.16)}
+.relateSpeakerTip:before {display:block;content:"";position:absolute;left:-12px;top:10px;border-right:12px solid #071c51;border-top:8px solid transparent;border-bottom:8px solid transparent;}
+.relateSpeakerTip .tit {display:block;line-height:38px;font-size:13px;color:#fff;text-align:center;background-color:#071c51;}
+.relateSpeakerTip .speakerList ul li {border-top:1px solid #ebedf1;}
+.relateSpeakerTip .speakerList ul li:first-child {border-top:none;}
+.relateSpeakerTip .speakerList ul li button {box-sizing:border-box;width:100%;padding:0 12px;text-align:left;}
+.relateSpeakerTip .speakerList ul li button em {display:block;overflow:hidden;width:100%;line-height:40px;white-space:nowrap;text-overflow:ellipsis;}
 
 /*************************************************************************************************************
 	layer popup

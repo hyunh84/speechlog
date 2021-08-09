@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jqcloud.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jqcloud.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
+	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+	<!-- 퍼블용입니다. 개발시 제외하세요 -->
+	<script type="text/javascript" src="../guide/js/layout.js"></script>
+	<!-- //퍼블용입니다. 개발시 제외하세요 -->
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<script>
+			header();
+		</script>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<!-- contents top fixed -->
+		<div class="pageFixedArea">
+			<div class="pageFixedBox">
+				<div class="pageFixedInner">
+
+					<div class="pageTitleBox">
+						<h1 class="pageTitle">키워드 분석</h1>
+					</div>
+
+					<div class="shareBtnBox">
+						<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+						<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+						<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+					</div>
+
+					<div class="integrSearchBox">
+						<div class="srchRow">
+							<!-- 검색어 박스 1개 -->
+							<div class="searchWordBox">
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text" title="검색어를 입력하세요." /></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="detailSrchBundle">
+							<div class="srchRow">
+								<div class="schTit">
+									<strong class="tit">기간선택</strong>
+									<span class="tooltipWrap">
+										<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+										<div class="tooltipBox" aria-hidden="true">
+											<div class="tooltipInner">
+												<p class="tooltipMssg">
+													기간 선택 : 오늘부터 최대 <span class="point01">12개월</span>까지 선택할 수 있습니다.
+												</p>
+											</div>
+										</div>
+									</span>
+								</div>
+								<div class="schCont">
+									<span class="inpDate">
+										<span class="inner">
+											<span><input type="text" title="시작일 입력" ></span>
+											<span><input type="text" title="종료일 입력" ></span>
+										</span>
+									</span>
+									<span class="btnRadioBox">
+										<button type="button" class="active"><em>1주일</em></button>
+										<button type="button"><em>1개월</em></button>
+										<button type="button"><em>3개월</em></button>
+										<button type="button"><em>6개월</em></button>
+										<button type="button"><em>12개월</em></button>
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="btnSrchBox">
+							<button type="button" class="btnLarge03"><em>검색</em></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- contents top fixed -->
+
+		<!-- contents -->
+		<div class="contents">
+
+			<!-- 키워드 종합순위 -->
+			<div class="subTitleWrap">
+				<h2 class="sTitle">키워드 종합순위</h2>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox03">
+					<div class="bundleL">
+						<div class="listTbl02 evClick">
+							<table>
+								<caption>순위, 변동, 키워드을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:20%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">변동</th>
+										<th scope="col">키워드</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>1</td>
+										<td> - </td>
+										<td>이재명</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td> - </td>
+										<td>윤석열</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td> - </td>
+										<td>이낙연</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td><div class="rankUp">1</div></td>
+										<td>코로나</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><div class="rankDown">1</div></td>
+										<td>올림픽</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td> - </td>
+										<td>이준석</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td><div class="rankUp">21</div></td>
+										<td>김연경</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td><div class="rankUp">49</div></td>
+										<td>최재형</td>
+									</tr>
+									<tr>
+										<td>9</td>
+										<td><div class="rankUp">136</div></td>
+										<td>음주운전</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td><div class="rankUp">1</div></td>
+										<td>후보</td>
+									</tr>
+									<tr>
+										<td>11</td>
+										<td><div class="rankDown">4</div></td>
+										<td>민주당</td>
+									</tr>
+									<tr>
+										<td>12</td>
+										<td><div class="rankDown">4</div></td>
+										<td>국민의힘</td>
+									</tr>
+									<tr>
+										<td>13</td>
+										<td><div class="rankDown">3</div></td>
+										<td>사람</td>
+									</tr>
+									<tr>
+										<td>14</td>
+										<td> - </td>
+										<td>정부</td>
+									</tr>
+									<tr>
+										<td>15</td>
+										<td> - </td>
+										<td>백신</td>
+									</tr>
+									<tr>
+										<td>16</td>
+										<td><div class="rankUp">999</div></td>
+										<td>여자배구</td>
+									</tr>
+									<tr>
+										<td>17</td>
+										<td><div class="rankUp">3000</div></td>
+										<td>경기도</td>
+									</tr>
+									<tr>
+										<td>18</td>
+										<td><div class="rankDown">4</div></td>
+										<td>대한민국</td>
+									</tr>
+									<tr>
+										<td>19</td>
+										<td><div class="rankNew">New</div></td>
+										<td>브라질</td>
+									</tr>
+									<tr>
+										<td>20</td>
+										<td><div class="rankDown">1</div></td>
+										<td>경기</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="relateSpeakerTip" aria-hidden="true">
+								<strong class="tit">관련발언자</strong>
+								<div class="speakerList">
+									<ul>
+										<li><button type="button"><em>이재명 경기도지사이재명 경기도지사</em></button></li>
+										<li><button type="button"><em>이낙연 전 더불어민주당 대표</em></button></li>
+										<li><button type="button"><em>정세균 전 국무총리</em></button></li>
+										<li><button type="button"><em>최재형 전 감사원장</em></button></li>
+										<li><button type="button"><em>홍준표 국민의힘 의원</em></button></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="graphBox">
+							<div class="graphCase">
+								<div id="keywordsCloud" class="wordsCloud"></div>
+								<!-- <img src="../../asset/images/temp/temp_graph01_09.png" style="width:100%;" alt="임시 그래프 이미지" /> -->
+							</div>
+						</div>
+						
+						<div class="subTitleWrap03">
+							<strong class="sTitle03">종합순위 추이</strong>
+						</div>
+						<div class="graphBox">
+							<div class="graphCase">
+								<canvas id="mediaNews"></canvas>
+								<!-- <img src="../../asset/images/temp/temp_graph01_10.png" style="width:100%;" alt="임시 그래프 이미지" /> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 키워드 종합순위 -->
+
+
+
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<script>footer();</script>
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<!-- 발언자 찾기 -->
+<article id="searchSpeakersPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">발언자 찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="spchsrchCopy">
+					발언자 목록에서 검색하실 발언자를 선택하세요. <br />
+					발언자를 찾을 수 없다면 발언자 등록을 요청을 해주세요.
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>발언자 등록 요청하기</em></a>
+					</div>
+				</div>
+				
+				<div class="spchSrchBox">
+					<span class="inpSrch" style="width:100%;">
+						<input type="text" title="발언자명을 입력하세요" placeholder="발언자를 검색하세요" />
+					</span>
+
+					<div class="listTbl">
+						<table>
+							<caption>번호, 발언자을(를) 포함하는 표</caption>
+							<colgroup>
+								<col style="width:15%" />
+								<col style="width:auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">발언자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="fontCB01">1</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">2</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">3</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">4</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">5</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지3</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">6</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지4</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">7</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지5</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">8</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지6</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">9</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지7</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">10</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지8</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<!-- PAGING button type -->
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+				<!-- // PAGING button type -->
+
+
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 발언자 찾기 -->
+
+<script type="text/javascript">
+var mediaNews = new lineChartFn('mediaNews', {
+	legend : true,
+	legendGap : 0,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var wordsTotalRank = new jqcloudFn('keywordsCloud', {
+	data : [
+		{text: "이재명", weight: 100*20},
+		{text: "윤석열", weight: 100*18},
+		{text: "이낙연", weight: 100*17},
+		{text: "코로나", weight: 100*17},
+		{text: "올림픽", weight: 100*16},
+		{text: "이준석", weight: 100*15},
+		{text: "김연경", weight: 100*14},
+		{text: "최재형", weight: 100*13},
+		{text: "음주운전", weight: 100*12},
+		{text: "후보", weight: 100*11},
+		{text: "민주당", weight: 100*10},
+		{text: "국민의힘", weight: 100*9},
+		{text: "사람", weight: 100*8},
+		{text: "정부", weight: 100*7},
+		{text: "백신", weight: 100*6},
+		{text: "여자배구", weight: 100*5},
+		{text: "경기도", weight: 100*4},
+		{text: "대한민국", weight: 100*3},
+		{text: "브라질", weight: 100*2.5},
+		{text: "경기", weight: 100*1.5}
+	]
+});
+</script>
+
+</body>
+</html>
