@@ -18,7 +18,6 @@ var lineChartFn = function(target, options) {
 		_wrap.prepend(html);
 		_legendBox = $('.graphLegendBox', _wrap);
 		_wrap.css({'padding-right' : _legendBox.outerWidth() + 50});
-		console.log(labelItems);
 	}
 
 	for(var i = 0; i < options.datasets.length; i++){
@@ -52,7 +51,6 @@ var lineChartFn = function(target, options) {
 		creatLegendFn();
 	
 		_wrap.on('click', '.graphLegendBox button', function() {
-			console.log('graphLegendBox button - click');
 			var _this = $(this);
 			var _thisIdx = _this.parent().index();
 			var chartType = chartSet.config.type;
