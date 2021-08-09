@@ -87,16 +87,7 @@ body.isPop {overflow:hidden;}
 [class^="pageFixedArea"] .integrSearchBox {margin:22px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox {display:flex;margin:0 -80px 0 0;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {position:relative;width:100%;max-width:745px;padding:0 80px 0 0;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpText,
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .inpSrch {width:100%;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase {display:none;position:absolute;left:0;right:80px;top:100%;padding:0 13px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li {margin:0 -13px;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button {width:100%;padding:10px 13px;line-height:20px;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button em {display:block;text-align:left;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button:hover,
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase ul li button:focus {background-color:#f2fbfe;}
-[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase .moreBox {border-top:1px solid #c2c8d8;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {max-width:745px;padding:0 80px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle {margin:15px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle .srchRow {margin:15px 0 0;}

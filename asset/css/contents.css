@@ -139,6 +139,19 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="btnRadioBox"] button.active {border:1px solid #071c51;background-color:#e6f1ff;z-index:1;}
 [class^="btnRadioBox"] button.active > em {color:#071c51;}
 
+/* form - 검색 */
+/* [class^="searchWordBox"] {display:flex;margin:0 -80px 0 0;}, */
+[class^="searchWordItem"] {display:inline-block;position:relative;width:100%;}
+[class^="searchWordItem"] .inpText,
+[class^="searchWordItem"] .inpSrch {width:100%;}
+[class^="searchWordItem"] .autoWordCase {display:none;position:absolute;left:0;right:80px;top:100%;padding:0 13px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
+[class^="searchWordItem"] .autoWordCase ul li {margin:0 -13px;}
+[class^="searchWordItem"] .autoWordCase ul li button {width:100%;padding:10px 13px;line-height:20px;}
+[class^="searchWordItem"] .autoWordCase ul li button em {display:block;text-align:left;}
+[class^="searchWordItem"] .autoWordCase ul li button:hover,
+[class^="searchWordItem"] .autoWordCase ul li button:focus {background-color:#f2fbfe;}
+[class^="searchWordItem"] .autoWordCase .moreBox {border-top:1px solid #c2c8d8;}
+
 /* search tag */
 [class^="srchTagItem"] {position:relative;margin:0 0 0 5px;padding:7px 28px  7px 12px;font-size:14px;color: #4b4d58;border:1px solid #eceef4;background-color:#eceef4}
 [class^="srchTagItem"] button {position:absolute;right:8px;top:50%;width:16px;height:16px;margin:-8px 0 0;background:url('../images/ico_search_tag_delete.png') no-repeat center;}
@@ -203,7 +216,8 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 /* bundle wrap */
 [class^="bundleWrap"] {box-sizing:border-box;margin:64px 0 0;padding:30px;border:1px solid #dee2eb;border-radius: 8px;background-color:#fff; box-shadow:0 1px 4px 0 rgba(52, 85, 159, 0.08);}
 [class^="bundleWrap"]:first-child {margin:0;}
-[class^="subTitleWrap"] + [class^="bundleWrap"] {margin:12px 0 0;}
+[class^="subTitleWrap"] + [class^="bundleWrap"],
+[class^="searchWordBox"] + [class^="bundleWrap"] {margin:12px 0 0;}
 
 /* graph box type */
 [class^="graphBundleBox"] {margin:50px 0 0;}
@@ -215,12 +229,14 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="graphBundleBox"] .graphBox .graphLegendBox ul li:first-child {margin:0;}
 [class^="graphBundleBox"] .graphBox .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
 [class^="graphBundleBox"] .graphBox .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
+[class^="searchWordBox"] + [class^="graphBundleBox"] {margin:12px 0 0;}
 
 .graphBundleBox02 {display:flex;justify-content:space-between;}
 .graphBundleBox02 > .bundleL {width:calc(100% - 843px);}
 .graphBundleBox02 > .bundleR {width:calc(100% - 843px);}
 .graphBundleBox02 > .graphBox {width:813px;}
 .graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
+.graphBundleBox02 > .graphBox .bubbleGraph {width:100%;height:856px;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
 [class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}
