@@ -78,6 +78,7 @@ var treeMapFn = function(target, options) {
 	// Themes begin
 	if(_options.theme === 'dataviz') am4core.useTheme(am4themes_dataviz);
 	am4core.useTheme(am4themes_animated);
+	am4core.addLicense("ch-custom-attribution");
 	// Themes end
 
 	// create chart
