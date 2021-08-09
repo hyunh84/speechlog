@@ -11,11 +11,15 @@
 	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
 	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
 
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/lineChartUi.js"></script>
+	<!-- <script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script> -->
 
 </head>
 <body>
@@ -264,6 +268,112 @@
 			</div>
 			<!-- // 기사량 순위 -->
 
+			<!-- 연관 키워드 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">연관 키워드</h2>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										발언자의 활동을 분석한 결과 연관도가 높은 키워드 리스트입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="bundleL">
+						<div class="listTbl02">
+							<table>
+								<caption>순위, 연관 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:auto">
+									<col style="width:20%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">연관 키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td class="txtAL">이재명</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td class="txtAL">윤석열</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td class="txtAL">민주당</td>
+										<td class="fontC02">99</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td class="txtAL">발언</td>
+										<td class="fontC02">9</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td class="txtAL">후보</td>
+										<td class="fontC02">199</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td class="txtAL">이낙연</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td class="txtAL">기본소득</td>
+										<td class="fontC02">2,099</td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td class="txtAL">대선</td>
+										<td class="fontC02">299</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td class="txtAL">경선</td>
+										<td class="fontC02">299</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td class="txtAL">이재명</td>
+										<td class="fontC02">299</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="graphBox">
+						<div class="graphCase">
+							<div id="keywrodRank"></div>
+							<img src="../../asset/images/temp/temp_graph01_02.png" alt="임시 그래프 이미지" style="width:100%;" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 연관 키워드 -->
+
 
 		</div>
 		<!-- //contents -->
@@ -367,6 +477,101 @@ var newsRank = lineChartFn('newsRank', {
 	}
 });
 
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// create chart
+var chart = am4core.create("keywrodRank", am4charts.TreeMap);
+chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+
+chart.data = [{
+	name: "키워드1",
+	children: [
+	{
+		name: "발언",
+		value: 100
+	},
+	{
+		name: "후보",
+		value: 60
+	}
+	]
+},
+{
+	name: "키워드2",
+	children: [
+	{
+		name: "이낙연",
+		value: 415
+	},
+	{
+		name: "민주당",
+		value: 148
+	},
+	{
+		name: "경기도",
+		value: 89
+	},
+	{
+		name: "기본소득",
+		value: 64
+	}
+	]
+},
+{
+	name: "키워드3",
+	children: [
+	{
+		name: "이재명",
+		value: 687
+	},
+	{
+		name: "윤석열",
+		value: 148
+	}
+	]
+}];
+
+chart.colors.step = 2;
+
+// define data fields
+chart.dataFields.value = "value";
+chart.dataFields.name = "name";
+chart.dataFields.children = "children";
+
+chart.zoomable = false;
+var bgColor = new am4core.InterfaceColorSet().getFor("background");
+
+// level 0 series template
+var level0SeriesTemplate = chart.seriesTemplates.create("0");
+var level0ColumnTemplate = level0SeriesTemplate.columns.template;
+
+level0ColumnTemplate.column.cornerRadius(10, 10, 10, 10);
+level0ColumnTemplate.fillOpacity = 0;
+level0ColumnTemplate.strokeWidth = 4;
+level0ColumnTemplate.strokeOpacity = 0;
+
+// level 1 series template
+var level1SeriesTemplate = chart.seriesTemplates.create("1");
+var level1ColumnTemplate = level1SeriesTemplate.columns.template;
+
+level1SeriesTemplate.tooltip.animationDuration = 0;
+level1SeriesTemplate.strokeOpacity = 1;
+
+level1ColumnTemplate.column.cornerRadius(10, 10, 10, 10)
+level1ColumnTemplate.fillOpacity = 1;
+level1ColumnTemplate.strokeWidth = 4;
+level1ColumnTemplate.stroke = bgColor;
+
+var bullet1 = level1SeriesTemplate.bullets.push(new am4charts.LabelBullet());
+bullet1.locationY = 0.5;
+bullet1.locationX = 0.5;
+bullet1.label.text = "{name}";
+bullet1.label.fill = am4core.color("#ffffff");
+
+chart.maxLevels = 2;
 </script>
 </body>
 </html>
