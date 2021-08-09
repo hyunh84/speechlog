@@ -220,6 +220,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .graphBundleBox02 > .bundleL {width:calc(100% - 843px);}
 .graphBundleBox02 > .bundleR {width:calc(100% - 843px);}
 .graphBundleBox02 > .graphBox {width:813px;}
+.graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
 [class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}

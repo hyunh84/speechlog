@@ -294,7 +294,8 @@
 					</div>
 					<div class="graphBox">
 						<div class="graphCase">
-							<img src="../../asset/images/temp/temp_graph01_02.png" alt="임시 그래프 이미지" style="width:100%;" />
+							<div id="keywrodRank" class="treemapGraph"></div>
+							<!-- <img src="../../asset/images/temp/temp_graph01_02.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
 						</div>
 					</div>
 				</div>
@@ -958,7 +959,7 @@
 <!-- //언론사 지정선택 -->
 
 <script type="text/javascript">
-var speakerActive = lineChartFn('speakerActive', {
+var speakerActive = new lineChartFn('speakerActive', {
 	legend : true,
 	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
 	datasets : [
@@ -995,7 +996,7 @@ var speakerActive = lineChartFn('speakerActive', {
 	}
 });
 
-var speakerEffect = lineChartFn('speakerEffect', {
+var speakerEffect = new lineChartFn('speakerEffect', {
 	legend : true,
 	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
 	datasets : [
@@ -1015,6 +1016,125 @@ var speakerEffect = lineChartFn('speakerEffect', {
 		}
 	}
 });
+
+var keywordRank = treeMapFn("keywrodRank", {
+	data : [
+		{
+			name: "키워드1",
+			children: [
+				{
+					name: "이재명",
+					value: 1099
+				},
+				{
+					name: "윤석열",
+					value: 899
+				}
+			]
+		},
+		{
+			name: "키워드3",
+			children: [
+				{
+					name: "이낙연",
+					value: 699
+				},
+				{
+					name: "민주당",
+					value: 148
+				},
+				{
+					name: "경기도",
+					value: 189
+				},
+				{
+					name: "기본소득",
+					value: 2099
+				}
+			]
+		},
+		{
+			name: "키워드2",
+			children: [
+				{
+					name: "발언",
+					value: 230
+				},
+				{
+					name: "후보",
+					value: 599
+				}
+			]
+		}
+	]
+});
+
+var relateSpeaker = treeMapFn("relateSpeaker", {
+	theme : 'dataviz',
+	data : [
+		{
+			name: "키워드1",
+			children: [
+				{
+					name: "이낙연 더불어민주당 전 대표",
+					value: 1099
+				},
+				{
+					name: "박용진 더불어민주당 의원",
+					value: 899
+				},
+				{
+					name: "정세균 전 국무총리",
+					value: 899
+				}
+			]
+		},
+		{
+			name: "키워드2",
+			children: [
+				{
+					name: "윤석열 전 검찰총장",
+					value: 699
+				},
+				{
+					name: "이준석 국민의힘 당대표",
+					value: 699
+				}
+			]
+		},
+		{
+			name: "키워드3",
+			children: [
+				{
+					name: "송영길 더불어민주당 대표",
+					value: 599
+				},
+				{
+					name: "추미애 전 법무부장관",
+					value: 230
+				},
+			]
+		},
+		{
+			name: "키워드4",
+			children: [
+				{
+					name: "홍준표 국민의힘 의원",
+					value: 599
+				},
+				{
+					name: "윤희숙 국민의힘 의원",
+					value: 230
+				},
+				{
+					name: "하태경 국민의힘 의원",
+					value: 230
+				}
+			]
+		}
+	]
+});
+
 </script>
 
 </body>
