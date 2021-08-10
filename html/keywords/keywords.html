@@ -1209,6 +1209,107 @@
 				</div>
 			</div>
 			<!-- //채널별 키워드 급등 순위 -->
+
+			<!-- 뉴스기사 순위 추이 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">채널별 키워드 급등 순위</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="ranking01"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //뉴스기사 순위 추이 -->
+
+			<!-- SNS 순위 추이 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">SNS 순위 추이</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="ranking02"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //SNS 순위 추이 -->
+
+			<!-- 유튜브 순위 추이 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">유튜브 순위 추이</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="ranking03"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //유튜브 순위 추이 -->
+
+			<!-- 커뮤니티 순위 추이 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">커뮤니티 순위 추이</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="ranking04"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_05.png" alt="임시 그래프 이미지" style="width:100%;" /> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //커뮤니티 순위 추이 -->
+
  
 
 
@@ -1381,6 +1482,102 @@ var wordsTotalRank = new jqcloudFn('keywordsCloud', {
 	]
 });
 
+var ranking01 = new lineChartFn('ranking01', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var ranking02 = new lineChartFn('ranking02', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var ranking03 = new lineChartFn('ranking03', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+var ranking04 = new lineChartFn('ranking04', {
+	legend : true,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '이재명 9,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '이낙연 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: '윤석열 3,510',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
 
 </script>
 

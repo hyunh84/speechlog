@@ -156,7 +156,7 @@ $(document).on('click', '.listTbl02.evSpeakerTip tbody tr', function(e) {e.stopP
 	speakerTipClose();
 	speakerTipOpen(this);
 });
-
+$(document).on('click', '.listTbl02.evSpeakerTip .relateSpeakerTip', function(e) {e.stopPropagation();});
 var speakerTipOpen = function(target) {
 	var _this = $(target);
 	var _evSpeakerTip = _this.closest('.evSpeakerTip');
