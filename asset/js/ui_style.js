@@ -16,6 +16,9 @@ $(document).on('click', function() {
 
 	// 리셋 검색어 자동완성기능
 	resetAutoWordFn();
+	
+	// 관련발언자 툴팁
+	speakerTipClose();
 });
 
 /* DOM Focusin */
@@ -138,6 +141,36 @@ $(document).on('click', '[class^="listTbl"].evClick tbody tr', function() {
 		_this.addClass('active');
 	}
 });
+
+/******************************************************************************************
+	관련 발언자 툴팁
+******************************************************************************************/
+$(document).on('click', '.listTbl02.evSpeakerTip tbody tr', function(e) {e.stopPropagation();
+	var _this = $(this);
+	var _tbody = _this.closest('tbody');
+
+	if(!_this.hasClass('active')) {
+		$('tr', _tbody).removeClass('active');
+		_this.addClass('active');
+	}
+	speakerTipClose();
+	speakerTipOpen(this);
+});
+
+var speakerTipOpen = function(target) {
+	var _this = $(target);
+	var _evSpeakerTip = _this.closest('.evSpeakerTip');
+	var _tooltip = $('.relateSpeakerTip', _evSpeakerTip);
+	var _topY = _this.position().top;
+
+	_tooltip.css({'top' : _topY});
+	if(_tooltip.is(':hidden')) _tooltip.attr('aria-hidden', false).show();
+}
+var speakerTipClose = function() {
+	var _tooltip = $('.evSpeakerTip .relateSpeakerTip');
+
+	_tooltip.attr('aria-hidden', true).hide();
+}
 
 /******************************************************************************************
 	컨텐츠 상단 고정영역 (페이지 타이틀, 통합검색)

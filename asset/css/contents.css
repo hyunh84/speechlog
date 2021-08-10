@@ -186,17 +186,41 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="listTbl"].evClick table tbody tr {cursor:pointer;}
 [class^="listTbl"].evClick table tbody tr.active {background-color:#e4f4f9;}
 
+/* table tr click event tooltip */
+[class^="listTbl"].evSpeakerTip table tbody tr {cursor:pointer;}
+[class^="listTbl"].evSpeakerTip table tbody tr.active {background-color:#e4f4f9;}
+[class^="listTbl"].evSpeakerTip .rankUp,
+[class^="listTbl"].evSpeakerTip .rankDown {width:100%;text-align:right;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip {display:none;position:absolute;top:0;left:100%;width:200px;border:2px solid #071c51;background-color:#fff;z-index:2;box-shadow:6px 12px 12px rgba(0, 0, 0, 0.16)}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip:before {display:block;content:"";position:absolute;left:-12px;top:10px;border-right:12px solid #071c51;border-top:8px solid transparent;border-bottom:8px solid transparent;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip .tit {display:block;line-height:38px;font-size:13px;color:#fff;text-align:center;background-color:#071c51;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip .speakerList ul li {border-top:1px solid #ebedf1;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip .speakerList ul li:first-child {border-top:none;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip .speakerList ul li button {box-sizing:border-box;width:100%;padding:0 12px;text-align:left;}
+[class^="listTbl"].evSpeakerTip .relateSpeakerTip .speakerList ul li button em {display:block;overflow:hidden;width:100%;line-height:40px;white-space:nowrap;text-overflow:ellipsis;}
+
 /* table scroll-y */
 [class^="listTbl"].scrollY {overflow-y:auto;overflow-x:hidden;max-height:526px;}
+[class^="listTbl"].scrollY table thead th {position:-webkit-sticky;position:sticky;top:0;}
 .listTbl02.scrollY {max-height:446px;}
 
 /* compare table box */
-.compareTblWrap {overflow:hidden;}
-.compareTblWrap ul {display:flex;margin:0 -4% 0 0;}
-.compareTblWrap ul li {width:30%;padding:0 3% 0 0;}
-.compareTblWrap ul li .tit {display:block;line-height:24px;font-size:18px;color:#0d3681;}
-.compareTblWrap ul li [class^="listTbl"] {margin:12px 0 0;}
-.compareTblWrap ul li [class^="listTbl"]:first-child {margin:0;}
+/* [class^="compareTblWrap"] {overflow:hidden;} */
+[class^="compareTblWrap"] > ul {display:flex;margin:0 -4% 0 0;}
+[class^="compareTblWrap"] > ul > li {box-sizing:border-box;width:33%;padding:0 2% 0 0;}
+[class^="compareTblWrap"] > ul > li .tit {display:block;line-height:24px;font-size:18px;color:#0d3681;}
+[class^="compareTblWrap"] > ul > li [class^="listTbl"] {margin:12px 0 0;}
+[class^="compareTblWrap"] > ul > li [class^="listTbl"]:first-child {margin:0;}
+
+.compareTblWrap02 > ul {margin:0 -30px 0 0;}
+.compareTblWrap02 > ul > li {width:25%;padding:0 30px 0 0;}
+.compareTblWrap02 > ul > li > .tit {text-align:center;}
+.compareTblWrap02 > ul > li > .tit:before {display:inline-block;content:"";width:42px;height:42px;margin:0 8px 0 0;background-repeat:no-repeat;background-position:center;vertical-align:middle;}
+.compareTblWrap02 > ul > li > .tit.icoNews:before {background-image:url('../images/ico_rank_news.png');}
+.compareTblWrap02 > ul > li > .tit.icoSns:before {background-image:url('../images/ico_rank_sns.png');}
+.compareTblWrap02 > ul > li > .tit.icoYtb:before {background-image:url('../images/ico_rank_Ytb.png');}
+.compareTblWrap02 > ul > li > .tit.icoWords:before {background-image:url('../images/ico_rank_community.png');}
+.compareTblWrap02 [class^="listTbl"].evSpeakerTip {margin:24px 0 0;}
 
 /* title */
 [class^="sTitle"] {display:block;line-height:32px;font-size:22px;}
@@ -252,9 +276,6 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .graphBundleBox03 > .bundleR {width:815px;}
 .graphBundleBox03 [class^="graphBox"] {padding:30px;border:1px solid #ebedf1;}
 .graphBundleBox03 [class^="subTitleWrap"] + [class^="graphBox"] {margin:12px 0 0;}
-.graphBundleBox03 [class^="rankUp"] {width:100%;text-align:right;}
-.graphBundleBox03 [class^="rankDown"] {width:100%;text-align:right;}
-.graphBundleBox03 [class^="rankNew"] {width:100%;}
 .graphBundleBox03 .graphBox .wordsCloud {position:relative;width:100%;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
@@ -264,7 +285,11 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="newsCardBox"] .flagBlog,
 [class^="newsCardBox"] .flagYtb,
 [class^="newsCardBox"] .flagCommunity {position:absolute;left:16px;top:16px;}
-[class^="newsCardBox"] .newsTitle .tit {display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:20px;font-size:15px;font-weight:700;text-overflow:ellipsis;}
+[class^="newsCardBox"] .newsTitle {line-height:20px;}
+[class^="newsCardBox"] .newsTitle .tit {font-size:15px;font-weight:700;text-overflow:ellipsis;vertical-align:middle;}
+[class^="newsCardBox"] .newsTitle .btnRelateNews {margin:0 0 0 5px;font-size:14px;text-overflow:ellipsis;color:#071c51;vertical-align:middle;}
+[class^="newsCardBox"] .newsTitle .btnRelateNews em {display:inline-block;position:relative;padding:0 10px 0 0;line-height:20px;}
+[class^="newsCardBox"] .newsTitle .btnRelateNews em:after {display:block;content:"";position:absolute;right:0;top:50%;width:7px;height:12px;background:url('../images/btn_link.png') no-repeat center;transform:translate(0, -50%);}
 [class^="newsCardBox"] .hasTag {margin:10px 0 0;}
 [class^="newsCardBox"] .hasTag button {margin:0 4px 0 0;}
 [class^="newsCardBox"] .hasTag button:last-child {margin:0;}
@@ -286,6 +311,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .newsCardBox02 .date {position:absolute;right:20px;top:50%;color:#858995;transform:translate(0, -50%);}
 
 /* 뉴스 LIST */
+[class^="newsListWrap"] {overflow-y:auto;overflow-x:hidden;max-height:1000px;}
 [class^="newsListWrap"] ul li {border-top:1px solid #ebedf1;}
 [class^="newsListWrap"] ul li:first-child {border-top:none;}
 
@@ -362,15 +388,6 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class="tooltipWrap"] .tooltipBox .tooltipInner:before {display:block;content:"";position:absolute;left:10px;top:-8px;width:16px;height:8px;background:url('../images/tail_tooltip.png') no-repeat center;}
 [class="tooltipWrap"] .tooltipBox .tooltipMssg {font-size:12px;color:#fff;}
 [class="tooltipWrap"] .tooltipBox .point01 {color:#a5f1ff;}
-
-/* 관련 발언자 리스트 툴팁 */
-.relateSpeakerTip {display:none;position:absolute;top:0;left:100%;width:200px;border:2px solid #071c51;background-color:#fff;z-index:2;box-shadow:6px 12px 12px rgba(0, 0, 0, 0.16)}
-.relateSpeakerTip:before {display:block;content:"";position:absolute;left:-12px;top:10px;border-right:12px solid #071c51;border-top:8px solid transparent;border-bottom:8px solid transparent;}
-.relateSpeakerTip .tit {display:block;line-height:38px;font-size:13px;color:#fff;text-align:center;background-color:#071c51;}
-.relateSpeakerTip .speakerList ul li {border-top:1px solid #ebedf1;}
-.relateSpeakerTip .speakerList ul li:first-child {border-top:none;}
-.relateSpeakerTip .speakerList ul li button {box-sizing:border-box;width:100%;padding:0 12px;text-align:left;}
-.relateSpeakerTip .speakerList ul li button em {display:block;overflow:hidden;width:100%;line-height:40px;white-space:nowrap;text-overflow:ellipsis;}
 
 /*************************************************************************************************************
 	layer popup
