@@ -270,6 +270,8 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .graphBundleBox02 > .graphBox {width:813px;}
 .graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
 .graphBundleBox02 > .graphBox .bubbleGraph {width:100%;height:856px;}
+.graphBundleBox02 > .graphBox02 {box-sizing:border-box;width:813px;padding:50px 0;text-align:center;border:1px solid #ebedf1;}
+.graphBundleBox02 > .graphBox02 .graphCase {display:inline-block;}
 
 .graphBundleBox03 {display:flex;justify-content:space-between;}
 .graphBundleBox03 > .bundleL {width:410px;}
@@ -365,6 +367,23 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .speakerActiveBox02 .itemCaseNews:before {background-image:url('../images/ico_active_count_news.png');}
 .speakerActiveBox02 .itemCaseSns:before {background-image:url('../images/ico_active_count_sns.png');}
 .speakerActiveBox02 .itemCaseYtb:before {background-image:url('../images/ico_active_count_ytb.png');}
+
+/* 발언자 활동량 */
+.speakerActiveBox03 {overflow:hidden;text-align:center;}
+.speakerActiveBox03 > .inner {display:inline-block;margin:-10px 0 0;text-align:left;}
+.speakerActiveBox03 [class^="itemCase"] {display:inline-block;position:relative;box-sizing:border-box;min-height:72px;margin:10px 80px 0 0;padding:8px 0 0 88px;}
+.speakerActiveBox03 [class^="itemCase"]:before {display:block;content:"";position:absolute;left:0;top:0;width:72px;height:72px;border-radius:5px;background-color:#eceef4;background-repeat:no-repeat;background-position:center;}
+.speakerActiveBox03 [class^="itemCase"]:after {display:block;content:"";position:absolute;right:-40px;top:0;width:1px;height:100%;background-color:#ebedf1;}
+.speakerActiveBox03 [class^="itemCase"]:last-child {margin:10px 0 0;}
+.speakerActiveBox03 [class^="itemCase"]:last-child:after {display:none;}
+.speakerActiveBox03 [class^="itemCase"] .itemRow {display:flex;justify-content:space-between;align-items:center;margin:8px 0 0;}
+.speakerActiveBox03 [class^="itemCase"] .itemRow:first-child {margin:0;}
+.speakerActiveBox03 [class^="itemCase"] .itemRow .tit {display:block;font-size:14px;color:#4b4d58;}
+.speakerActiveBox03 [class^="itemCase"] .itemRow .count {display:block;min-width:72px;margin:0 0 0 px;line-height:24px;font-size:20px;font-weight:700;text-align:right;}
+.speakerActiveBox03 .itemCaseNews:before {background-image:url('../images/ico_active_count_news.png');}
+.speakerActiveBox03 .itemCaseSns:before {background-image:url('../images/ico_active_count_sns.png');}
+.speakerActiveBox03 .itemCaseYtb:before {background-image:url('../images/ico_active_count_ytb.png');}
+.speakerActiveBox03 .itemCaseCommu:before {background-image:url('../images/ico_active_count_commu.png');}
 
 /* 감성분석 배너 */
 .emotionAnalysisBanner {position:relative;box-sizing:border-box;margin:65px 0 0;padding:35px 220px 35px 50px;border-radius:5px;background-color:rgba(213, 223, 243, .8);}

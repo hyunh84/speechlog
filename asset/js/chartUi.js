@@ -2,7 +2,9 @@
 var lineChartFn = function(target, options) {
 	var _wrap = $('#'+target).parent();
 	var _legendBox;
-	var options = options || {};
+	var _options = options || {};
+	var _type = _options.type ? _options.type : 'line';
+	var _responsive = _options.responsive !== undefined ? _options.responsive : true;
 	// line color
 	var charLineColor = ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
 
@@ -17,27 +19,39 @@ var lineChartFn = function(target, options) {
 
 		_wrap.prepend(html);
 		_legendBox = $('.graphLegendBox', _wrap);
-		_wrap.css({'padding-right' : options.legendGap != undefined ? _legendBox.outerWidth() + options.legendGap : _legendBox.outerWidth() + 50});
+		_wrap.css({'padding-right' : _options.legendGap != undefined ? _legendBox.outerWidth() + _options.legendGap : _legendBox.outerWidth() + 50});
 	}
 
-	for(var i = 0; i < options.datasets.length; i++){
-		options.datasets[i]['backgroundColor'] = charLineColor[i];
-		options.datasets[i]['borderColor'] = charLineColor[i];
-		options.datasets[i]['pointBackgroundColor'] = charLineColor[i];
-		options.datasets[i]['pointBorderColor'] = charLineColor[i];
+	if(_type === 'line') {
+		for(var i = 0; i < _options.datasets.length; i++){
+			_options.datasets[i]['backgroundColor'] = charLineColor[i];
+			_options.datasets[i]['borderColor'] = charLineColor[i];
+			_options.datasets[i]['pointBackgroundColor'] = charLineColor[i];
+			_options.datasets[i]['pointBorderColor'] = charLineColor[i];
+		}
+	}else if(_type === 'doughnut' || _type === 'pie') {
+		_options.datasets[0]['backgroundColor'] = [];
+		for(var i = 0; i < charLineColor.length; i++){
+			_options.datasets[0]['backgroundColor'][i] = charLineColor[i];
+			
+		}
 	}
 
+	console.log(_responsive);
 	//chart lib
 	var chartSet = new Chart(
 		document.getElementById(target),
 		{
-			type: 'line',
+			width:300,
+			height:300,
+			type: _type,
 			data : {
-				labels: options.labels,
-				datasets: options.datasets
+				labels: _options.labels,
+				datasets: _options.datasets
 			},
 			options: {
-				scales: options.scales,
+				responsive: _responsive,
+				scales : _options.scales,
 				plugins : {
 					legend : {
 						display : false
@@ -47,7 +61,7 @@ var lineChartFn = function(target, options) {
 		}
 	);
 	
-	if(options.legend) {//범례 생성
+	if(_options.legend) {//범례 생성
 		creatLegendFn();
 	
 		_wrap.on('click', '.graphLegendBox button', function() {
