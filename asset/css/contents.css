@@ -89,6 +89,11 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="btnBundleBox"] > button {margin:0 10px 0 0;}
 [class^="btnBundleBox"] > a:last-child,
 [class^="btnBundleBox"] > button:last-child {margin:0;}
+[class^="btnBundleBox"] .flexInner:after {display:block;content:"";clear:both;overflow:hidden;width:0;height:0;padding:0;margin:0;line-height:0;font-size:1px;}
+[class^="btnBundleBox"] .flexInner .itemL {float:left;}
+[class^="btnBundleBox"] .flexInner .itemR {float:right;}
+
+.notiDetailWrap + [class^="btnBundleBox"] {margin:15px 0 0;}
 
 /* form - text */
 [class^="inpText"] {display:inline-block;box-sizing:border-box;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;vertical-align:middle;}
@@ -177,6 +182,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="listTbl"] .fontCB02 {color:#858995;font-weight:700;}
 [class^="listTbl"] .fontCB03 {color:#00b3e3;font-weight:700;}
 [class^="listTbl"] .aLink {display:inline-block;color:#858995;text-decoration:underline;}
+[class^="listTbl"] .notiTit {display:block;line-height:22px;}
 
 [class^="subTitleWrap"] + [class^="listTbl"] {margin:12px 0 0;}
 
@@ -235,6 +241,12 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 [class^="subTitleWrap"] [class^="totalNum"] em {display:inline-block;font-size:14px;font-weight:400;color:#858995;vertical-align:middle;}
 [class^="subTitleWrap"] .totalNum02 {line-height:20px;font-size:16px;}
 [class^="subTitleWrap"] .btnRadioBox {margin:0 0 0 30px;}
+[class^="subTitleWrap"] [class^="srchTotalNum"] {display:inline-block;margin:0 0 0 4px;}
+[class^="subTitleWrap"] [class^="srchTotalNum"] [class^="totalNum"] {display:inline-block;position:relative;margin:0 20px 0 0;}
+[class^="subTitleWrap"] [class^="srchTotalNum"] [class^="totalNum"]:after {display:block;content:"";position:absolute;right:-10px;top:50%;width:1px;height:14px;background-color:#c2c5d1;transform:translate(0, -50%);}
+[class^="subTitleWrap"] [class^="srchTotalNum"] [class^="totalNum"]:last-child {margin:0;}
+[class^="subTitleWrap"] [class^="srchTotalNum"] [class^="totalNum"]:last-child:after {display:none;}
+[class^="subTitleWrap"] [class^="subCopyTxt"] {display:block;font-size:16px;line-height:24px;}
 [class^="subTitleWrap"] [class^="flexInner"] {display:flex;justify-content:space-between;}
 
 .subTitleWrap02 {margin:40px 0 0;}
@@ -367,6 +379,7 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .speakerActiveBox02 .itemCaseNews:before {background-image:url('../images/ico_active_count_news.png');}
 .speakerActiveBox02 .itemCaseSns:before {background-image:url('../images/ico_active_count_sns.png');}
 .speakerActiveBox02 .itemCaseYtb:before {background-image:url('../images/ico_active_count_ytb.png');}
+.speakerActiveBox02 .itemCaseCommu:before {background-image:url('../images/ico_active_count_commu.png');}
 
 /* 발언자 활동량 */
 .speakerActiveBox03 {overflow:hidden;text-align:center;}
@@ -396,6 +409,17 @@ a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top
 .emotionAnalysisBanner ul li p {float:right;width:calc(100% - 150px);}
 .emotionAnalysisBanner > button {position:absolute;right:50px;top:50%;padding:0 30px;border:1px solid #071c51;border-radius:22px;transform:translate(0, -50%);}
 .emotionAnalysisBanner > button em {display:block;line-height:44px;color:#071c51;}
+
+/* 공지사항 */
+.notiDetailWrap {border-bottom:1px solid #d3d3d3;}
+.notiDetailWrap .notiHead {position:relative;padding:0 24px 24px;border-bottom:1px solid #ebedf1;}
+.notiDetailWrap .notiHead .tit {display:block;line-height:24px;font-size:16px;}
+.notiDetailWrap .notiHead .attachFileBox {position:relative;margin:10px 0 0;padding:0 0 0 80px;line-height:20px;}
+.notiDetailWrap .notiHead .attachFileBox .fileName {display:block;position:absolute;left:0;top:0;color:#858995;}
+.notiDetailWrap .notiHead .attachFileBox .fileName:after {display:block;content:"";position:absolute;right:-15px;top:50%;width:1px;height:11px;background-color:rgba(0, 0, 0, 0.2);transform:translate(0, -50%);}
+.notiDetailWrap .notiHead .attachFileBox .fileItems li a {display:inline-block;line-height:16px;color:#14b3e3;border-bottom:1px solid #14b3e3;}
+.notiDetailWrap .notiHead .date {position:absolute;right:24px;bottom:24px;}
+.notiDetailWrap .notiViewBox {padding:40px 24px;}
 
 /*************************************************************************************************************
 	tooltip

@@ -66,6 +66,28 @@ body.isPop {overflow:hidden;}
 #footer .copyright {position:absolute;top:12px;right:32px;font-size:11px;color:#858890;}
 
 /*************************************************************************************************************
+	로그인
+*************************************************************************************************************/
+.loginWrap {box-sizing:border-box;width:640px;margin:230px auto 0;border:2px solid #071c51;background-color:#fff;}
+.loginWrap .loginHead {padding:24px 32px;background-color:#071c51;}
+.loginWrap .loginHead .loginMssg {margin:20px 0 0;line-height:20px;color:#fff;}
+.loginWrap .inpLoginBox {padding:40px 0;}
+.loginWrap .inpLoginBox .inner {position:relative;width:332px;margin:0 auto;}
+.loginWrap .inpLoginBox .inner .inpText {display:block;width:240px;margin:8px 0 0;}
+.loginWrap .inpLoginBox .inner .inpText:first-child {margin:0;}
+.loginWrap .inpLoginBox .inner .checkItem {margin:8px 0 0;}
+.loginWrap .inpLoginBox .inner .btnLogin {position:absolute;right:0;top:0;width:80px;height:72px;border-radius:5px;background-color:#00b3e3;}
+.loginWrap .inpLoginBox .inner .btnLogin em {display:block;line-height:72px;font-size:16px;color:#fff;}
+.loginFoot {width:640px;margin:30px auto 0;color:#585a64;}
+.loginFoot .consultTime strong {margin:0 8px 0 0;}
+.loginFoot .contacus {margin:5px 0 0;}
+.loginFoot .contacus span {display:inline-block;position:relative;margin:0 40px 0 0;}
+.loginFoot .contacus span:after {display:block;content:"";position:absolute;right:-20px;top:50%;width:1px;height:11px;background-color:rgba(0, 0, 0, 0.2);transform:translate(0, -50%);}
+.loginFoot .contacus span:last-child {margin:0;}
+.loginFoot .contacus span:last-child:after {display:none;}
+.loginFoot .copyright {margin:25px 0 0;font-size:11px;color:#858890;}
+
+/*************************************************************************************************************
 	CONTENT 상단 고정영역
 *************************************************************************************************************/
 /* PAGE TITLE */
