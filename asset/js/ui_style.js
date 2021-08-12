@@ -241,7 +241,7 @@ var layerOpenFn = function(target, clickTarget) {
 		if(_layerFootH) {
 			_layerBody.css({'max-height' : (winH*0.9) -_layerHeaderH - _layerFootH});
 		}else{
-			_layerBody.css({'max-height' : (winH*0.9) -_layerHeaderH});
+			_layerBody.css({'max-height' : (winH*0.9) -_layerHeaderH - 30});
 		}
 	}
 	

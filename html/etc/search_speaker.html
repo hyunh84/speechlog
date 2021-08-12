@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
+	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+	<!-- 퍼블용입니다. 개발시 제외하세요 -->
+	<script type="text/javascript" src="../guide/js/layout.js"></script>
+	<!-- //퍼블용입니다. 개발시 제외하세요 -->
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+
+</div>
+<!-- //wrap -->
+
+<!-- 발언자 찾기 -->
+<article id="searchSpeakersPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">발언자 찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="spchsrchCopy">
+					발언자 목록에서 검색하실 발언자를 선택하세요. <br />
+					발언자를 찾을 수 없다면 발언자 등록을 요청을 해주세요.
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>발언자 등록 요청하기</em></a>
+					</div>
+				</div>
+				
+				<div class="spchSrchBox">
+					<span class="inpSrch" style="width:100%;">
+						<input type="text" title="발언자명을 입력하세요" placeholder="발언자를 검색하세요" />
+					</span>
+
+					<div class="listTbl">
+						<table>
+							<caption>번호, 발언자을(를) 포함하는 표</caption>
+							<colgroup>
+								<col style="width:15%" />
+								<col style="width:auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">발언자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="fontCB01">1</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">2</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">3</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">4</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">5</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지3</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">6</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지4</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">7</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지5</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">8</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지6</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">9</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지7</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">10</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지8</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<!-- PAGING button type -->
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+				<!-- // PAGING button type -->
+
+
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 발언자 찾기 -->
+
+
+<script type="text/javascript">
+layerOpenFn('#searchSpeakersPop');
+</script>
+
+</body>
+</html>
