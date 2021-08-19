@@ -35,8 +35,8 @@
 .flagCommunity em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
 
 /* link 새창보기 */
-a[target="_blank"] {display:inline-block;position:relative;min-height:16px;padding:0 0 0 20px;line-height:20px;font-size:12px;}
-a[target="_blank"]:before {display:block;content:"";position:absolute;left:0;top:2px;width:16px;height:16px;background:url('../images/ico_link_blank.png') no-repeat center;}
+a.tBlank {display:inline-block;position:relative;min-height:16px;padding:0 0 0 20px;line-height:20px;font-size:12px;}
+a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width:16px;height:16px;background:url('../images/ico_link_blank.png') no-repeat center;}
 
 /* button - large */
 [class^="btnLarge"] {display:inline-block;box-sizing:border-box;min-width:80px;padding:0 10px;text-align:center;border:1px solid #071c51;border-radius:4px;background-color:#fff;}
