@@ -317,7 +317,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="newsCardBox"] .hasTag {margin:10px 0 0;}
 [class^="newsCardBox"] .hasTag button {margin:0 4px 0 0;}
 [class^="newsCardBox"] .hasTag button:last-child {margin:0;}
-[class^="newsCardBox"] .newsInfo {font-size:13px;color:#858995;}
+[class^="newsCardBox"] .newsInfo {font-size:13px;color:#858995;text-align:right;word-break:break-all;}
 [class^="newsCardBox"] .newsInfo span {display:inline-block;margin:0 0 0 4px;}
 [class^="newsCardBox"] .newsInfo span:first-child {margin:0;}
 [class^="newsCardBox"] .newsInfo .point01 {font-weight:700;color:#2b2c33;}
