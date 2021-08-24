@@ -345,9 +345,11 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 /* PAGING */
 [class^="pagingBox"] {margin:30px 0 0;text-align:center;}
 [class^="pagingBox"] button,
-[class^="pagingBox"] a {display:inline-block;width:32px;height:32px;margin:0 4px;background-repeat:no-repeat;background-position:center;}
+[class^="pagingBox"] a {display:inline-block;min-width:32px;height:32px;margin:0 4px;background-repeat:no-repeat;background-position:center;}
 [class^="pagingBox"] button em,
 [class^="pagingBox"] a em {display:block;line-height:32px;}
+[class^="pagingBox"] button.active em,
+[class^="pagingBox"] a.active em {font-weight:bold;color:#00b3e3;}
 [class^="pagingBox"] button.pagiFirst {margin:0 8px 0 0;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_first.png');}
 [class^="pagingBox"] button.pagiPrev {margin:0 12px 0 0;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_Prev.png');}
 [class^="pagingBox"] button.pagiNext {margin:0 0 0 12px;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_Next.png');}
@@ -419,6 +421,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .emotionAnalysisBanner ul li p {float:right;width:calc(100% - 150px);}
 .emotionAnalysisBanner > button {position:absolute;right:50px;top:50%;padding:0 30px;border:1px solid #071c51;border-radius:22px;transform:translate(0, -50%);}
 .emotionAnalysisBanner > button em {display:block;line-height:44px;color:#071c51;}
+[class^="subTitleWrap"] + .emotionAnalysisBanner  {margin:12px 0 0;}
 
 /* 공지사항 */
 .notiDetailWrap {border-bottom:1px solid #d3d3d3;}
