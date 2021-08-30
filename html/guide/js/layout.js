@@ -21,7 +21,7 @@ var header = function() {
 		html += '<li>';
 		html += '<a href="#" class="icoDashboard"><em>대시보드</em></a>';
 		html += '</li>';
-		html += '<li>';
+		html += '<li class="active">';
 		html += '<a href="#" class="icoSpeaker"><em>발언자 분석</em></a>';
 		html += '<div class="depth02">';
 		html += '<ul>';

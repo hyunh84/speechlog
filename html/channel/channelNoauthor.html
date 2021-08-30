@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
+	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+	<!-- 퍼블용입니다. 개발시 제외하세요 -->
+	<script type="text/javascript" src="../guide/js/layout.js"></script>
+	<!-- //퍼블용입니다. 개발시 제외하세요 -->
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<script>
+			header();
+		</script>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<!-- contents top fixed -->
+		<div class="pageFixedArea">
+			<div class="pageFixedBox">
+				<div class="pageFixedInner">
+
+					<div class="pageTitleBox">
+						<h1 class="pageTitle">특성화 채널분석</h1>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										지역 특성에 맞춘 지역뉴스기사, 카페, 밴드, 블로그 등의 채널을 분석한 결과입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="srchMssg">
+							<span>'여주시'</span> 검색 결과
+						</span>
+					</div>
+
+					<!-- <div class="shareBtnBox">
+						<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+						<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+						<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+					</div> -->
+
+					<div class="integrSearchBox">
+						<div class="srchRow">
+							<!-- 검색어 박스 1개 -->
+							<div class="searchWordBox">
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text" title="검색어를 입력하세요" /></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="detailSrchBundle">
+							<div class="srchRow">
+								<div class="schTit">
+									<strong class="tit">기간선택</strong>
+									<span class="tooltipWrap">
+										<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+										<div class="tooltipBox" aria-hidden="true">
+											<div class="tooltipInner">
+												<p class="tooltipMssg">
+													기간 선택 : 오늘부터 최대 <span class="point01">12개월</span>까지 선택할 수 있습니다.
+												</p>
+											</div>
+										</div>
+									</span>
+								</div>
+								<div class="schCont">
+									<span class="inpDate">
+										<span class="inner">
+											<span><input type="text" title="시작일 입력" ></span>
+											<span><input type="text" title="종료일 입력" ></span>
+										</span>
+									</span>
+									<span class="btnRadioBox">
+										<button type="button" class="active"><em>1주일</em></button>
+										<button type="button"><em>1개월</em></button>
+										<button type="button"><em>3개월</em></button>
+										<button type="button"><em>6개월</em></button>
+										<button type="button"><em>12개월</em></button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="detailSrchBox" aria-labelledby="integrDetailSearch" aria-hiddne="true">
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">채널선택</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														채널선택 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<div class="chanelSelectBox">
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" checked />
+													<span>지역뉴스기사</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>카페</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>밴드</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>블로그</span>
+												</label>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">제목</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														제목 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="제목을 입력하세요" placeholder="제목를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">발언내용</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														발언내용 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="발언내용을 입력하세요" placeholder="발언내용를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">키워드</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														키워드 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="키워드을 입력하세요" placeholder="키워드를 입력하세요" />
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btnSrchBox">
+							<button type="button" class="btnReset"><em>초기화</em></button>
+							<button type="button" class="btnLarge03"><em>검색</em></button>
+							<button type="button" id="integrDetailSearch" class="btnDetailSrch" aria-expanded="false"><em>상세검색</em></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- contents top fixed -->
+
+		<!-- contents -->
+		<div class="contents">
+
+			<!-- 지역뉴스기사 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">지역뉴스</h2> <span class="totalNum"><em>기사량</em> 3,942 <em>개</em></span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="newsListWrap">
+					<ul>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나 감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나감싼 이재명 “결혼 전 일 어떻게 책임지나</a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagNews"><em class="blind">뉴스기사</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">더 팩트 - ‘윤석열 배우자 논란’ </a>
+											<button type="button" class="btnRelateNews"><em>관련기사 2개 더보기</em><button>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span class="point01">정치</span>
+											<span>더 팩트</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button" class="active"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+			</div>
+			<!-- //지역뉴스기사 -->
+
+
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<script>footer();</script>
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<!-- 접근권한없음 -->
+<article id="noAuthorPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">접근권한없음</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="noAuthorCopy">
+					사용중인 특성화 채널이 없습니다.
+				</div>
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 접근권한없음 -->
+
+
+<script>
+layerOpenFn('#noAuthorPop');
+</script>
+
+</body>
+</html>

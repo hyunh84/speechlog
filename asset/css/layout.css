@@ -41,6 +41,11 @@ body.isPop {overflow:hidden;}
 #header .gnbWrap .depth01 > ul > li > a.icoKeywrod em:before {background-image:url('../images/layout/ico_gnb3.png');}
 #header .gnbWrap .depth01 > ul > li > a.icoChanel em:before {background-image:url('../images/layout/ico_gnb4.png');}
 #header .gnbWrap .depth01 > ul > li > a.icoCharacter em:before {background-image:url('../images/layout/ico_gnb5.png');}
+/* #header .gnbWrap .depth01 > ul > li.active > a.icoDashboard em:before {background-image:url('../images/layout/ico_gnb1_on.png');} */
+#header .gnbWrap .depth01 > ul > li.active > a.icoSpeaker em:before {background-image:url('../images/layout/ico_gnb2_on.png');}
+#header .gnbWrap .depth01 > ul > li.active > a.icoKeywrod em:before {background-image:url('../images/layout/ico_gnb3_on.png');}
+#header .gnbWrap .depth01 > ul > li.active > a.icoChanel em:before {background-image:url('../images/layout/ico_gnb4_on.png');}
+#header .gnbWrap .depth01 > ul > li.active > a.icoCharacter em:before {background-image:url('../images/layout/ico_gnb5_on.png');}
 #header .gnbWrap .depth02 > ul {padding:12px 0;}
 #header .gnbWrap .depth02 > ul > li > a {display:block;padding:6px 30px 6px 70px;}
 #header .gnbWrap .depth02 > ul > li > a em {display:block;line-height:20px;font-size:15px;color:rgba(255, 255, 255, .8);}

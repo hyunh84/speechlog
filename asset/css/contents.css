@@ -33,6 +33,14 @@
 .flagCommunity {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
 .flagCommunity:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_community.png') no-repeat center;}
 .flagCommunity em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 까페 */
+.flagCafe {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagCafe:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_cafe.png') no-repeat center;}
+.flagCafe em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+/* icon flag - 밴드 */
+.flagBand {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
+.flagBand:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_band.png') no-repeat center;}
+.flagBand em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
 
 /* link 새창보기 */
 a.tBlank {display:inline-block;position:relative;min-height:16px;padding:0 0 0 20px;line-height:20px;font-size:12px;}
@@ -304,10 +312,9 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 
 /* 뉴스카드 - defaul 뉴스기사 */
 [class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}
-[class^="newsCardBox"] .flagNews,
-[class^="newsCardBox"] .flagTwt,
-[class^="newsCardBox"] .flagBlog,
-[class^="newsCardBox"] .flagYtb,
+[class^="newsCardBox"] .flagNews, [class^="newsCardBox"] .flagTwt,
+[class^="newsCardBox"] .flagBlog, [class^="newsCardBox"] .flagYtb, 
+[class^="newsCardBox"] .flagCafe, [class^="newsCardBox"] .flagBand,
 [class^="newsCardBox"] .flagCommunity {position:absolute;left:16px;top:16px;}
 [class^="newsCardBox"] .newsTitle {line-height:20px;}
 [class^="newsCardBox"] .newsTitle .tit {font-size:15px;font-weight:700;text-overflow:ellipsis;vertical-align:middle;}
@@ -531,3 +538,6 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .shortcutInpBox:before {display:block;content:"";position:absolute;left:0;top:0;width:42px;height:42px;background:url('../images/ico_active_count_news.png') no-repeat center;}
 .shortcutInpBox .inpText {display:block;}
 .shortcutInpBox .checkItem {margin:15px 0 0;}
+
+/* 특성화 분석 채널 */
+.noAuthorCopy {padding:90px 0 0;line-height:24px;font-size:16px;text-align:center;background:url('../images/ico_no_author.png') no-repeat center top;}

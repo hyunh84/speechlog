@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
+	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+	<!-- 퍼블용입니다. 개발시 제외하세요 -->
+	<script type="text/javascript" src="../guide/js/layout.js"></script>
+	<!-- //퍼블용입니다. 개발시 제외하세요 -->
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<script>
+			header();
+		</script>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<!-- contents top fixed -->
+		<div class="pageFixedArea">
+			<div class="pageFixedBox">
+				<div class="pageFixedInner">
+
+					<div class="pageTitleBox">
+						<h1 class="pageTitle">특성화 채널분석</h1>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										지역 특성에 맞춘 지역뉴스기사, 카페, 밴드, 블로그 등의 채널을 분석한 결과입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="srchMssg">
+							<span>'여주시'</span> 검색 결과
+						</span>
+					</div>
+
+					<!-- <div class="shareBtnBox">
+						<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+						<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+						<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+					</div> -->
+
+					<div class="integrSearchBox">
+						<div class="srchRow">
+							<!-- 검색어 박스 1개 -->
+							<div class="searchWordBox">
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text" title="검색어를 입력하세요" /></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="detailSrchBundle">
+							<div class="srchRow">
+								<div class="schTit">
+									<strong class="tit">기간선택</strong>
+									<span class="tooltipWrap">
+										<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+										<div class="tooltipBox" aria-hidden="true">
+											<div class="tooltipInner">
+												<p class="tooltipMssg">
+													기간 선택 : 오늘부터 최대 <span class="point01">12개월</span>까지 선택할 수 있습니다.
+												</p>
+											</div>
+										</div>
+									</span>
+								</div>
+								<div class="schCont">
+									<span class="inpDate">
+										<span class="inner">
+											<span><input type="text" title="시작일 입력" ></span>
+											<span><input type="text" title="종료일 입력" ></span>
+										</span>
+									</span>
+									<span class="btnRadioBox">
+										<button type="button" class="active"><em>1주일</em></button>
+										<button type="button"><em>1개월</em></button>
+										<button type="button"><em>3개월</em></button>
+										<button type="button"><em>6개월</em></button>
+										<button type="button"><em>12개월</em></button>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="detailSrchBox" aria-labelledby="integrDetailSearch" aria-hiddne="true">
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">채널선택</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														채널선택 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<div class="chanelSelectBox">
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>지역뉴스기사</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" checked />
+													<span>카페</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox />
+													<span>밴드</span>
+												</label>
+											</span>
+											<span class="chanelItems">
+												<label class="checkItem">
+													<input type="checkbox" />
+													<span>블로그</span>
+												</label>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="detailSrchBundle">
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">제목</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														제목 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="제목을 입력하세요" placeholder="제목를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">발언내용</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														발언내용 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="발언내용을 입력하세요" placeholder="발언내용를 입력하세요" />
+										</span>
+									</div>
+								</div>
+								<div class="srchRow">
+									<div class="schTit">
+										<strong class="tit">키워드</strong>
+										<span class="tooltipWrap">
+											<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+											<div class="tooltipBox" aria-hidden="true">
+												<div class="tooltipInner">
+													<p class="tooltipMssg">
+														키워드 가이드 문구 노출(문서에 툴팁 문구 없음)
+													</p>
+												</div>
+											</div>
+										</span>
+									</div>
+									<div class="schCont">
+										<span class="inpText" style="width:256px;">
+											<input type="text" title="키워드을 입력하세요" placeholder="키워드를 입력하세요" />
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btnSrchBox">
+							<button type="button" class="btnReset"><em>초기화</em></button>
+							<button type="button" class="btnLarge03"><em>검색</em></button>
+							<button type="button" id="integrDetailSearch" class="btnDetailSrch" aria-expanded="false"><em>상세검색</em></button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- contents top fixed -->
+
+		<!-- contents -->
+		<div class="contents">
+
+			<!-- 까페 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">까페검색결과</h2> <span class="totalNum"><em>기사량</em> 3,942 <em>개</em></span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="bundleWrap">
+				<div class="newsListWrap">
+					<ul>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagCafe"><em class="blind">까페</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">&lt;또 또 또 1위… 광역단체장 유일 60%대 긍정평가&gt; 텃밭 농사 못 짓는데 큰 밭 농사 잘 지을 수 없습니다. 주어진 일부터 잘 해내는 사람이어야 더 어려운 일도 잘 할 수 있습니다.</a>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span>@Jaemyung****</span>
+											<span class="point01">이재명 경기도지사</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagCafe"><em class="blind">까페</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">&lt;또 또 또 1위… 광역단체장 유일 60%대 긍정평가&gt; 텃밭 농사 못 짓는데 큰 밭 농사 잘 지을 수 없습니다. 주어진 일부터 잘 해내는 사람이어야 더 어려운 일도 잘 할 수 있습니다.</a>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span>@Jaemyung****</span>
+											<span class="point01">이재명 경기도지사</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagCafe"><em class="blind">까페</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">&lt;또 또 또 1위… 광역단체장 유일 60%대 긍정평가&gt; 텃밭 농사 못 짓는데 큰 밭 농사 잘 지을 수 없습니다. 주어진 일부터 잘 해내는 사람이어야 더 어려운 일도 잘 할 수 있습니다.</a>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span>@Jaemyung****</span>
+											<span class="point01">이재명 경기도지사</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagCafe"><em class="blind">까페</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">&lt;또 또 또 1위… 광역단체장 유일 60%대 긍정평가&gt; 텃밭 농사 못 짓는데 큰 밭 농사 잘 지을 수 없습니다. 주어진 일부터 잘 해내는 사람이어야 더 어려운 일도 잘 할 수 있습니다.</a>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span>@Jaemyung****</span>
+											<span class="point01">이재명 경기도지사</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="newsCardBox">
+								<div class="flexInner">
+									<div class="boxL">
+										<span class="flagCafe"><em class="blind">까페</em></span>
+										<div class="newsTitle">
+											<a href="#" class="tit">&lt;또 또 또 1위… 광역단체장 유일 60%대 긍정평가&gt; 텃밭 농사 못 짓는데 큰 밭 농사 잘 지을 수 없습니다. 주어진 일부터 잘 해내는 사람이어야 더 어려운 일도 잘 할 수 있습니다.</a>
+										</div>
+										<div class="hasTag">
+											<button type="button" class="btnTiny"><em>#원팀</em></button>
+											<button type="button" class="btnTiny"><em>#논란</em></button>
+											<button type="button" class="btnTiny"><em>#결혼</em></button>
+											<button type="button" class="btnTiny"><em>#과정</em></button>
+											<button type="button" class="btnTiny"><em>#이재명</em></button>
+											<button type="button" class="btnTiny"><em>#민주당</em></button>
+										</div>
+									</div>
+									<div class="boxR">
+										<div class="newsInfo">
+											<span>@Jaemyung****</span>
+											<span class="point01">이재명 경기도지사</span>
+											<span class="itemDate">2021.07.12 20:37</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button" class="active"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+			</div>
+			<!-- //까페 -->
+
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<script>footer();</script>
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<!-- 발언자 찾기 -->
+<article id="searchSpeakersPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">발언자 찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="spchsrchCopy">
+					발언자 목록에서 검색하실 발언자를 선택하세요. <br />
+					발언자를 찾을 수 없다면 발언자 등록을 요청을 해주세요.
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>발언자 등록 요청하기</em></a>
+					</div>
+				</div>
+				
+				<div class="spchSrchBox">
+					<span class="inpSrch" style="width:100%;">
+						<input type="text" title="발언자명을 입력하세요" placeholder="발언자를 검색하세요" />
+					</span>
+
+					<div class="listTbl">
+						<table>
+							<caption>번호, 발언자을(를) 포함하는 표</caption>
+							<colgroup>
+								<col style="width:15%" />
+								<col style="width:auto" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">번호</th>
+									<th scope="col">발언자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="fontCB01">1</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">2</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">3</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지사</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">4</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지2</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">5</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지3</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">6</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지4</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">7</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지5</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">8</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지6</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">9</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지7</button></td>
+								</tr>
+								<tr>
+									<td class="fontCB01">10</td>
+									<td class="fontC01 txtAL"><button type="button" class="btnTblItem">이재명 경기도지8</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<!-- PAGING button type -->
+				<div class="pagingBox">
+					<button type="button" class="pagiFirst"><em class="blind">처음</em></button>
+					<button type="button" class="pagiPrev"><em class="blind">이전</em></button>
+					<button type="button" class="active"><em>1</em></button>
+					<button type="button"><em>2</em></button>
+					<button type="button"><em>3</em></button>
+					<button type="button"><em>4</em></button>
+					<button type="button"><em>5</em></button>
+					<button type="button" class="pagiNext"><em class="blind">다음</em></button>
+					<button type="button" class="pagiLast"><em class="blind">마지막</em></button>
+				</div>
+				<!-- // PAGING button type -->
+
+
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 발언자 찾기 -->
+
+<!-- 언론사 지정선택 -->
+<article id="mediaSelectPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">언론사 지정선택</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="mediaSlctCopy">
+					지정하실 언론사를 선택하세요. <br />
+					찾으시는 언론사가 없으시면 언론사 추가 요청을 해 주시기 바랍니다.<br />
+					언론사 추가에는 추가비용이 발생할 수 있습니다. 
+
+					<div class="btnCase">
+						<a href="#" class="btnSmall"><em>언론사 추가 요청하기</em></a>
+					</div>
+				</div>
+
+				<div class="mediaSlctBox">
+					<ul>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>중앙지 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>경향신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>국민일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>내일신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>동아일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>문화일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울신문</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>세계일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>조선일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>중앙일보</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한겨레</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국일보</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>방송 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>JTBC</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>KBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>KTV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>MBC</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>MBN</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>SBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>TBS</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>YTN</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>연합뉴스TV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>채널A</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제TV</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>TV조선</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>통신 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>뉴스1</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>뉴시스</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>연합뉴스</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>경제 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>이데일리</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>인터넷 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>이데일리</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>한국경제</span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<div class="mediaSlctCase">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>지역지 전체</span>
+								</label>
+							</div>
+							<div class="mediaSlctCase02">
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>매일경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>머니투데이</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>서울경제</span>
+								</label>
+								<label class="checkItem">
+									<input type="checkbox" />
+									<span>아시아경제</span>
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- //언론사 지정선택 -->
+
+<!-- 뉴스기사 -->
+<article id="mediaStoryPop" class="layerWrap wide" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">뉴스기사</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="newsDetailInfoWrap">
+					<div class="mediaInfo">
+						<span class="flagBlog"><em>뉴스기사</em></span>
+						<div class="field">
+							<span class="flagItem">정치</span>
+							<span>더팩트</span>
+						</div>
+					</div>
+					<div class="newsInfo">
+						<strong class="title">더 팩트 - ‘윤석열 배우자 논란’ 감싼 이재명 “결혼 전 일 어떻게 책임지나” </strong>
+						<div class="writer">
+							<span>나세웅 salto@mbc.co.kr</span>
+							<span>MBC</span>
+							<a href="#" class="tBlank" target="_blank">기사원문보기</a>
+						</div>
+						<div class="hasTag">
+							<button type="button" class="btnTiny"><em>#원팀</em></button>
+							<button type="button" class="btnTiny"><em>#논란</em></button>
+							<button type="button" class="btnTiny"><em>#결혼</em></button>
+							<button type="button" class="btnTiny"><em>#과정</em></button>
+							<button type="button" class="btnTiny"><em>#이재명</em></button>
+							<button type="button" class="btnTiny"><em>#민주당</em></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="subTitleWrap03">
+					<h2 class="sTitle02">발언 모음</h2>
+				</div>
+
+				<div class="listTbl">
+					<table>
+						<caption>발언자, 내용, 부가기능을(를) 포함하는 표</caption>
+						<colgroup>
+							<col style="width:20%">
+							<col style="width:auto">
+							<col style="width:20%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>발언자</th>
+								<th>내용</th>
+								<th>부가기능</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+							<tr>
+								<td>이재명<br />경기도지사</td>
+								<td class="txtAL">
+									학교 측과 노조 사이에 조사에 어디까지 참여하느냐를 두고 견해가 엇갈리는데 학교 측이 공동으로 참여할 수 있게 기회를 주면 어떤 결론이 나더라도 보다 많은 분이 동의할 수 있을 것
+								</td>
+								<td><button type="button" class="btnReport"><em class="blind">리포트제작</em></button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+
+				<div class="subTitleWrap03">
+					<h2 class="sTitle02">관련뉴스</h2> <span class="totalNum02">3,942 <em>건</em></span>
+				</div>
+
+				<div class="newsListWrap">
+					<ul>
+						<li>
+							<a href="#" class="newsCardBox02">
+								<span class="flagItem">정치</span>
+								<div class="linkTit">
+									뉴스1 - ‘청소노동자 사망’ 서울대 찾은 이재명 ‘눈물’..여동생도 그렇게 보냈다
+								</div>
+								<div class="date">2021.06.12 20:37</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="newsCardBox02">
+								<span class="flagItem">정치</span>
+								<div class="linkTit">
+									뉴스1 - ‘청소노동자 사망’ 서울대 찾은 이재명 ‘눈물’..여동생도 그렇게 보냈다
+								</div>
+								<div class="date">2021.06.12 20:37</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="newsCardBox02">
+								<span class="flagItem">정치</span>
+								<div class="linkTit">
+									뉴스1 - ‘청소노동자 사망’ 서울대 찾은 이재명 ‘눈물’..여동생도 그렇게 보냈다
+								</div>
+								<div class="date">2021.06.12 20:37</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- //뉴스기사 -->
+
+<!-- 리포트제작 -->
+<article id="reportPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">리포트제작</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="reportCopy">
+					리포트 제작을 위해 발언정보를 저장합니다.<br />
+					저장된 발언정보는 리포트 제작 페이지에서 확인할 수 있습니다
+				</div>
+
+				<div class="subTitleWrap03">
+					<h2 class="sTitle02">리포트 제목 선택</h2>
+				</div>
+
+				<div class="reportSelectBox">
+					<ul>
+						<li>
+							<button type="button" class="active">조국, 송영길</button>
+						</li>
+						<li>
+							<button type="button">TV 토론회</button>
+						</li>
+						<li>
+							<button type="button">노무현 대통령</button>
+						</li>
+						<li>
+							<button type="button">민주당</button>
+						</li>
+						<li>
+							<button type="button" >조국, 송영길</button>
+						</li>
+						<li>
+							<button type="button">TV 토론회</button>
+						</li>
+						<li>
+							<button type="button">노무현 대통령</button>
+						</li>
+						<li>
+							<button type="button">민주당</button>
+						</li>
+						<li>
+							<button type="button">조국, 송영길</button>
+						</li>
+						<li>
+							<button type="button">TV 토론회</button>
+						</li>
+						<li>
+							<button type="button">노무현 대통령</button>
+						</li>
+						<li>
+							<button type="button">민주당</button>
+						</li>
+					</ul>
+					<span class="inpText" style="width:100%;"><input type="text" title="새로운 리포트명을 입력해주세요" placeholder="새로운 리포트 추가" /></span>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- //리포트제작 -->
+
+</body>
+</html>

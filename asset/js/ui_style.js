@@ -28,6 +28,47 @@ $(document).on('focusin', function() {
 });
 
 /******************************************************************************************
+	GNB
+******************************************************************************************/
+/* 1 depth */
+$(document).on('click', '.gnbWrap .depth01 > ul > li > a', function() {
+	var _this = $(this);
+	var _gnbWrap = _this.closest('.gnbWrap');
+	var _depth01 = $('.depth01', _gnbWrap);
+	var _itemCase01 = $('> ul > li', _depth01);
+	var _depth02 = $('.depth02', _gnbWrap);
+	var _itemCase02 = $('> ul > li', _depth02);
+
+	if(!_this.parent().hasClass('active')) {
+		_itemCase01.removeClass('active');
+		_this.parent().addClass('active');
+		_itemCase02.removeClass('active');
+		if(_this.next().length) {
+			console.log('2depth reset');
+			_this.next().find('> ul > li:first-child').addClass('active');
+		}
+	}
+});
+/* 2 depth */
+$(document).on('click', '.gnbWrap .depth02 > ul > li > a', function() {
+	var _this = $(this);
+	var _thisDepthBox = _this.closest('.depth02');
+	var _gnbWrap = _this.closest('.gnbWrap');
+	var _depth01 = $('.depth01', _gnbWrap);
+	var _itemCase01 = $('> ul > li', _depth01);
+	var _depth02 = $('.depth02', _gnbWrap);
+	var _itemCase02 = $('> ul > li', _depth02);
+
+	if(!_this.parent().hasClass('active')) {
+		_itemCase01.removeClass('active');
+		_itemCase02.removeClass('active');
+		_this.parent().addClass('active');
+		_thisDepthBox.parent().addClass('active');
+		// _itemCase02.closest('li').addClass('active');
+	}
+});
+
+/******************************************************************************************
 	button type radio
 ******************************************************************************************/
 $(document).on('click', '[class^="btnRadioBox"] button', function() {
