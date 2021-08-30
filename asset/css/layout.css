@@ -73,10 +73,10 @@ body.isPop {overflow:hidden;}
 /*************************************************************************************************************
 	로그인
 *************************************************************************************************************/
-.loginWrap {box-sizing:border-box;width:640px;margin:230px auto 0;border:2px solid #071c51;background-color:#fff;}
-.loginWrap .loginHead {padding:24px 32px;background-color:#071c51;}
-.loginWrap .loginHead .loginMssg {margin:20px 0 0;line-height:20px;color:#fff;}
-.loginWrap .inpLoginBox {padding:40px 0;}
+.loginWrap {box-sizing:border-box;width:640px;margin:230px auto 0;border:1px solid #dee2eb;border-radius:8px;background:#fff url('../images/bg_login.png') no-repeat right bottom;}
+.loginWrap .loginHead {padding:45px 45px 0;}
+.loginWrap .loginHead .loginMssg {margin:20px 0 0;line-height:20px;color:#071c51;}
+.loginWrap .inpLoginBox {padding:45px 0 40px;}
 .loginWrap .inpLoginBox .inner {position:relative;width:332px;margin:0 auto;}
 .loginWrap .inpLoginBox .inner .inpText {display:block;width:240px;margin:8px 0 0;}
 .loginWrap .inpLoginBox .inner .inpText:first-child {margin:0;}
