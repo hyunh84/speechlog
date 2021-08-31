@@ -90,6 +90,12 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="btnMore"] em {display:inline-block;position:relative;padding:9px 0 9px 20px;line-height:20px;font-size:14px;color:#14b3e3;}
 [class^="btnMore"] em:before {display:block;content:"";position:absolute;left:0;top:50%;width:17px;height:17px;margin:-8px 0 0;background:url('../images/btn_more.png') no-repeat center;}
 [class^="btnReport"] {display:inline-block;width:32px;height:32px;background:#fff url('../images/ico_report.png') no-repeat center;}
+[class^="btnDwn"] {display:inline-block;padding:0 8px;box-sizing:border-box;text-align:center;border:1px solid #d8dce5;border-radius:4px;background-color:#fff;}
+[class^="btnDwn"] em {display:inline-block;position:relative;padding:3px 20px 1px 0;line-height:20px;font-size:11px;color:#4b4d58;}
+[class^="btnDwn"] em:after {display:block;content:"";position:absolute;right:0;top:50%;width:16px;height:16px;margin:-9px 0 0;background:url('../images/ico_download.png') no-repeat center;}
+[class^="btnInquiry"] {display:inline-block;padding:0 8px;box-sizing:border-box;text-align:center;border:1px solid #d8dce5;border-radius:4px;background-color:#fff;}
+[class^="btnInquiry"] em {display:inline-block;position:relative;padding:3px 20px 1px 0;line-height:20px;font-size:11px;color:#4b4d58;}
+[class^="btnInquiry"] em:after {display:block;content:"";position:absolute;right:0;top:50%;width:16px;height:16px;margin:-8px 0 0;background:url('../images/ico_mail.png') no-repeat center;}
 
 /* button case */
 [class^="btnBundleBox"] {text-align:center;}
@@ -281,6 +287,8 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="bundleWrap"]:first-child {margin:0;}
 [class^="subTitleWrap"] + [class^="bundleWrap"],
 [class^="searchWordBox"] + [class^="bundleWrap"] {margin:12px 0 0;}
+.introMssgBox + [class^="bundleWrap"] {margin:45px 0 0;}
+.introServiceTitle + [class^="bundleWrap"] {margin:45px 0 0;}
 
 /* graph box type */
 [class^="graphBundleBox"] {margin:50px 0 0;}
@@ -347,7 +355,6 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="newsListWrap"] ul li:first-child {border-top:none;}
 
 [class^="subTitleWrap"] + [class^="newsListWrap"] {margin:12px 0 0;}
-
 
 /* PAGING */
 [class^="pagingBox"] {margin:30px 0 0;text-align:center;}
@@ -440,6 +447,82 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .notiDetailWrap .notiHead .attachFileBox .fileItems li a {display:inline-block;line-height:16px;color:#14b3e3;border-bottom:1px solid #14b3e3;}
 .notiDetailWrap .notiHead .date {position:absolute;right:24px;bottom:24px;}
 .notiDetailWrap .notiViewBox {padding:40px 24px;}
+
+/* speechlog intro */
+.introMssgBox {line-height:46px;font-size:36px;text-align:center;}
+.introMssgBox em {display:inline-block;color:#14b3e3;}
+
+.speechIntro01 {position:relative;padding:55px 0 55px 512px;}
+.speechIntro01:before {display:block;content:"";position:absolute;left:0;top:50%;width:512px;height:333px;background:url('../images/intro/intro01.png') no-repeat center;transform:translate(0, -50%);}
+.speechIntro01 .tit {display:block;min-height:27px;padding:0 0 0 42px;line-height:27px;font-size:20px;color:#071c51;background:url('../images/ico_intro_title.png') no-repeat left top;}
+.speechIntro01 .txt01 {display:block;margin:30px 0 0;line-height:34px;font-size:24px;color:#4b4d58;}
+.speechIntro01 .txt02 {display:block;margin:15px 0 0;line-height:26px;font-size:16px;}
+
+.speechIntro02 {position:relative;padding:55px 482px 55px 50px;}
+.speechIntro02:before {display:block;content:"";position:absolute;right:-30px;top:50%;width:512px;height:333px;background:url('../images/intro/intro02.png') no-repeat center;transform:translate(0, -50%);}
+.speechIntro02 .tit {display:block;min-height:27px;padding:0 0 0 42px;line-height:27px;font-size:20px;color:#071c51;background:url('../images/ico_intro_title.png') no-repeat left top;}
+.speechIntro02 .txt01 {display:block;margin:30px 0 0;line-height:34px;font-size:24px;color:#4b4d58;}
+.speechIntro02 .txt02 {display:block;margin:15px 0 0;line-height:26px;font-size:16px;}
+
+.speechIntro03 {overflow:hidden;}
+.speechIntro03 ul {display:flex;flex-wrap:wrap;margin:-1px -1px 0 0;}
+.speechIntro03 ul li {position:relative;float:left;box-sizing:border-box;width:50%;min-height:220px;padding:40px 0 40px 35px;border-right:1px solid #ebedf1;border-top:1px solid #ebedf1;}
+.speechIntro03 ul li:after {display:block;content:"";position:absolute;right:75px;top:50%;width:110px;height:212px;background-repeat:no-repeat;background-position:center;transform:translate(0, -50%);}
+.speechIntro03 ul li:nth-child(1):after {background-image:url('../images/intro/num_1.png');}
+.speechIntro03 ul li:nth-child(2):after {background-image:url('../images/intro/num_2.png');}
+.speechIntro03 ul li:nth-child(3):after {background-image:url('../images/intro/num_3.png');}
+.speechIntro03 ul li:nth-child(4):after {background-image:url('../images/intro/num_4.png');}
+.speechIntro03 ul li .num {display:block;color:#071c51;}
+.speechIntro03 ul li .tit {display:block;margin:25px 0 0;line-height:34px;font-size:24px;color:#071c51;}
+.speechIntro03 ul li .txt01 {display:block;margin:40px 0 0;line-height:26px;font-size:16px;}
+
+.speechIntro04 {overflow:hidden;padding:35px;}
+.speechIntro04 ul {display:flex;margin:0 -62px 0 0;}
+.speechIntro04 ul li {box-sizing:border-box;width:352px;margin:0 62px 0 0;}
+.speechIntro04 ul li .img {display:block;}
+.speechIntro04 ul li .tit {display:block;margin:40px 0 0;line-height:36px;font-size:26px;font-weight:400;color:#4b4d58;}
+.speechIntro04 ul li .txt01 {display:block;margin:20px 0 0;line-height:26px;font-size:16px;}
+
+.speechIntro05 {}
+.speechIntro05 .tit {display:block;line-height:36px;font-size:26px;color:#071c51;}
+.speechIntro05 .corpList {overflow:hidden;margin:30px 0 0;border-top:1px solid #c2c7d8;}
+.speechIntro05 ul {margin:0 -2% 0 0;}
+.speechIntro05 ul:after {display:block;content:"";overflow:hidden;clear:both;width:0;height:0;padding:0;margin:0;line-height:0;font-size:1px;}
+.speechIntro05 ul li {float:left;width:14%;margin:30px 0 0;}
+.speechIntro05 ul li a {display:inline-block;}
+
+/* 서비스 안내 */
+.introServiceTitle {line-height:46px;font-size:36px;text-align:center;}
+
+.serviceGuideBox {margin:45px 0 0;}
+.serviceGuideBox > ul > li {display:flex;justify-content:space-between;align-items:center;margin:40px 0 0;padding:32px 0;border:1px solid #dee2eb;border-radius:8px;background-color:#fff;box-shadow:0 1px 4px rgba(52, 85, 159, 0.08);}
+.serviceGuideBox > ul > li:first-child {margin:0;}
+.serviceGuideBox > ul > li .serviceTit {width:285px;padding:80px 0 0;line-height:30px;font-size:20px;color:#071c51;text-align:center;background-repeat:no-repeat;background-position:top center;}
+.serviceGuideBox > ul > li .serviceInfo {width:685px;}
+.serviceGuideBox > ul > li .serviceInfo ul li {position:relative;margin:10px 0 0;padding:0 0 0 12px;}
+.serviceGuideBox > ul > li .serviceInfo ul li:first-child {margin:0;}
+.serviceGuideBox > ul > li .serviceInfo ul li:before {display:block;content:"";position:absolute;left:0;top:7px;width:6px;height:1px;background-color:#2b2c33;}
+.serviceGuideBox > ul > li .servicePrice {box-sizing:border-box;width:340px;padding:20px 45px;border-left:1px solid #c2c7d8;}
+.serviceGuideBox > ul > li .servicePrice .pirceTit {display:block;line-height:28px;font-size:18px;font-weight:700;color:#071c51;}
+.serviceGuideBox > ul > li .servicePrice .price {display:block;margin:10px 0 0;padding:18px 0 16px;line-height:30px;font-size:20px;font-weight:700;color:#071c51;text-align:center;border-radius:45px;background-color:#bdccf0;}
+.serviceGuideBox > ul > li .servicePrice .price span {display:inline-block;font-size:28px;}
+.serviceGuideBox > ul > li .servicePrice .priceEstimate {display:block;line-height:64px;font-size:20px;font-weight:700;color:#071c51;text-align:center;border-radius:45px;background-color:rgba(189, 204, 240, .2);}
+.serviceGuideBox > ul > li .servicePrice .etc {display:block;margin:15px 0 0;text-align:right;color:#4b4d58;}
+.serviceGuideBox > ul > li.serviceItem01 .serviceTit {background-image:url('../images/service_guide/ico_service1.png');}
+.serviceGuideBox > ul > li.serviceItem02 .serviceTit {background-image:url('../images/service_guide/ico_service2.png');}
+.serviceGuideBox > ul > li.serviceItem03 .serviceTit {background-image:url('../images/service_guide/ico_service3.png');}
+.serviceGuideBox > ul > li.serviceItem04 .serviceTit {background-image:url('../images/service_guide/ico_service4.png');}
+
+.serviceInquiryInfoBox {display:flex;align-items:center;margin:40px 0 0;padding:28px 72px;color:#071c51;border-radius:8px;background-color:#a1dff2;}
+.serviceInquiryInfoBox .tit {display:block;width:211px;padding:0 0 0 80px;line-height:64px;font-size:24px;background:url('../images/service_guide/tit_service_inquiry.png') no-repeat left top;}
+.serviceInquiryInfoBox .mail {margin:0 0 0 40px;line-height:30px;font-size:16px;font-weight:700;}
+.serviceInquiryInfoBox .mail em {display:inline-block;padding:0 0 0 30px;background:url('../images/service_guide/ico_mail.png') no-repeat left center;vertical-align:middle;}
+.serviceInquiryInfoBox .mail span {display:inline-block;margin:0 0 0 20px;font-size:20px;vertical-align:middle;}
+.serviceInquiryInfoBox .tel {position:relative;margin:0 0 0 40px;padding:0 0 0 40px;line-height:30px;font-size:16px;font-weight:700;}
+.serviceInquiryInfoBox .tel:before {display:block;content:"";position:absolute;left:0;top:50%;width:1px;height:20px;margin:-10px 0 0;background-color:#438296;}
+.serviceInquiryInfoBox .tel em {display:inline-block;padding:0 0 0 30px;background:url('../images/service_guide/ico_tel.png') no-repeat left center;vertical-align:middle;}
+.serviceInquiryInfoBox .tel span {display:inline-block;margin:0 0 0 20px;font-size:20px;vertical-align:middle;}
+.serviceInquiryInfoBox .tel span.time {font-size:16px;font-weight:400;vertical-align:middle;}
 
 /*************************************************************************************************************
 	tooltip

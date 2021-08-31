@@ -100,6 +100,8 @@ body.isPop {overflow:hidden;}
 [class^="pageFixedArea"] .pageFixedBox .pageFixedInner {position:relative;box-sizing:border-box;padding:22px 0 18px 36px;width:1348px;}
 [class^="pageFixedArea"] .pageTitleBox .pageTitle {display:inline-block;position:relative;padding:0 0 0 32px;line-height:32px;font-size:22px;font-weight:700;vertical-align:middle;}
 [class^="pageFixedArea"] .pageTitleBox .pageTitle:before {display:block;content:"";position:absolute;left:0;top:0;width:32px;height:32px;background:url('../images/layout/ico_page_title.png') no-repeat center;}
+[class^="pageFixedArea"] .pageTitleBox [class^="btnDwn"],
+[class^="pageFixedArea"] .pageTitleBox [class^="btnInquiry"] {margin:0 0 0 12px;}
 [class^="pageFixedArea"] .pageTitleBox .tooltipWrap {margin:0 0 0 4px;}
 [class^="pageFixedArea"] .pageTitleBox .srchMssg {display:inline-block;margin:0 0 0 8px;font-size:16px;font-weight:700;color:#071c51;vertical-align:middle;}
 [class^="pageFixedArea"] .pageTitleBox .srchMssg span {color:#00b3e3;}
