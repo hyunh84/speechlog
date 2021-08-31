@@ -114,17 +114,23 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="inpText"] input[type="text"],
 [class^="inpText"] input[type="tel"],
 [class^="inpText"] input[type="password"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 10px;border-radius:5px;background-color:#fff;}
+[class^="inpText"] input[type="text"]:disabled,
+[class^="inpText"] input[type="tel"]:disabled,
+[class^="inpText"] input[type="password"]:disabled {background-color:#eee;}
 
 /* form - date */
 [class^="inpDate"] {display:inline-block;position:relative;box-sizing:border-box;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;vertical-align:middle;}
 [class^="inpDate"]:after {display:block;content:"";position:absolute;right:8px;top:50%;width:24px;height:24px;background:url('../images/ico_calendar.png') no-repeat center;transform:translate(0, -50%);}
 [class^="inpDate"] input[type="text"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 32px 0 10px;text-align:center;border-radius:5px;background-color:#fff;}
+[class^="inpDate"] input[type="text"]:disabled {background-color:#eee;}
 
 .inpDate .inner {display:flex;justify-content:space-between;padding:0 32px 0 0;}
 .inpDate .inner > span {width:calc(50% - 10px);}
 .inpDate .inner > span input[type="text"] {width:100%;padding:0;}
 .inpDate .inner > span + span {position:relative;}
 .inpDate .inner > span + span:before {display:block;content:"-";position:absolute;left:-20px;top:0;bottom:0;width:20px;line-height:32px;text-align:center;}
+.inpDate.disabled {background-color:#eee;}
+.inpDate.disabled .inner > span + span:before {color:#c2c5d1;}
 
 /* form - search */
 [class^="inpSrch"] {display:inline-block;box-sizing:border-box;position:relative;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;vertical-align:middle;}
@@ -132,6 +138,9 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="inpSrch"] input[type="text"],
 [class^="inpSrch"] input[type="tel"],
 [class^="inpSrch"] input[type="password"] {display:block;box-sizing:border-box;width:100%;height:30px;padding:0 35px 0 10px;border-radius:5px;background-color:#fff;}
+[class^="inpSrch"] input[type="text"]:disabled,
+[class^="inpSrch"] input[type="tel"]:disabled,
+[class^="inpSrch"] input[type="password"]:disabled {background-color:#eee;}
 
 /* form - textarea */
 [class^="textarea"] {height:200px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
