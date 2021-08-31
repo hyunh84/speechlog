@@ -244,9 +244,8 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="viewTbl"] table tbody td {padding:10px 20px;}
 
 /* compare table box */
-/* [class^="compareTblWrap"] {overflow:hidden;} */
-[class^="compareTblWrap"] > ul {display:flex;margin:0 -4% 0 0;}
-[class^="compareTblWrap"] > ul > li {box-sizing:border-box;width:33%;padding:0 2% 0 0;}
+[class^="compareTblWrap"] > ul {display:flex;margin:0 -33px 0 0;}
+[class^="compareTblWrap"] > ul > li {box-sizing:border-box;padding:0 33px 0 0;}
 [class^="compareTblWrap"] > ul > li .tit {display:block;line-height:24px;font-size:18px;color:#0d3681;}
 [class^="compareTblWrap"] > ul > li [class^="listTbl"] {margin:12px 0 0;}
 [class^="compareTblWrap"] > ul > li [class^="listTbl"]:first-child {margin:0;}
