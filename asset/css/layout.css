@@ -41,6 +41,7 @@ body.isPop {overflow:hidden;}
 #header .gnbWrap .depth01 > ul > li > a.icoKeywrod em:before {background-image:url('../images/layout/ico_gnb3.png');}
 #header .gnbWrap .depth01 > ul > li > a.icoChanel em:before {background-image:url('../images/layout/ico_gnb4.png');}
 #header .gnbWrap .depth01 > ul > li > a.icoCharacter em:before {background-image:url('../images/layout/ico_gnb5.png');}
+#header .gnbWrap .depth01 > ul > li.active > a em {color:#14b3e3;}
 /* #header .gnbWrap .depth01 > ul > li.active > a.icoDashboard em:before {background-image:url('../images/layout/ico_gnb1_on.png');} */
 #header .gnbWrap .depth01 > ul > li.active > a.icoSpeaker em:before {background-image:url('../images/layout/ico_gnb2_on.png');}
 #header .gnbWrap .depth01 > ul > li.active > a.icoKeywrod em:before {background-image:url('../images/layout/ico_gnb3_on.png');}
