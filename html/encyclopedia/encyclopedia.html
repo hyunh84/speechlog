@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SPEECHLOG</title>
+	
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/contents.css">
+
+	<script type="text/javascript" src="../../asset/js/chart.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
+	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
+	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/animated.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
+	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+	<!-- 퍼블용입니다. 개발시 제외하세요 -->
+	<script type="text/javascript" src="../guide/js/layout.js"></script>
+	<!-- //퍼블용입니다. 개발시 제외하세요 -->
+
+</head>
+<body>
+
+<!-- wrap --> 
+<div id="wrap">
+	<!-- header -->
+	<header id="header">
+		<script>
+			header();
+		</script>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<!-- contents top fixed -->
+		<div class="pageFixedArea">
+			<div class="pageFixedBox">
+				<div class="pageFixedInner">
+
+					<div class="pageTitleBox">
+						<h1 class="pageTitle">키워드검색</h1>
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										과거 10년 동안의 뉴스기사를 기반으로 인물의 성향을 분석한 인물분석백과입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+						<span class="srchMssg">
+							<span>'이재명'</span> 분석 결과
+						</span>
+					</div>
+
+					<div class="shareBtnBox">
+						<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+						<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+						<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+					</div>
+
+					<div class="integrSearchBox">
+						<div class="srchRow">
+							<!-- 검색어 박스 1개 -->
+							<div class="searchWordBox02">
+								<div class="searchWordItem">
+									<span class="inpSrch"><input type="text" title="검색어를 입력하세요." /></span>
+									<div class="autoWordCase" aria-hidden="true">
+										<ul>
+											<li><button type="button"><em>이재명 경기도지사</em></button></li>
+											<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+											<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+											<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+											<li><button type="button"><em>이재명</em></button></li>
+										</ul>
+										<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+									</div>
+								</div>
+								<button type="button" class="btnLarge03"><em>인물검색</em></button>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- contents top fixed -->
+
+		<!-- contents -->
+		<div class="contents">
+
+			<!-- 인물평 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">인물평</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="characterAnalysisBox">
+					<div class="charInfoCase">
+						<span class="photo"><img src="../../asset/images/temp/temp_photo.png" alt="이재명" /></span>
+						<strong class="charName">이재명</strong>
+						<p class="charSummary">경기도지사, 변호사</p>
+						<p class="charSummary">1964년 12월 22일, 경상북도 안동출생</p>
+						<div class="snsShareCase">
+							<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+							<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+							<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+						</div>
+
+						<div class="detailLinkCase">
+							<a href="#" class="bntLink"><em>NAVER</em></a>
+							<a href="#" class="bntLink"><em>나무위키</em></a>
+						</div>
+					</div>
+
+					<div class="charAnalysisCase">
+						<p class="analysItem"><span class="keyWord">이재명</span>의 연관인물은 <span class="keyWord">이낙연, 김부선, 김혜경</span> 이다.</p>
+						<p class="analysItem">연관장소는 <span class="keyWord">경기도, 성남시, 대장동</span> 이다.</p>
+						<p class="analysItem">연관조직은 <span class="keyWord">검찰, 더불어민주당, 바른미래당</span> 이다.</p>
+						<p class="analysItem"><span class="keyWord">세월호, 혜경궁 김씨, 바른미래당</span> 사건과 관련성이 높다.</p>
+						<p class="analysItem">정책 주제 중 <span class="keyWord">포용</span> 분야에 관심을 가지고 있고, <span class="keyWord">근로장려금확대, 근로 저소득층 지원확대, 서민·취약계층 금융지원강화, 대·중소기업간 상생협력 생태계 조성</span> 과 관련되어있다.</p>
+						<p class="analysItem">가장 많이 언급한 단어 <span class="keyWord">지원금, 대선, 대통령</span> 이다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- // 인물평 -->
+
+			<!-- 탭 -->
+			<div class="tabAnchorWrap">
+				<div class="tabAnchorInner">
+					<div class="tabWrap">
+						<ul>
+							<li>
+								<a href="#"><em>인물</em></a>
+							</li>
+							<li>
+								<a href="#"><em>장소</em></a>
+							</li>
+							<li>
+								<a href="#"><em>조직</em></a>
+							</li>
+							<li>
+								<a href="#"><em>사건</em></a>
+							</li>
+							<li>
+								<a href="#"><em>정책</em></a>
+							</li>
+							<li>
+								<a href="#"><em>종합</em></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 탭 -->
+
+
+		</div>
+		<!-- //contents -->
+	</section>
+	<!-- //container -->
+
+	<!-- footer -->
+	<footer id="footer">
+		<script>footer();</script>
+	</footer>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>

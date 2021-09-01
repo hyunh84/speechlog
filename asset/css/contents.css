@@ -96,6 +96,9 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="btnInquiry"] {display:inline-block;padding:0 8px;box-sizing:border-box;text-align:center;border:1px solid #d8dce5;border-radius:4px;background-color:#fff;}
 [class^="btnInquiry"] em {display:inline-block;position:relative;padding:3px 20px 1px 0;line-height:20px;font-size:11px;color:#4b4d58;}
 [class^="btnInquiry"] em:after {display:block;content:"";position:absolute;right:0;top:50%;width:16px;height:16px;margin:-8px 0 0;background:url('../images/ico_mail.png') no-repeat center;}
+[class^="bntLink"] {display:inline-block;padding:0 8px;box-sizing:border-box;text-align:center;border:1px solid #071c51;border-radius:4px;background-color:#fff;}
+[class^="bntLink"] em {display:inline-block;position:relative;padding:6px 15px 4px 0;line-height:20px;font-size:15px;}
+[class^="bntLink"] em:after {display:block;content:"";position:absolute;right:0;top:50%;width:7px;height:12px;margin:-6px 0 0;background:url('../images/ico_go_link.png') no-repeat center;}
 
 /* button case */
 [class^="btnBundleBox"] {text-align:center;}
@@ -190,6 +193,10 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="searchWordItem"] .autoWordCase ul li button:hover,
 [class^="searchWordItem"] .autoWordCase ul li button:focus {background-color:#f2fbfe;}
 [class^="searchWordItem"] .autoWordCase .moreBox {border-top:1px solid #c2c8d8;}
+
+/* 검색 - input 버튼 정렬 */
+.searchWordBox02 {position:relative;padding:0 100px 0 0;}
+.searchWordBox02 .btnLarge03 {position:absolute;right:0;top:50%;transform:translate(0, -50%);}
 
 /* search tag */
 [class^="srchTagItem"] {position:relative;margin:0 0 0 5px;padding:7px 28px  7px 12px;font-size:14px;color: #4b4d58;border:1px solid #eceef4;background-color:#eceef4}
@@ -377,6 +384,14 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="pagingBox"] button.pagiNext {margin:0 0 0 12px;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_Next.png');}
 [class^="pagingBox"] button.pagiLast {margin:0 0 0 8px;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_Last.png');}
 
+/* tab anchor box */
+[class^="tabAnchorWrap"] {}
+
+/* tab box */
+[class^="tabWrap"] ul {display:flex;}
+[class^="tabWrap"] ul li a,
+[class^="tabWrap"] ul li button {display:block;width:100%;}
+
 /*************************************************************************************************************
 	contents UI
 *************************************************************************************************************/
@@ -444,6 +459,24 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .emotionAnalysisBanner > button {position:absolute;right:50px;top:50%;padding:0 30px;border:1px solid #071c51;border-radius:22px;transform:translate(0, -50%);}
 .emotionAnalysisBanner > button em {display:block;line-height:44px;color:#071c51;}
 [class^="subTitleWrap"] + .emotionAnalysisBanner  {margin:12px 0 0;}
+
+/* 인물분서백과 - 인물평 */
+.characterAnalysisBox {display:flex;align-items:center;padding:18px 30px;}
+.characterAnalysisBox .charInfoCase {position:relative;box-sizing:border-box;width:45%;min-height:264px;padding:0 20px 0 246px;}
+.characterAnalysisBox .charInfoCase .photo {overflow:hidden;position:absolute;left:0;top:0;box-sizing:border-box;width:216px;height:264px;padding:12px;border:1px solid #c2c8d8;}
+.characterAnalysisBox .charInfoCase .photo img {width:100%;}
+.characterAnalysisBox .charInfoCase .charName {display:block;line-height:32px;font-size:22px;}
+.characterAnalysisBox .charInfoCase .charSummary {line-heighT:26px;font-size:16px;color:#858995;}
+.characterAnalysisBox .charInfoCase .charName + .charSummary {margin:10px 0 0;}
+.characterAnalysisBox .charInfoCase .snsShareCase {margin:10px 0 0;}
+.characterAnalysisBox .charInfoCase .snsShareCase .btnTwt,
+.characterAnalysisBox .charInfoCase .snsShareCase .btnFbook,
+.characterAnalysisBox .charInfoCase .snsShareCase .btnYtb {margin:0 10px 0 0;border:none;border-radius:0;}
+.characterAnalysisBox .charInfoCase .detailLinkCase {position:absolute;left:246px;bottom:0;}
+.characterAnalysisBox .charAnalysisCase {box-sizing:border-box;width:55%;padding:0 0 0 32px;border-left:1px solid #ebedf1;}
+.characterAnalysisBox .charAnalysisCase .analysItem {margin:15px 0 0;line-height:28px;font-size:18px;color:#000;}
+.characterAnalysisBox .charAnalysisCase .analysItem:first-child {margin:0;}
+.characterAnalysisBox .charAnalysisCase .analysItem .keyWord {color:#14b3e3;}
 
 /* 공지사항 */
 .notiDetailWrap {border-bottom:1px solid #d3d3d3;}
