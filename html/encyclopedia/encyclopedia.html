@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta 	name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>SPEECHLOG</title>
 	
 	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
@@ -15,11 +15,14 @@
 	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
 	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
 	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/forceDirected.js"></script>
 	<script type="text/javascript" src="../../asset/js/animated.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/ui_style.js"></script>	
 	<script type="text/javascript" src="../../asset/js/chartUi.js"></script>
+
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
 	<!-- 퍼블용입니다. 개발시 제외하세요 -->
 	<script type="text/javascript" src="../guide/js/layout.js"></script>
@@ -117,7 +120,7 @@
 				<div class="characterAnalysisBox">
 					<div class="charInfoCase">
 						<span class="photo"><img src="../../asset/images/temp/temp_photo.png" alt="이재명" /></span>
-						<strong class="charName">이재명</strong>
+						<strong class="char	Name">이재명</strong>
 						<p class="charSummary">경기도지사, 변호사</p>
 						<p class="charSummary">1964년 12월 22일, 경상북도 안동출생</p>
 						<div class="snsShareCase">
@@ -146,32 +149,474 @@
 
 			<!-- 탭 -->
 			<div class="tabAnchorWrap">
-				<div class="tabAnchorInner">
-					<div class="tabWrap">
-						<ul>
-							<li>
-								<a href="#"><em>인물</em></a>
-							</li>
-							<li>
-								<a href="#"><em>장소</em></a>
-							</li>
-							<li>
-								<a href="#"><em>조직</em></a>
-							</li>
-							<li>
-								<a href="#"><em>사건</em></a>
-							</li>
-							<li>
-								<a href="#"><em>정책</em></a>
-							</li>
-							<li>
-								<a href="#"><em>종합</em></a>
-							</li>
-						</ul>
-					</div>
+				<div class="tabWrap">
+					<ul>
+						<li class="active">
+							<a href="#"><em>인물</em></a>
+						</li>
+						<li>
+							<a href="#"><em>장소</em></a>
+						</li>
+						<li>
+							<a href="#"><em>조직</em></a>
+						</li>
+						<li>
+							<a href="#"><em>사건</em></a>
+						</li>
+						<li>
+							<a href="#"><em>정책</em></a>
+						</li>
+						<li>
+							<a href="#"><em>종합</em></a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<!-- // 탭 -->
+
+			<!-- 인물 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">인물</h2>
+
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										관심인물 : 인물의 발언에서 추출한 키워드입니다.<br />
+										연관인물 : 인물의 뉴스기사에서 추출한 키워드입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+
+						<span class="btnRadioBox">
+							<button type="button" class="active"><em>관심인물</em></button>
+							<button type="button"><em>연관인물</em></button>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="graphBox">
+						<div class="graphCase">
+						<div id="chartGraph" class="bubbleGraph02"></div>
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="listTbl02 scrollY">
+							<table>
+								<caption>순위, 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:30%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 인물 -->
+
+			<!-- 장소 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">장소</h2>
+
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										관심인물 : 인물의 발언에서 추출한 키워드입니다.<br />
+										연관인물 : 인물의 뉴스기사에서 추출한 키워드입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+
+						<span class="btnRadioBox">
+							<button type="button" class="active"><em>관심인물</em></button>
+							<button type="button"><em>연관인물</em></button>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="graphBox">
+						<div class="graphCase">
+						<div id="chartGraph02" class="bubbleGraph02"></div>
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="listTbl02 scrollY">
+							<table>
+								<caption>순위, 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:30%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td>경기도</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td>성남시</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td>대한민국</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td>대장동</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td>한반도</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td>수원</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td>봉하마을</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td>여의도</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td>서울시</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td>안동</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 장소 -->
+
+			<!-- 조직 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">조직</h2>
+
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										관심인물 : 인물의 발언에서 추출한 키워드입니다.<br />
+										연관인물 : 인물의 뉴스기사에서 추출한 키워드입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+
+						<span class="btnRadioBox">
+							<button type="button" class="active"><em>관심인물</em></button>
+							<button type="button"><em>연관인물</em></button>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="graphBox">
+						<div class="graphCase">
+						<div id="chartGraph03" class="bubbleGraph02"></div>
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="listTbl02 scrollY">
+							<table>
+								<caption>순위, 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:30%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 조직 -->
+
+			<!-- 사건 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">사건</h2>
+
+						<span class="tooltipWrap">
+							<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+							<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+								<div class="tooltipInner">
+									<p class="tooltipMssg">
+										관심인물 : 인물의 발언에서 추출한 키워드입니다.<br />
+										연관인물 : 인물의 뉴스기사에서 추출한 키워드입니다.
+									</p>
+								</div>
+							</div>
+						</span>
+
+						<span class="btnRadioBox">
+							<button type="button" class="active"><em>관심인물</em></button>
+							<button type="button"><em>연관인물</em></button>
+						</span>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="graphBundleBox02">
+					<div class="graphBox">
+						<div class="graphCase">
+						<div id="chartGraph04" class="bubbleGraph02"></div>
+						</div>
+					</div>
+					<div class="bundleR">
+						<div class="listTbl02 scrollY">
+							<table>
+								<caption>순위, 키워드, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:30%">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">키워드</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">2</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">8</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td>이재명</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 사건 -->
 
 
 		</div>
@@ -190,6 +635,320 @@
 
 <script type="text/javascript">
 
+bubbleChartFn('chartGraph', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph02', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph03', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph04', {
+	data : [{
+	name: 'Flora',
+	children: [{
+		name: 'Black Tea', value: 1
+	}, {
+		name: 'Floral',
+		children: [{
+		name: 'Chamomile', value: 1
+		}, {
+		name: 'Rose', value: 1
+		}, {
+		name: 'Jasmine', value: 1
+		}]
+	}]
+	}, {
+	name: 'Fruity',
+	children: [{
+		name: 'Berry',
+		children: [{
+		name: 'Blackberry', value: 1
+		}, {
+		name: 'Raspberry', value: 1
+		}, {
+		name: 'Blueberry', value: 1
+		}, {
+		name: 'Strawberry', value: 1
+		}]
+	}, {
+		name: 'Dried Fruit',
+		children: [{
+		name: 'Raisin', value: 1
+		}, {
+		name: 'Prune', value: 1
+		}]
+	}, {
+		name: 'Other Fruit',
+		children: [{
+		name: 'Coconut', value: 1
+		}, {
+		name: 'Cherry', value: 1
+		}, {
+		name: 'Pomegranate', value: 1
+		}, {
+		name: 'Pineapple', value: 1
+		}, {
+		name: 'Grape', value: 1
+		}, {
+		name: 'Apple', value: 1
+		}, {
+		name: 'Peach', value: 1
+		}, {
+		name: 'Pear', value: 1
+		}]
+	}, {
+		name: 'Citrus Fruit',
+		children: [{
+		name: 'Grapefruit', value: 1
+		}, {
+		name: 'Orange', value: 1
+		}, {
+		name: 'Lemon', value: 1
+		}, {
+		name: 'Lime', value: 1
+		}]
+	}]
+	}, {
+	name: 'Sour/Fermented',
+	children: [{
+		name: 'Sour',
+		children: [{
+		name: 'Sour Aromatics', value: 1
+		}, {
+		name: 'Acetic Acid', value: 1
+		}, {
+		name: 'Butyric Acid', value: 1
+		}, {
+		name: 'Isovaleric Acid', value: 1
+		}, {
+		name: 'Citric Acid', value: 1
+		}, {
+		name: 'Malic Acid', value: 1
+		}]
+	}, {
+		name: 'Alcohol/Fremented',
+		children: [{
+		name: 'Winey', value: 1
+		}, {
+		name: 'Whiskey', value: 1
+		}, {
+		name: 'Fremented', value: 1
+		}, {
+		name: 'Overripe', value: 1
+		}]
+	}]
+	}, {
+	name: 'Green/Vegetative',
+	children: [{
+		name: 'Olive Oil', value: 1
+	}, {
+		name: 'Raw', value: 1
+	}, {
+		name: 'Green/Vegetative',
+		children: [{
+		name: 'Under-ripe', value: 1
+		}, {
+		name: 'Peapod', value: 1
+		}, {
+		name: 'Fresh', value: 1
+		}, {
+		name: 'Dark Green', value: 1
+		}, {
+		name: 'Vegetative', value: 1
+		}, {
+		name: 'Hay-like', value: 1
+		}, {
+		name: 'Herb-like', value: 1
+		}]
+	}, {
+		name: 'Beany', value: 1
+	}]
+	}, {
+	name: 'Other',
+	children: [{
+		name: 'Papery/Musty',
+		children: [{
+		name: 'Stale', value: 1
+		}, {
+		name: 'Cardboard', value: 1
+		}, {
+		name: 'Papery', value: 1
+		}, {
+		name: 'Woody', value: 1
+		}, {
+		name: 'Moldy/Damp', value: 1
+		}, {
+		name: 'Musty/Dusty', value: 1
+		}, {
+		name: 'Musty/Earthy', value: 1
+		}, {
+		name: 'Animalic', value: 1
+		}, {
+		name: 'Meaty Brothy', value: 1
+		}, {
+		name: 'Phenolic', value: 1
+		}]
+	}, {
+		name: 'Chemical',
+		children: [{
+		name: 'Bitter', value: 1
+		}, {
+		name: 'Salty', value: 1
+		}, {
+		name: 'Medicinal', value: 1
+		}, {
+		name: 'Petroleum', value: 1
+		}, {
+		name: 'Skunky', value: 1
+		}, {
+		name: 'Rubber', value: 1
+		}]
+	}]
+	}, {
+	name: 'Roasted',
+	children: [{
+		name: 'Pipe Tobacco', value: 1
+	}, {
+		name: 'Tobacco', value: 1
+	}, {
+		name: 'Burnt',
+		children: [{
+		name: 'Acrid', value: 1
+		}, {
+		name: 'Ashy', value: 1
+		}, {
+		name: 'Smoky', value: 1
+		}, {
+		name: 'Brown, Roast', value: 1
+		}]
+	}, {
+		name: 'Cereal',
+		children: [{
+		name: 'Grain', value: 1
+		}, {
+		name: 'Malt', value: 1
+		}]
+	}]
+	}, {
+	name: 'Spices',
+	children: [{
+		name: 'Pungent', value: 1
+	}, {
+		name: 'Pepper', value: 1
+	}, {
+		name: 'Brown Spice',
+		children: [{
+		name: 'Anise', value: 1
+		}, {
+		name: 'Nutmeg', value: 1
+		}, {
+		name: 'Cinnamon', value: 1
+		}, {
+		name: 'Clove', value: 1
+		}]
+	}]
+	}, {
+	name: 'Nutty/Cocoa',
+	children: [{
+		name: 'Nutty',
+		children: [{
+		name: 'Peanuts', value: 1
+		}, {
+		name: 'Hazelnut', value: 1
+		}, {
+		name: 'Almond', value: 1
+		}]
+	}, {
+		name: 'Cocoa',
+		children: [{
+		name: 'Chocolate', value: 1
+		}, {
+		name: 'Dark Chocolate', value: 1
+		}]
+	}]
+	}, {
+	name: 'Sweet',
+	children: [{
+		name: 'Brown Sugar',
+		children: [{
+		name: 'Molasses', value: 1
+		}, {
+		name: 'Maple Syrup', value: 1
+		}, {
+		name: 'Caramelized', value: 1
+		}, {
+		name: 'Honey', value: 1
+		}]
+	}, {
+		name: 'Vanilla', value: 1
+	}, {
+		name: 'Vanillin', value: 1
+	}, {
+		name: 'Overall Sweet', value: 1
+	}, {
+		name: 'Sweet Aromatics', value: 1
+	}]
+	}]
+});
 
 </script>
 

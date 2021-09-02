@@ -141,6 +141,38 @@ var treeMapFn = function(target, options) {
 	chart.maxLevels = 2;
 }
 
+/* AMCHART bubble */
+var bubbleChartFn = function(target, options) {
+	var _options = options || {};
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+
+	var chart = am4core.create(target, am4plugins_forceDirected.ForceDirectedTree);
+
+	var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries());
+
+	networkSeries.data = _options.data;
+
+	networkSeries.dataFields.linkWith = "linkWith";
+	networkSeries.dataFields.name = "name";
+	networkSeries.dataFields.id = "name";
+	networkSeries.dataFields.value = "value";
+	networkSeries.dataFields.children = "children";
+	networkSeries.links.template.distance = 1;
+	networkSeries.nodes.template.tooltipText = "{name}";
+	networkSeries.nodes.template.fillOpacity = 1;
+	networkSeries.nodes.template.outerCircle.scale = 1;
+
+	networkSeries.nodes.template.label.text = "{name}"
+	networkSeries.fontSize = 8;
+	networkSeries.nodes.template.label.hideOversized = true;
+	networkSeries.nodes.template.label.truncate = true;
+	networkSeries.minRadius = am4core.percent(2);
+	networkSeries.manyBodyStrength = -5;
+	networkSeries.links.template.strokeOpacity = 0;
+}
+
 /* jQCloud */
 var jqcloudFn = function(target, options) {
 	var _target = $('#'+target);

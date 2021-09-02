@@ -323,6 +323,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .graphBundleBox02 > .graphBox {width:813px;}
 .graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
 .graphBundleBox02 > .graphBox .bubbleGraph {width:100%;height:856px;}
+.graphBundleBox02 > .graphBox .bubbleGraph02 {width:100%;height:446px;border:1px solid #ebedf1;}
 .graphBundleBox02 > .graphBox02 {box-sizing:border-box;width:813px;padding:50px 0;text-align:center;border:1px solid #ebedf1;}
 .graphBundleBox02 > .graphBox02 .graphCase {display:inline-block;}
 
@@ -385,12 +386,25 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="pagingBox"] button.pagiLast {margin:0 0 0 8px;border:1px solid #707070;background-color:#fff;border-radius:5px;background-image:url('../images/btn_Last.png');}
 
 /* tab anchor box */
-[class^="tabAnchorWrap"] {}
+[class^="tabAnchorWrap"] {margin:40px 0 0;}
+[class^="tabAnchorWrap"]:first-child {margin:0;}
+[class^="tabAnchorWrap"] {margin:40px 0 0;}
 
 /* tab box */
+[class^="tabWrap"] {border-radius:8px;background-color:#fff;}
 [class^="tabWrap"] ul {display:flex;}
+[class^="tabWrap"] ul li {position:relative;flex:1;margin:0 -1px 0 0;border:1px solid #b4baca;}
+[class^="tabWrap"] ul li:first-child {border-radius:8px 0 0 8px;}
+[class^="tabWrap"] ul li:last-child {border-radius:0 8px 8px 0;}
 [class^="tabWrap"] ul li a,
-[class^="tabWrap"] ul li button {display:block;width:100%;}
+[class^="tabWrap"] ul li button {display:block;width:100%;text-align:center;}
+[class^="tabWrap"] ul li a em,
+[class^="tabWrap"] ul li button em {display:inline-block;padding:11px 0;line-height:20px;font-size:16px;}
+[class^="tabWrap"] ul li.active {border:1px solid #071c51;}
+[class^="tabWrap"] ul li.active a,
+[class^="tabWrap"] ul li.active button {background-color:#071c51;}
+[class^="tabWrap"] ul li.active a em,
+[class^="tabWrap"] ul li.active button em {color:#fff;}
 
 /*************************************************************************************************************
 	contents UI
@@ -524,7 +538,6 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .speechIntro04 ul li .tit {display:block;margin:40px 0 0;line-height:36px;font-size:26px;font-weight:400;color:#4b4d58;}
 .speechIntro04 ul li .txt01 {display:block;margin:20px 0 0;line-height:26px;font-size:16px;}
 
-.speechIntro05 {}
 .speechIntro05 .tit {display:block;line-height:36px;font-size:26px;color:#071c51;}
 .speechIntro05 .corpList {overflow:hidden;margin:30px 0 0;border-top:1px solid #c2c7d8;}
 .speechIntro05 ul {margin:0 -2% 0 0;}
