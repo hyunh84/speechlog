@@ -146,6 +146,7 @@ var bubbleChartFn = function(target, options) {
 	var _options = options || {};
 	// Themes begin
 	am4core.useTheme(am4themes_animated);
+	am4core.addLicense("ch-custom-attribution");
 	// Themes end
 
 	var chart = am4core.create(target, am4plugins_forceDirected.ForceDirectedTree);
@@ -179,6 +180,7 @@ var barChartFn = function(target, options) {
 
 	// Themes begin
 	am4core.useTheme(am4themes_animated);
+	am4core.addLicense("ch-custom-attribution");
 	// Themes end
 
 	var chart = am4core.create(target, am4charts.XYChart);
@@ -215,7 +217,6 @@ var barChartFn = function(target, options) {
 
 	categoryAxis.sortBySeries = series;
 	chart.data = _options.data;
-
 }
 
 /* jQCloud */
