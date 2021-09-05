@@ -534,7 +534,7 @@
 					</li>
 				</ul>
 
-				<button type="button"><em>감성분석 비교하기</em></button>
+				<button type="button" onclick=""><em>감성분석 비교하기</em></button>
 			</div>
 			<!-- // 감성분석 비교하기 -->
 
@@ -959,6 +959,36 @@
 </article>
 <!-- //언론사 지정선택 -->
 
+<!-- 발언 감성분석 -->
+<article id="speakEmotionAnalyPop" class="layerWrap wide" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">발언 감성분석</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+
+				<div class="speakEmotionAnalyBox">
+					<div class="graphL">
+
+					</div>
+					<div class="graphC">
+
+					</div>
+					<div class="graphR">
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 발언 감성분석 -->
+
 <script type="text/javascript">
 var speakerActive = new lineChartFn('speakerActive', {
 	legend : true,
@@ -1136,6 +1166,7 @@ var relateSpeaker = treeMapFn("relateSpeaker", {
 	]
 });
 
+layerOpenFn('#speakEmotionAnalyPop');
 </script>
 
 </body>
