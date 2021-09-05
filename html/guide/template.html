@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="../../asset/js/amcore.js"></script>
 	<script type="text/javascript" src="../../asset/js/amcharts.js"></script>
 	<script type="text/javascript" src="../../asset/js/amthemeDataviz.js"></script>
+	<script type="text/javascript" src="../../asset/js/forceDirected.js"></script>
 	<script type="text/javascript" src="../../asset/js/animated.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="../../asset/js/jquery-ui.min.js"></script>
@@ -476,6 +477,821 @@
 		<!-- contents -->
 		<div class="contents">
 
+
+			<!-- 인물평 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">인물평</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="characterAnalysisBox">
+					<div class="charInfoCase">
+						<span class="photo"><img src="../../asset/images/temp/temp_photo.png" alt="이재명" /></span>
+						<strong class="charName">이재명</strong>
+						<p class="charSummary">경기도지사, 변호사</p>
+						<p class="charSummary">1964년 12월 22일, 경상북도 안동출생</p>
+						<div class="snsShareCase">
+							<button type="button" class="btnTwt"><em class="blind">트위터</em></button>
+							<button type="button" class="btnFbook"><em class="blind">페이스북</em></button>
+							<button type="button" class="btnYtb"><em class="blind">유투브</em></button>
+						</div>
+
+						<div class="detailLinkCase">
+							<a href="#" class="bntLink"><em>NAVER</em></a>
+							<a href="#" class="bntLink"><em>나무위키</em></a>
+						</div>
+					</div>
+
+					<div class="charAnalysisCase">
+						<p class="analysItem"><span class="keyWord">이재명</span>의 연관인물은 <span class="keyWord">이낙연, 김부선, 김혜경</span> 이다.</p>
+						<p class="analysItem">연관장소는 <span class="keyWord">경기도, 성남시, 대장동</span> 이다.</p>
+						<p class="analysItem">연관조직은 <span class="keyWord">검찰, 더불어민주당, 바른미래당</span> 이다.</p>
+						<p class="analysItem"><span class="keyWord">세월호, 혜경궁 김씨, 바른미래당</span> 사건과 관련성이 높다.</p>
+						<p class="analysItem">정책 주제 중 <span class="keyWord">포용</span> 분야에 관심을 가지고 있고, <span class="keyWord">근로장려금확대, 근로 저소득층 지원확대, 서민·취약계층 금융지원강화, 대·중소기업간 상생협력 생태계 조성</span> 과 관련되어있다.</p>
+						<p class="analysItem">가장 많이 언급한 단어 <span class="keyWord">지원금, 대선, 대통령</span> 이다.</p>
+					</div>
+				</div>
+			</div>
+			<!-- // 인물평 -->
+
+			<!-- 탭 -->
+			<div class="tabAnchorWrap">
+				<div class="tabAnchorInner">
+					<div class="tabWrap">
+						<ul>
+							<li class="active">
+								<a href="#" data-panel="tab01"><em>인물</em></a>
+							</li>
+							<li>
+								<a href="#" data-panel="tab02"><em>장소</em></a>
+							</li>
+							<li>
+								<a href="#" data-panel="tab03"><em>조직</em></a>
+							</li>
+							<li>
+								<a href="#" data-panel="tab04"><em>사건</em></a>
+							</li>
+							<li>
+								<a href="#" data-panel="tab05"><em>정책</em></a>
+							</li>
+							<li>
+								<a href="#" data-panel="tab06"><em>종합</em></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // 탭 -->
+
+			<div class="tabPanelWrap">
+				<div class="tabPanel" id="tab01">
+					<!-- 인물 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">인물</h2>
+
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심인물 : 인물의 발언에서 추출한 키워드입니다.<br />
+												연관인물 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심인물</em></button>
+									<button type="button"><em>연관인물</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+
+					<div class="bundleWrap">
+						<div class="graphBundleBox02">
+							<div class="graphBox">
+								<div class="graphCase">
+								<div id="chartGraph" class="bubbleGraph02"></div>
+								</div>
+							</div>
+							<div class="bundleR">
+								<div class="listTbl02 scrollY">
+									<table>
+										<caption>순위, 관심인물, 건수을(를) 포함하는 표</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+											<col style="width:20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">순위</th>
+												<th scope="col">관심인물</th>
+												<th scope="col">건수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bold7">1</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">2</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">3</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">4</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">5</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">6</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">7</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">8</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">9</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">10</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 인물 -->
+				</div>
+				<div class="tabPanel" id="tab02">
+					<!-- 장소 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">장소</h2>
+		
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심장소 : 인물의 발언에서 추출한 키워드입니다.<br/>
+												연관장소 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+		
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심장소</em></button>
+									<button type="button"><em>연관장소</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="bundleWrap">
+						<div class="graphBundleBox02">
+							<div class="graphBox">
+								<div class="graphCase">
+								<div id="chartGraph02" class="bubbleGraph02"></div>
+								</div>
+							</div>
+							<div class="bundleR">
+								<div class="listTbl02 scrollY">
+									<table>
+										<caption>순위, 관심장소, 건수을(를) 포함하는 표</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+											<col style="width:20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">순위</th>
+												<th scope="col">관심장소</th>
+												<th scope="col">건수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bold7">1</td>
+												<td>경기도</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">2</td>
+												<td>성남시</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">3</td>
+												<td>대한민국</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">4</td>
+												<td>대장동</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">5</td>
+												<td>한반도</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">6</td>
+												<td>수원</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">7</td>
+												<td>봉하마을</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">8</td>
+												<td>여의도</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">9</td>
+												<td>서울시</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">10</td>
+												<td>안동</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 장소 -->
+				</div>
+				<div class="tabPanel" id="tab03">
+					<!-- 조직 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">조직</h2>
+		
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심조직 : 인물의 발언에서 추출한 키워드입니다.<br />
+												연관조직 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+		
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심조직</em></button>
+									<button type="button"><em>연관조직</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="bundleWrap">
+						<div class="graphBundleBox02">
+							<div class="graphBox">
+								<div class="graphCase">
+								<div id="chartGraph03" class="bubbleGraph02"></div>
+								</div>
+							</div>
+							<div class="bundleR">
+								<div class="listTbl02 scrollY">
+									<table>
+										<caption>순위, 관심조직, 건수을(를) 포함하는 표</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+											<col style="width:20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">순위</th>
+												<th scope="col">관심조직</th>
+												<th scope="col">건수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bold7">1</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">2</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">3</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">4</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">5</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">6</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">7</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">8</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">9</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">10</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 조직 -->
+				</div>
+				<div class="tabPanel" id="tab04">
+					<!-- 사건 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">사건</h2>
+		
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심사건 : 인물의 발언에서 추출한 키워드입니다.<br />
+												연관사건 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+		
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심사건</em></button>
+									<button type="button"><em>연관사건</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="bundleWrap">
+						<div class="graphBundleBox02">
+							<div class="graphBox">
+								<div class="graphCase">
+								<div id="chartGraph04" class="bubbleGraph02"></div>
+								</div>
+							</div>
+							<div class="bundleR">
+								<div class="listTbl02 scrollY">
+									<table>
+										<caption>순위, 관심사건, 건수을(를) 포함하는 표</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+											<col style="width:20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">순위</th>
+												<th scope="col">관심사건</th>
+												<th scope="col">건수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bold7">1</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">2</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">3</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">4</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">5</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">6</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">7</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">8</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">9</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">10</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 사건 -->
+				</div>
+				<div class="tabPanel" id="tab05">
+					<!-- 정책 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">정책</h2>
+		
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심정책 : 인물의 발언에서 추출한 키워드입니다.<br />
+												연관정책 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+		
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심정책</em></button>
+									<button type="button"><em>연관정책</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="bundleWrap">
+						<div class="graphBundleBox">
+							<div class="graphBox">
+								<div class="graphCase">
+									<div id="barGraph" class="barGraph"></div>
+								</div>
+							</div>
+						</div>
+		
+						<div class="listTbl">
+							<table>
+								<caption>순위, 분야, 관심정책, 건수을(를) 포함하는 표</caption>
+								<colgroup>
+									<col style="width:10%">
+									<col style="width:10%">
+									<col style="width:auto">
+									<col style="width:15%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">순위</th>
+										<th scope="col">분야</th>
+										<th scope="col">관심정책</th>
+										<th scope="col">건수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="bold7">1</td>
+										<td>공정</td>
+										<td class="txtAL">취업취양계층 지원서비스, 구직촉진수당, 국민취업지원제도</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">12</td>
+										<td>포용</td>
+										<td class="txtAL">서민·취약계층 금융지원 강화</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">3</td>
+										<td>포용</td>
+										<td class="txtAL">정규직 고용원칙 확립과 비정규직 차별 폐지</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">4</td>
+										<td>공정</td>
+										<td class="txtAL">지역사회 생활안전망 강화, 취약계층의 사회참여 기회 확대</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">5</td>
+										<td>미래</td>
+										<td class="txtAL">대·중소기업 간 상생협력 생태계 조성</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">6</td>
+										<td>포용</td>
+										<td class="txtAL">청년정책 종합 계획 수립</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">7</td>
+										<td>공정</td>
+										<td class="txtAL">인공지능 기술 성장</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">18</td>
+										<td>미래</td>
+										<td class="txtAL">보편적 국제 규범에 맞는 노동기본권 보장</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">9</td>
+										<td>포용</td>
+										<td class="txtAL">모든 아동에게 균등한 발달 기회 제공</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+									<tr>
+										<td class="bold7">10</td>
+										<td>공정</td>
+										<td class="txtAL">「제조업 혁신성장 및 경쟁력 강화 특별법」을 제정, 4차 산업혁명 대응</td>
+										<td class="fontC02">57,654</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // 정책 -->
+				</div>
+				<div class="tabPanel" id="tab06">
+					<!-- 종합 -->
+					<div class="subTitleWrap">
+						<div class="flexInner">
+							<div class="caseL">
+								<h2 class="sTitle">종합</h2>
+		
+								<span class="tooltipWrap">
+									<button type="button" aria-expanded="false"><em class="blind">툴팁팝업</em></button>
+									<div class="tooltipBox" aria-hidden="true" style="width:280px;">
+										<div class="tooltipInner">
+											<p class="tooltipMssg">
+												관심키워드 : 인물의 발언에서 추출한 키워드입니다.<br />
+												연관키워드 : 인물의 뉴스기사에서 추출한 키워드입니다.
+											</p>
+										</div>
+									</div>
+								</span>
+		
+								<span class="btnRadioBox">
+									<button type="button" class="active"><em>관심키워드</em></button>
+									<button type="button"><em>연관키워드</em></button>
+								</span>
+							</div>
+							<div class="caseR">
+								<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+								<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="bundleWrap">
+						<div class="graphBundleBox02">
+							<div class="graphBox">
+								<div class="graphCase">
+									<div id="barGraph02" class="barGraph02"></div>
+								</div>
+							</div>
+							<div class="bundleR">
+								<div class="listTbl02">
+									<table>
+										<caption>순위, 관심키워드, 건수을(를) 포함하는 표</caption>
+										<colgroup>
+											<col style="width:20%">
+											<col style="width:auto">
+											<col style="width:20%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">순위</th>
+												<th scope="col">관심키워드</th>
+												<th scope="col">건수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="bold7">1</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">2</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">3</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">4</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">5</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">6</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">7</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">8</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">9</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">10</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">11</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">12</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">13</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">14</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">15</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">16</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">17</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">18</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">19</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+											<tr>
+												<td class="bold7">20</td>
+												<td>이재명</td>
+												<td class="fontC02">57,654</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- // 종합 -->
+				</div>
+			</div>
 			
 			<div class="bundleFlexBox">
 				<div class="bundleL">
@@ -3767,6 +4583,432 @@ var wordsTotalRank = new jqcloudFn('keywordsCloud', {
 		{text: "경기", weight: 100*1.5}
 	]
 });
+
+
+tabFixedTopFn('.tabAnchorWrap');
+
+bubbleChartFn('chartGraph', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph02', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph03', {
+	data : [{
+		name: '이재명 경기도지사', value: 3105
+	}, {
+		name: '이낙연 전 더불어민주당 대표', value: 316
+	}, {
+		name: '박용진 더불어민주당 의원', value: 356
+	}, {
+		name: '심상정 정의당 의원', value: 287
+	}, {
+		name: '진중권 동양대 교수', value: 100
+	}, {
+		name: '박주민 더불어민주당 의원', value: 150
+	}, {
+		name: '윤희숙 국문의당 의원', value: 100
+	}, {
+		name: '김기현 국민의힘 원내대표', value: 2225
+	}, {
+		name: '정세균 전 국무총리', value: 1532
+	}]
+});
+
+bubbleChartFn('chartGraph04', {
+	data : [{
+	name: 'Flora',
+	children: [{
+		name: 'Black Tea', value: 1
+	}, {
+		name: 'Floral',
+		children: [{
+		name: 'Chamomile', value: 1
+		}, {
+		name: 'Rose', value: 1
+		}, {
+		name: 'Jasmine', value: 1
+		}]
+	}]
+	}, {
+	name: 'Fruity',
+	children: [{
+		name: 'Berry',
+		children: [{
+		name: 'Blackberry', value: 1
+		}, {
+		name: 'Raspberry', value: 1
+		}, {
+		name: 'Blueberry', value: 1
+		}, {
+		name: 'Strawberry', value: 1
+		}]
+	}, {
+		name: 'Dried Fruit',
+		children: [{
+		name: 'Raisin', value: 1
+		}, {
+		name: 'Prune', value: 1
+		}]
+	}, {
+		name: 'Other Fruit',
+		children: [{
+		name: 'Coconut', value: 1
+		}, {
+		name: 'Cherry', value: 1
+		}, {
+		name: 'Pomegranate', value: 1
+		}, {
+		name: 'Pineapple', value: 1
+		}, {
+		name: 'Grape', value: 1
+		}, {
+		name: 'Apple', value: 1
+		}, {
+		name: 'Peach', value: 1
+		}, {
+		name: 'Pear', value: 1
+		}]
+	}, {
+		name: 'Citrus Fruit',
+		children: [{
+		name: 'Grapefruit', value: 1
+		}, {
+		name: 'Orange', value: 1
+		}, {
+		name: 'Lemon', value: 1
+		}, {
+		name: 'Lime', value: 1
+		}]
+	}]
+	}, {
+	name: 'Sour/Fermented',
+	children: [{
+		name: 'Sour',
+		children: [{
+		name: 'Sour Aromatics', value: 1
+		}, {
+		name: 'Acetic Acid', value: 1
+		}, {
+		name: 'Butyric Acid', value: 1
+		}, {
+		name: 'Isovaleric Acid', value: 1
+		}, {
+		name: 'Citric Acid', value: 1
+		}, {
+		name: 'Malic Acid', value: 1
+		}]
+	}, {
+		name: 'Alcohol/Fremented',
+		children: [{
+		name: 'Winey', value: 1
+		}, {
+		name: 'Whiskey', value: 1
+		}, {
+		name: 'Fremented', value: 1
+		}, {
+		name: 'Overripe', value: 1
+		}]
+	}]
+	}, {
+	name: 'Green/Vegetative',
+	children: [{
+		name: 'Olive Oil', value: 1
+	}, {
+		name: 'Raw', value: 1
+	}, {
+		name: 'Green/Vegetative',
+		children: [{
+		name: 'Under-ripe', value: 1
+		}, {
+		name: 'Peapod', value: 1
+		}, {
+		name: 'Fresh', value: 1
+		}, {
+		name: 'Dark Green', value: 1
+		}, {
+		name: 'Vegetative', value: 1
+		}, {
+		name: 'Hay-like', value: 1
+		}, {
+		name: 'Herb-like', value: 1
+		}]
+	}, {
+		name: 'Beany', value: 1
+	}]
+	}, {
+	name: 'Other',
+	children: [{
+		name: 'Papery/Musty',
+		children: [{
+		name: 'Stale', value: 1
+		}, {
+		name: 'Cardboard', value: 1
+		}, {
+		name: 'Papery', value: 1
+		}, {
+		name: 'Woody', value: 1
+		}, {
+		name: 'Moldy/Damp', value: 1
+		}, {
+		name: 'Musty/Dusty', value: 1
+		}, {
+		name: 'Musty/Earthy', value: 1
+		}, {
+		name: 'Animalic', value: 1
+		}, {
+		name: 'Meaty Brothy', value: 1
+		}, {
+		name: 'Phenolic', value: 1
+		}]
+	}, {
+		name: 'Chemical',
+		children: [{
+		name: 'Bitter', value: 1
+		}, {
+		name: 'Salty', value: 1
+		}, {
+		name: 'Medicinal', value: 1
+		}, {
+		name: 'Petroleum', value: 1
+		}, {
+		name: 'Skunky', value: 1
+		}, {
+		name: 'Rubber', value: 1
+		}]
+	}]
+	}, {
+	name: 'Roasted',
+	children: [{
+		name: 'Pipe Tobacco', value: 1
+	}, {
+		name: 'Tobacco', value: 1
+	}, {
+		name: 'Burnt',
+		children: [{
+		name: 'Acrid', value: 1
+		}, {
+		name: 'Ashy', value: 1
+		}, {
+		name: 'Smoky', value: 1
+		}, {
+		name: 'Brown, Roast', value: 1
+		}]
+	}, {
+		name: 'Cereal',
+		children: [{
+		name: 'Grain', value: 1
+		}, {
+		name: 'Malt', value: 1
+		}]
+	}]
+	}, {
+	name: 'Spices',
+	children: [{
+		name: 'Pungent', value: 1
+	}, {
+		name: 'Pepper', value: 1
+	}, {
+		name: 'Brown Spice',
+		children: [{
+		name: 'Anise', value: 1
+		}, {
+		name: 'Nutmeg', value: 1
+		}, {
+		name: 'Cinnamon', value: 1
+		}, {
+		name: 'Clove', value: 1
+		}]
+	}]
+	}, {
+	name: 'Nutty/Cocoa',
+	children: [{
+		name: 'Nutty',
+		children: [{
+		name: 'Peanuts', value: 1
+		}, {
+		name: 'Hazelnut', value: 1
+		}, {
+		name: 'Almond', value: 1
+		}]
+	}, {
+		name: 'Cocoa',
+		children: [{
+		name: 'Chocolate', value: 1
+		}, {
+		name: 'Dark Chocolate', value: 1
+		}]
+	}]
+	}, {
+	name: 'Sweet',
+	children: [{
+		name: 'Brown Sugar',
+		children: [{
+		name: 'Molasses', value: 1
+		}, {
+		name: 'Maple Syrup', value: 1
+		}, {
+		name: 'Caramelized', value: 1
+		}, {
+		name: 'Honey', value: 1
+		}]
+	}, {
+		name: 'Vanilla', value: 1
+	}, {
+		name: 'Vanillin', value: 1
+	}, {
+		name: 'Overall Sweet', value: 1
+	}, {
+		name: 'Sweet Aromatics', value: 1
+	}]
+	}]
+});
+
+barChartFn('barGraph', {
+	data : [
+		{
+			"network": "Facebook",
+			"MAU": 2255250000
+		},
+		{
+			"network": "Google+",
+			"MAU": 430000000
+		},
+		{
+			"network": "Instagram",
+			"MAU": 1000000000
+		},
+		{
+			"network": "Pinterest",
+			"MAU": 246500000
+		},
+		{
+			"network": "Reddit",
+			"MAU": 355000000
+		},
+		{
+			"network": "TikTok",
+			"MAU": 500000000
+		},
+		{
+			"network": "Tumblr",
+			"MAU": 624000000
+		},
+		{
+			"network": "Twitter",
+			"MAU": 329500000
+		},
+		{
+			"network": "WeChat",
+			"MAU": 1000000000
+		},
+		{
+			"network": "Weibo",
+			"MAU": 431000000
+		},
+		{
+			"network": "Whatsapp",
+			"MAU": 1433333333
+		},
+		{
+			"network": "YouTube",
+			"MAU": 1900000000
+		}
+	]
+})
+
+barChartFn('barGraph02', {
+	data : [
+		{
+			"network": "Facebook",
+			"MAU": 2255250000
+		},
+		{
+			"network": "Google+",
+			"MAU": 430000000
+		},
+		{
+			"network": "Instagram",
+			"MAU": 1000000000
+		},
+		{
+			"network": "Pinterest",
+			"MAU": 246500000
+		},
+		{
+			"network": "Reddit",
+			"MAU": 355000000
+		},
+		{
+			"network": "TikTok",
+			"MAU": 500000000
+		},
+		{
+			"network": "Tumblr",
+			"MAU": 624000000
+		},
+		{
+			"network": "Twitter",
+			"MAU": 329500000
+		},
+		{
+			"network": "WeChat",
+			"MAU": 1000000000
+		},
+		{
+			"network": "Weibo",
+			"MAU": 431000000
+		},
+		{
+			"network": "Whatsapp",
+			"MAU": 1433333333
+		},
+		{
+			"network": "YouTube",
+			"MAU": 1900000000
+		},
+		
+	]
+})
+
 
 
 </script>

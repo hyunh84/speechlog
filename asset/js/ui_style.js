@@ -193,16 +193,18 @@ var tabFixedTopFn = function(target) {
 
 	tabItem.on('click', function(e) {e.preventDefault();
 		var _this = $(this);
+		var _thisCover = _this.parent();
 		var _panelId = _this.data('panel');
 		var _panelItem = $('#'+_panelId);
 		var _itemOffT = _panelItem.offset().top;
 
-		$('body, html').animate({
-			scrollTop : _itemOffT - winPadT - (tabH + 80)
-		}, 300);
-
-		console.log(_itemOffT);
-		console.log(winPadT);
+		if(!_thisCover.hasClass('active')) {
+			$('li', tabWrap).removeClass('active');
+			_thisCover.addClass('active');
+			$('body, html').animate({
+				scrollTop : _itemOffT - winPadT - (tabH + 80)
+			}, 300);
+		}
 	});
 
 	window.addEventListener('scroll', scrollFn);
