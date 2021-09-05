@@ -158,6 +158,58 @@ $(document).on('focusin', '#searchSpeakersPop *', function(e) {e.stopPropagation
 });
 
 /******************************************************************************************
+	탭 상단 고정
+******************************************************************************************/
+var tabFixedTopFn = function(target) {
+	var tabAnchor = $(target);
+	var tabAnchorInner = $('[class^="tabAnchorInner"]', tabAnchor);
+	var tabWrap = $('[class^="tabWrap"]', tabAnchorInner);
+	var tabItem = $('a, button', tabWrap)
+	var tabPanel = tabAnchor.parent().find('> [class^="tabPanelWrap"]');
+	var utilH = $('#header .utilH');
+	var pageFixed = $('.pageFixedArea .pageFixedBox');
+
+	var tabH = tabWrap.outerHeight();
+	var tabAnchorOffT = tabAnchor.offset().top;
+	var winPadT = utilH.outerHeight() + pageFixed.outerHeight();
+	var winSt;
+	var chFixedPos;
+
+	tabAnchor.css({'height' : tabH});
+
+	var scrollFn = function(e) {
+		winSt = $(window).scrollTop();
+		winPadT = utilH.outerHeight() + pageFixed.outerHeight();
+		chFixedPos = tabAnchorOffT - winPadT;
+
+		if(winSt >= chFixedPos) {
+			tabAnchor.addClass('fixed');
+			tabAnchorInner.css({top : winPadT});
+		}else{
+			tabAnchor.removeClass('fixed');
+			tabAnchorInner.removeAttr('style');
+		}
+	}
+
+	tabItem.on('click', function(e) {e.preventDefault();
+		var _this = $(this);
+		var _panelId = _this.data('panel');
+		var _panelItem = $('#'+_panelId);
+		var _itemOffT = _panelItem.offset().top;
+
+		$('body, html').animate({
+			scrollTop : _itemOffT - winPadT - (tabH + 80)
+		}, 300);
+
+		console.log(_itemOffT);
+		console.log(winPadT);
+	});
+
+	window.addEventListener('scroll', scrollFn);
+
+}
+
+/******************************************************************************************
 	리포트 제작 - 리포트 선택
 ******************************************************************************************/
 $(document).on('click', '.reportSelectBox button', function() {
@@ -258,7 +310,6 @@ var pageFixedFn = function() {
 		}
 	}
 }
-
 
 /******************************************************************************************
 	LAYER POPUP

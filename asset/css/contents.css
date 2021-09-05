@@ -218,6 +218,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="listTbl"] .aLink {display:inline-block;color:#858995;text-decoration:underline;}
 [class^="listTbl"] .notiTit {display:block;line-height:22px;}
 
+[class^="graphBundleBox"] + [class^="listTbl"] {margin:40px 0 0;}
 [class^="subTitleWrap"] + [class^="listTbl"] {margin:12px 0 0;}
 
 .listTbl02 table tbody td {height:20px;}
@@ -315,15 +316,18 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li:first-child {margin:0;}
 [class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
 [class^="graphBundleBox"] [class^="graphBox"] .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
+[class^="graphBundleBox"] [class^="graphBox"] .treemapGraph {width:100%;height:446px;}
+[class^="graphBundleBox"] [class^="graphBox"] .bubbleGraph {width:100%;height:856px;}
+[class^="graphBundleBox"] [class^="graphBox"] .bubbleGraph02 {width:100%;height:446px;border:1px solid #ebedf1;}
+[class^="graphBundleBox"] [class^="graphBox"] .barGraph {width:100%;height:506px;border:1px solid #ebedf1;}
+[class^="graphBundleBox"] [class^="graphBox"] .barGraph02 {width:100%;height:856px;border:1px solid #ebedf1;}
+
 [class^="searchWordBox"] + [class^="graphBundleBox"] {margin:12px 0 0;}
 
 .graphBundleBox02 {display:flex;justify-content:space-between;}
 .graphBundleBox02 > .bundleL {width:calc(100% - 843px);}
 .graphBundleBox02 > .bundleR {width:calc(100% - 843px);}
 .graphBundleBox02 > .graphBox {width:813px;}
-.graphBundleBox02 > .graphBox .treemapGraph {width:100%;height:446px;}
-.graphBundleBox02 > .graphBox .bubbleGraph {width:100%;height:856px;}
-.graphBundleBox02 > .graphBox .bubbleGraph02 {width:100%;height:446px;border:1px solid #ebedf1;}
 .graphBundleBox02 > .graphBox02 {box-sizing:border-box;width:813px;padding:50px 0;text-align:center;border:1px solid #ebedf1;}
 .graphBundleBox02 > .graphBox02 .graphCase {display:inline-block;}
 
@@ -389,11 +393,13 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="tabAnchorWrap"] {margin:40px 0 0;}
 [class^="tabAnchorWrap"]:first-child {margin:0;}
 [class^="tabAnchorWrap"] {margin:40px 0 0;}
+[class^="tabAnchorWrap"].fixed [class^="tabAnchorInner"] {position:fixed;left:252px;right:0;padding:40px 0 0 36px;background-color:#f1f3f4;z-index:100;}
+[class^="tabAnchorWrap"].fixed [class^="tabAnchorInner"] [class^="tabWrap"] {width:1312px;}
 
 /* tab box */
 [class^="tabWrap"] {border-radius:8px;background-color:#fff;}
 [class^="tabWrap"] ul {display:flex;}
-[class^="tabWrap"] ul li {position:relative;flex:1;margin:0 -1px 0 0;border:1px solid #b4baca;}
+[class^="tabWrap"] ul li {overflow:hidden;position:relative;flex:1;margin:0 -1px 0 0;border:1px solid #b4baca;}
 [class^="tabWrap"] ul li:first-child {border-radius:8px 0 0 8px;}
 [class^="tabWrap"] ul li:last-child {border-radius:0 8px 8px 0;}
 [class^="tabWrap"] ul li a,
@@ -405,6 +411,10 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="tabWrap"] ul li.active button {background-color:#071c51;}
 [class^="tabWrap"] ul li.active a em,
 [class^="tabWrap"] ul li.active button em {color:#fff;}
+
+[class^="tabPanelWrap"] {margin:65px 0 0;}
+[class^="tabPanelWrap"] [class^="tabPanel"] {margin:40px 0 0;}
+[class^="tabPanelWrap"] [class^="tabPanel"]:first-child {margin:0;}
 
 /*************************************************************************************************************
 	contents UI
@@ -678,3 +688,15 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 
 /* 특성화 분석 채널 */
 .noAuthorCopy {padding:90px 0 0;line-height:24px;font-size:16px;text-align:center;background:url('../images/ico_no_author.png') no-repeat center top;}
+
+/* 인물 검색 */
+/* .srchPersonWrap .srchInpBox {margin:-30px -30px 0;padding:24px 0;text-align:center;background-color:#eceef4;} */
+.srchPersonWrap {padding:119px 0 0;}
+.srchPersonWrap .srchInpBox {position:fixed;top:47px;left:0;right:0;padding:24px 0;text-align:center;background-color:#eceef4;z-index:100;}
+.srchPersonWrap .consonantBox {position:fixed;top:126px;left:0;right:0;padding:25px 30px 0;background-color:#fff;z-index:100;}
+.srchPersonWrap .srchResultBox {margin:15px 0 0;}
+.srchPersonWrap .personListBox {overflow:hidden;border:1px solid #ebedf1;border-top:1px solid #c2c7d8;}
+.srchPersonWrap .personListBox ul {display:flex;flex-wrap:wrap;margin:-1px -10px 0 -1px;}
+.srchPersonWrap .personListBox ul li {box-sizing:border-box;width:10%;margin:0 -1px -1px 0;border:1px solid #ebedf1;}
+.srchPersonWrap .personListBox ul li button {width:100%;padding:10px 0;line-height:20px;word-break:break-all;}
+.srchPersonWrap .noData {padding:150px 0 40px;text-align:center;border-bottom:1px solid #ebedf1;border-top:1px solid #c2c7d8;background:url('../images/ico_no_author.png') no-repeat center 64px;}

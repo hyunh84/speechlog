@@ -58,6 +58,8 @@
 				<button type="button" class="btnPlus" onclick="layerOpenFn('#mediaSelectPop', this);"><em>언론사 지정선택</em></button>
 				<button type="button" class="btnPlus" onclick="layerOpenFn('#mediaStoryPop', this);"><em>뉴스기사</em></button>
 				<button type="button" class="btnPlus" onclick="layerOpenFn('#reportPop', this);"><em>리포트 제작</em></button>
+				<button type="button" class="btnPlus" onclick="layerOpenFn('#searchPersonPop', this);"><em>인물검색</em></button>
+				<button type="button" class="btnPlus" onclick="layerOpenFn('#searchPersonPop02', this);"><em>인물검색(데이터 없음 예제)</em></button>
 			</div>
 			
 		</div>
@@ -677,6 +679,313 @@
 	</div>
 </article>
 <!-- //리포트제작 -->
+
+<!-- 인물검색 -->
+<article id="searchPersonPop" class="layerWrap wide" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">인물찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+
+				<div class="srchPersonWrap">
+					<div class="srchInpBox">
+						<span class="inpSrch" style="width:350px;">
+							<input type="text">
+						</span>
+					</div>
+
+					<div class="consonantBox">
+						<div class="tabWrap">
+							<ul>
+								<li class="active">
+									<a href="#"><em>ㄱ~ㄷ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㄹ~ㅂ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㅅ~ㅈ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㅊ~ㅎ</em></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="srchResultBox">
+						<!-- <div class="noData">
+							해당 데이터가 없습니다.
+						</div> -->
+						<div class="personListBox">
+							<ul>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개아무개아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+								<li><button type="button"><em>아무개</em></button></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 인물검색 -->
+<!-- 인물검색 -->
+<article id="searchPersonPop02" class="layerWrap wide" aria-hidden="true">
+	<div class="layerBox">
+		<header class="layerHeader">
+			<h1 class="layerTit">인물찾기</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+
+				<div class="srchPersonWrap">
+					<div class="srchInpBox">
+						<span class="inpSrch" style="width:350px;">
+							<input type="text">
+						</span>
+					</div>
+
+					<div class="consonantBox">
+						<div class="tabWrap">
+							<ul>
+								<li class="active">
+									<a href="#"><em>ㄱ~ㄷ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㄹ~ㅂ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㅅ~ㅈ</em></a>
+								</li>
+								<li>
+									<a href="#"><em>ㅊ~ㅎ</em></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="srchResultBox">
+						<div class="noData">
+							해당 데이터가 없습니다.
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>확인</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 인물검색 -->
 
 </body>
 </html>
