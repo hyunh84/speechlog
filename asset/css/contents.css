@@ -702,4 +702,25 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .srchPersonWrap .noData {padding:150px 0 40px;text-align:center;border-bottom:1px solid #ebedf1;border-top:1px solid #c2c7d8;background:url('../images/ico_no_author.png') no-repeat center 64px;}
 
 /* 감성분석 */
-.speakEmotionAnalyBox {}
+.speakEmotionAnalyBox {margin:40px 0 0;}
+.speakEmotionAnalyBox .analysisGraph01 {display:flex;justify-content:space-between;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL {position:relative;box-sizing:border-box;width:58%;padding:30px 0 0;border:1px solid #ebedf1;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL > div {box-sizing:border-box;position:relative;width:90%;margin:0 auto;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL .graphLegendBox {position:absolute;right:0;top:50%;transform:translate(0 , -50%);}
+.speakEmotionAnalyBox .analysisGraph01 .graphL .graphLegendBox ul li {position:relative;margin:15px 0 0;padding:0 0 0 17px;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL .graphLegendBox ul li:first-child {margin:0;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
+.speakEmotionAnalyBox .analysisGraph01 .graphL .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
+.speakEmotionAnalyBox .analysisGraph01 .graphR {box-sizing:border-box;width:40%;padding:30px 0 0;border:1px solid #ebedf1;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR > div {position:relative;width:80%;margin:0 auto;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox {position:absolute;left:50%;bottom:15px;width:200px;transform:translate(-50% , 0);}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox ul {margin:0 0 0 -20px;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox ul:after {display:block;content:"";clear:both;overflow:hidden;width:0;height:0;margin:0;padding:0;line-height:0;font-size:1;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox ul li {float:left;position:relative;box-sizing:border-box;width:calc(50% - 20px);padding:0 0 0 17px;margin:0 0 0 20px;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox ul li button {width:100%;height:20px;font-size:13px;text-align:left;}
+.speakEmotionAnalyBox .analysisGraph01 .graphR .graphLegendBox ul li button > span {display:block;position:absolute;left:0;top:9px;width:12px;height:12px;border-radius:100%;transform:translate(0 , -50%);}
+
+.speakEmotionAnalyBox .analysisGraph02 {display:flex;justify-content:space-between;margin:30px 0 0;border:1px solid #ebedf1;}
+.speakEmotionAnalyBox .analysisGraph02 .barGraph {width:100%;height:350px;}
+.speakEmotionAnalyBox .analysisGraph02 .graphL {width:48%;}
+.speakEmotionAnalyBox .analysisGraph02 .graphR {width:48%;}

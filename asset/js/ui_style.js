@@ -158,8 +158,18 @@ $(document).on('focusin', '#searchSpeakersPop *', function(e) {e.stopPropagation
 });
 
 /******************************************************************************************
-	탭 상단 고정
+	탭
 ******************************************************************************************/
+$(document).on('click', '[class^="tabWrap"] a, [class^="tabWrap"] button', function() {
+	var _this = $(this);
+	var _wrap = _this.closest('[class^="tabWrap"]');
+	var _tabCase = $('li', _wrap);
+
+	if(!_this.parent().hasClass('active')) {
+		_tabCase.removeClass('active');
+		_this.parent().addClass('active');
+	}
+});
 var tabFixedTopFn = function(target) {
 	var tabAnchor = $(target);
 	var tabAnchorInner = $('[class^="tabAnchorInner"]', tabAnchor);
@@ -199,8 +209,8 @@ var tabFixedTopFn = function(target) {
 		var _itemOffT = _panelItem.offset().top;
 
 		if(!_thisCover.hasClass('active')) {
-			$('li', tabWrap).removeClass('active');
-			_thisCover.addClass('active');
+			// $('li', tabWrap).removeClass('active');
+			// _thisCover.addClass('active');
 			$('body, html').animate({
 				scrollTop : _itemOffT - winPadT - (tabH + 80)
 			}, 300);
@@ -208,7 +218,6 @@ var tabFixedTopFn = function(target) {
 	});
 
 	window.addEventListener('scroll', scrollFn);
-
 }
 
 /******************************************************************************************

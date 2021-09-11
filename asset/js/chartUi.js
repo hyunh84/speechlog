@@ -5,6 +5,9 @@ var lineChartFn = function(target, options) {
 	var _options = options || {};
 	var _type = _options.type ? _options.type : 'line';
 	var _responsive = _options.responsive !== undefined ? _options.responsive : true;
+	var _legendPos = _options.legendPos || 'right';
+	var _width = _options.width || 300;
+	var _height = _options.height || 300;
 	// line color
 	var charLineColor = ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
 
@@ -19,10 +22,14 @@ var lineChartFn = function(target, options) {
 
 		_wrap.prepend(html);
 		_legendBox = $('.graphLegendBox', _wrap);
-		_wrap.css({'padding-right' : _options.legendGap != undefined ? _legendBox.outerWidth() + _options.legendGap : _legendBox.outerWidth() + 50});
+		if(_legendPos === 'right') {
+			_wrap.css({'padding-right' : _options.legendGap != undefined ? _legendBox.outerWidth() + _options.legendGap : _legendBox.outerWidth() + 50});
+		}else if(_legendPos === 'bottom') {
+			_wrap.css({'padding-bottom' : _options.legendGap != undefined ? _legendBox.outerHeight() + _options.legendGap : _legendBox.outerHeight() + 80});
+		}
 	}
 
-	if(_type === 'line') {
+	if(_type === 'line' || _type === 'bar') {
 		for(var i = 0; i < _options.datasets.length; i++){
 			_options.datasets[i]['backgroundColor'] = charLineColor[i];
 			_options.datasets[i]['borderColor'] = charLineColor[i];
@@ -37,13 +44,12 @@ var lineChartFn = function(target, options) {
 		}
 	}
 
-	console.log(_responsive);
 	//chart lib
 	var chartSet = new Chart(
 		document.getElementById(target),
 		{
-			width:300,
-			height:300,
+			width: _width,
+			height: _height,
 			type: _type,
 			data : {
 				labels: _options.labels,

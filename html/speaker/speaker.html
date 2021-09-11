@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>SPEECHLOG</title>
 	
-	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../../asset/css/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="../../asset/css/base.css">
 	<link rel="stylesheet" type="text/css" href="../../asset/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../../asset/css/layout.css">
@@ -534,7 +534,7 @@
 					</li>
 				</ul>
 
-				<button type="button" onclick=""><em>감성분석 비교하기</em></button>
+				<button type="button" class="btnEmotionsAnaly"><em>감성분석 비교하기</em></button>
 			</div>
 			<!-- // 감성분석 비교하기 -->
 
@@ -969,15 +969,36 @@
 		<div class="layerBody">
 			<div class="layerConts">
 
+				<div class="tabWrap">
+					<ul>
+						<li class="active">
+							<a href="#"><em>‘이재명 경기도지사’ 분석결과</em></a>
+						</li>
+						<li>
+							<a href="#"><em>‘이낙연’ 분석결과</em></a>
+						</li>
+						<li>
+							<a href="#"><em>‘윤석열’ 분석결과</em></a>
+						</li>
+					</ul>
+				</div>
+
 				<div class="speakEmotionAnalyBox">
-					<div class="graphL">
-
+					<div class="analysisGraph01">
+						<div class="graphL">
+							<div><canvas id="emotionStack" width="420" height="355"></canvas></div>
+						</div>
+						<div class="graphR">
+							<div><canvas id="emotionDoughnut"></canvas></div>
+						</div>
 					</div>
-					<div class="graphC">
-
-					</div>
-					<div class="graphR">
-
+					<div class="analysisGraph02">
+						<div class="graphL">
+							<div id="emotionBarGraph01" class="barGraph"></div>
+						</div>
+						<div class="graphR">
+							<div  id="emotionBarGraph02" class="barGraph"></div>
+						</div>
 					</div>
 				</div>
 
@@ -1166,7 +1187,170 @@ var relateSpeaker = treeMapFn("relateSpeaker", {
 	]
 });
 
-layerOpenFn('#speakEmotionAnalyPop');
+$('.btnEmotionsAnaly').click(function(e) {
+	layerOpenFn('#speakEmotionAnalyPop', this);
+
+	var emotionStack = new lineChartFn('emotionStack', {
+		type : 'bar',
+		legend : true,
+		responsive : false,
+		labels: ['07/01', '07/02', '07/03', '07/04', '07/05', '07/06', '07/07'],
+		datasets : [
+			{
+				label: 'Dataset 1',
+				data: [700, 200, 300, 767, 450, 534, 566]
+			},
+			{
+				label: 'Dataset 2',
+				data: [800, 400, -330, -880, -233, -667, -176]
+			},
+			{
+				label: 'Dataset 3',
+				data: [900, 500, 430, 890, 850, 634, 766]
+			},
+		],	
+		scales: {
+			x: {
+				stacked: true
+			},
+			y: {
+				display: false,
+			}
+		}
+	});
+
+	var emotionDoughnut = new lineChartFn('emotionDoughnut', {
+		type : 'doughnut',
+		legend : true,
+		responsive : false,
+		legendPos : 'bottom',
+		labels: ['긍정 26,676', '부정 71,349', '중립 28,291', '기타 1,034'],
+		datasets : [
+			{
+				label: '감성분석',
+				data: [26676, 71349, 28291, 1034],
+			},
+		],	
+		scales: {
+			x: {
+				display: false,
+			},
+			y: {
+				display: false,
+			}
+		}
+	});
+
+	var emotionBarGraph01 = barChartFn('emotionBarGraph01', {
+		data : [
+			{
+				"network": "Facebook",
+				"MAU": 2255250000
+			},
+			{
+				"network": "Google+",
+				"MAU": 430000000
+			},
+			{
+				"network": "Instagram",
+				"MAU": 1000000000
+			},
+			{
+				"network": "Pinterest",
+				"MAU": 246500000
+			},
+			{
+				"network": "Reddit",
+				"MAU": 355000000
+			},
+			{
+				"network": "TikTok",
+				"MAU": 500000000
+			},
+			{
+				"network": "Tumblr",
+				"MAU": 624000000
+			},
+			{
+				"network": "Twitter",
+				"MAU": 329500000
+			},
+			{
+				"network": "WeChat",
+				"MAU": 1000000000
+			},
+			{
+				"network": "Weibo",
+				"MAU": 431000000
+			},
+			{
+				"network": "Whatsapp",
+				"MAU": 1433333333
+			},
+			{
+				"network": "YouTube",
+				"MAU": 1900000000
+			}
+		]
+	})
+
+	var emotionBarGraph02 = barChartFn('emotionBarGraph02', {
+		data : [
+			{
+				"network": "Facebook",
+				"MAU": 2255250000
+			},
+			{
+				"network": "Google+",
+				"MAU": 430000000
+			},
+			{
+				"network": "Instagram",
+				"MAU": 1000000000
+			},
+			{
+				"network": "Pinterest",
+				"MAU": 246500000
+			},
+			{
+				"network": "Reddit",
+				"MAU": 355000000
+			},
+			{
+				"network": "TikTok",
+				"MAU": 500000000
+			},
+			{
+				"network": "Tumblr",
+				"MAU": 624000000
+			},
+			{
+				"network": "Twitter",
+				"MAU": 329500000
+			},
+			{
+				"network": "WeChat",
+				"MAU": 1000000000
+			},
+			{
+				"network": "Weibo",
+				"MAU": 431000000
+			},
+			{
+				"network": "Whatsapp",
+				"MAU": 1433333333
+			},
+			{
+				"network": "YouTube",
+				"MAU": 1900000000
+			}
+		]
+	})
+
+});
+
+
+
 </script>
 
 </body>
