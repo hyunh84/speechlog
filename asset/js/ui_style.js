@@ -396,3 +396,15 @@ var layerCloseFn = function(target, layerCalckSizeH) {
 	$(_clickTarget).focus();
 	window.removeEventListener('resize', layerCalckSizeH);
 }
+
+/******************************************************************************************
+	loading
+******************************************************************************************/
+var loadingOpenFn = function() {
+	var _loadingWrap = $('.loadingPageWrap');
+	_loadingWrap.show();
+}
+var loadingCloseFn = function() {
+	var _loadingWrap = $('.loadingPageWrap');
+	_loadingWrap.hide();
+}
