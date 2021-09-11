@@ -420,8 +420,16 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 	contents UI
 *************************************************************************************************************/
 /* 대시보드 현황판 */
+.dashboardStateWrap {margin:25px 0 0;}
+.dashboardStateWrap:first-child {margin:0;}
 .dashboardStateWrap ul {display:flex;margin:0 -28px 0 0;}
 .dashboardStateWrap ul li {width:418px;margin:0 28px 0 0;padding:30px;border:1px solid #dee2eb;border-radius:8px;background-color:#fff;box-shadow: 0 1px 4px 0 rgb(52 85 159 / 8%);}
+.dashboardStateWrap ul li a {display:block;box-sizing:border-box;position:relative;min-height:90px;padding:0 0 20px;}
+.dashboardStateWrap ul li .tit {display:block;line-height:28px;font-size:18px;color:#071c51;}
+.dashboardStateWrap ul li .num {position:absolute;right:0;top:10px;line-height:46px;font-size:36px;font-weight:700;color:#071c51;}
+.dashboardStateWrap ul li .num em {display:inline-block;color:#14b3e3;}
+.dashboardStateWrap ul li .rate {margin:5px 0 0;font-weight:700;color:#14b3e3;}
+.dashboardStateWrap ul li .date {position:absolute;left:0;bottom:0;color:#858995;}
 
 
 /* 발언자 활동량 */
