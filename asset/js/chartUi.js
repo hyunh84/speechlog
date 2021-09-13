@@ -9,7 +9,7 @@ var lineChartFn = function(target, options) {
 	var _width = _options.width || 300;
 	var _height = _options.height || 300;
 	// line color
-	var charLineColor = ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
+	var charLineColor = _options.customLineColor || ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
 
 	// 범례 그리기 함수
 	var creatLegendFn = function() {
@@ -40,7 +40,6 @@ var lineChartFn = function(target, options) {
 		_options.datasets[0]['backgroundColor'] = [];
 		for(var i = 0; i < charLineColor.length; i++){
 			_options.datasets[0]['backgroundColor'][i] = charLineColor[i];
-			
 		}
 	}
 
