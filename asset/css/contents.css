@@ -302,6 +302,8 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 /* bundle wrap */
 [class^="bundleWrap"] {box-sizing:border-box;margin:64px 0 0;padding:30px;border:1px solid #dee2eb;border-radius: 8px;background-color:#fff; box-shadow:0 1px 4px 0 rgba(52, 85, 159, 0.08);}
 [class^="bundleWrap"]:first-child {margin:0;}
+[class^="bundleWrap"] [class^="bundleFlexInner"] {display:flex;margin:0 -30px 0 0;}
+[class^="bundleWrap"] [class^="bundleFlexInner"] .bundleItem {box-sizing:border-box;width:calc(50% - 30px);margin:0 30px 0 0;}
 [class^="subTitleWrap"] + [class^="bundleWrap"],
 [class^="searchWordBox"] + [class^="bundleWrap"] {margin:12px 0 0;}
 .introMssgBox + [class^="bundleWrap"] {margin:45px 0 0;}
@@ -338,6 +340,8 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .graphBundleBox03 [class^="graphBox"] {padding:30px;border:1px solid #ebedf1;}
 .graphBundleBox03 [class^="subTitleWrap"] + [class^="graphBox"] {margin:12px 0 0;}
 .graphBundleBox03 .graphBox .wordsCloud {position:relative;width:100%;}
+
+.graphBundleBox04 > .graphBox {width:100%;}
 
 /* 뉴스카드 - defaul 뉴스기사 */
 [class^="newsCardBox"] {display:block;position:relative;min-height:40px;padding:16px 33px 16px 66px;}
@@ -482,6 +486,18 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .dashboardSummaryBox .dashboardSummaryCard03 a .summaryNum ul li {color:#ea7610;}
 .dashboardSummaryBox .dashboardSummaryCard03 .btnSetting {background-image:url('../images/btn_dashboard_setting03.png');}
 .dashboardKeywordBox + .dashboardSummaryBox {margin:12px 0 0;}
+
+/* 대시보드 관심발언자 모니터링 */
+.impactCompareCase .tit {display:block;line-height:22px;font-size:18px;color:#071c51;}
+.impactCompareCase .date {display:block;margin:10px 0 0;color:#858995;}
+.impactCompareCase .speakerList {display:block;margin:15px 0 0;}
+.impactCompareCase .speakerList ul {border-top:1px solid #dee2eb;border-bottom:1px solid #ebedf1;}
+.impactCompareCase .speakerList ul li {display:flex;padding:15px 0;color:#000;border-top:1px solid #ebedf1;}
+.impactCompareCase .speakerList ul li a {color:#000;}
+.impactCompareCase .speakerList ul li:first-child {border-top:none;}
+.impactCompareCase .speakerList ul li .gridItem:nth-child(1) {width:10%;font-weight:700;text-align:center;}
+.impactCompareCase .speakerList ul li .gridItem:nth-child(2) {width:70%;padding:0 10px;}
+.impactCompareCase .speakerList ul li .gridItem:nth-child(3) {width:20%;text-align:center;}
 
 /* 발언자 활동량 */
 .speakerActiveBox {overflow:hidden;text-align:center;}

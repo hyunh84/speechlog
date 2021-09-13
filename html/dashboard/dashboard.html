@@ -757,6 +757,60 @@
 			</div>
 			<!-- // 인물·이슈동향 -->
 
+			<!-- 관심발언자 모니터링 -->
+			<div class="subTitleWrap">
+				<div class="flexInner">
+					<div class="caseL">
+						<h2 class="sTitle">관심발언자 모니터링</h2>
+					</div>
+					<div class="caseR">
+						<button type="button" class="btnExl"><em class="blind">엑셀</em></button>
+						<button type="button" class="btnPrint"><em class="blind">인쇄</em></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="bundleWrap">
+				<div class="bundleFlexInner">
+					<div class="bundleItem">
+						<div class="impactCompareCase">
+							<strong class="tit">관심발언자 모니터링</strong>
+							<p class="date">2021-08-24 ~ 2021-08-30</p>
+							<div class="speakerList">
+								<ul>
+									<li>
+										<div class="gridItem">1</div>
+										<div class="gridItem"><a href="#">이재명</a></div>
+										<div class="gridItem">2,999</div>
+									</li>
+									<li>
+										<div class="gridItem">2</div>
+										<div class="gridItem"><a href="#">이재명</a></div>
+										<div class="gridItem">2,999</div>
+									</li>
+									<li>
+										<div class="gridItem">3</div>
+										<div class="gridItem"><a href="#">이재명</a></div>
+										<div class="gridItem">2,999</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="bundleItem">
+						<div class="graphBundleBox04">
+							<div class="graphBox">
+								<div class="graphCase">
+									<canvas id="monitoringGraph"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 관심발언자 모니터링 -->
+
+
 		</div>
 		<!-- //contents -->
 	</section>
@@ -773,7 +827,6 @@
 
 
 <script type="text/javascript">
-
 
 lineChartFn('dashboardSummaryGraph01', {
 	customLineColor : ['#6952db'],
@@ -943,6 +996,28 @@ lineChartFn('dashboardSummaryGraph09', {
 		},
 		y: {
 			display: false
+		}
+	}
+});
+
+var monitoringGraph = new lineChartFn('monitoringGraph', {
+	legend : true,
+	legendGap : 5,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+	{
+			label: '뉴스기사량 3,942',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '뉴스발언량 2,052',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
 		}
 	}
 });
