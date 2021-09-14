@@ -118,6 +118,8 @@ body.isPop {overflow:hidden;}
 [class^="pageFixedArea"] .integrSearchBox:first-child {margin:0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox {display:flex;margin:0 -80px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem {max-width:745px;padding:0 80px 0 0;}
+[class^="pageFixedArea"] .integrSearchBox .searchWordBox > .searchWordItem .autoWordCase {right:80px;}
+
 [class^="pageFixedArea"] .integrSearchBox .searchWordBox02  {max-width:745px;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle {margin:15px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .detailSrchBundle:first-child {margin:0;}
