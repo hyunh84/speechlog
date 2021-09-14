@@ -468,7 +468,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .summaryInfo .txt {display:block;margin:10px 0 0;color:#000;}
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .summaryInfo .txt02 {display:block;margin:5px 0 0;color:#858995;}
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .gaphCase {margin:24px -16px 0;padding:10px 20px;}
-.dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .gaphCase .graphTit {display:block;color:#858995;}
+.dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .gaphCase .graphTit {display:block;color:#858995;padding:0 0 0 20px;background:url('../images/ico_trend_graph.png') no-repeat left center;}
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .gaphCase .graphInner {margin:0 -20px;padding:0 20px;}
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .summaryNum {padding:15px 0;}
 .dashboardSummaryBox [class^="dashboardSummaryCard"] .innerDashboardSummary .summaryNum ul {display:flex;}
