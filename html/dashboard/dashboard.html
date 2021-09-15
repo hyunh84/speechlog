@@ -79,7 +79,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#" class="interestSetting">
 								<strong class="tit ico03">관심사 알림</strong>
 								<div class="date">2021-08-30</div>
 							</a>
@@ -824,6 +824,91 @@
 </div>
 <!-- //wrap -->
 
+<!-- 설정 -->
+<article id="interestsSetPop" class="layerWrap" aria-hidden="true">
+	<div class="layerBox" style="width:700px;">
+		<header class="layerHeader">
+			<h1 class="layerTit">설정</h1>
+		</header>
+	
+		<div class="layerBody">
+			<div class="layerConts">
+				<div class="trendSettBox">
+					<ul>
+						<li>
+							<div class="titBox">
+								<strong class='tit'>관심 발언자 *</strong>
+								<span class="srchTagBox">
+									<span class="srchTagItem">이재명 경기도지사 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+								</span>
+							</div>
+							<div class="cont">
+								<div class="searchWordBox">
+									<div class="searchWordItem" style="width:100%;">
+										<span class="inpSrch"><input type="text" title="발언자를 입력하세요" placeholder="발언자를 검색하세요"></span>
+										<div class="autoWordCase" aria-hidden="ture">
+											<ul>
+												<li><button type="button"><em>이재명 경기도지사</em></button></li>
+												<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+												<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+												<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+												<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+												<li><button type="button"><em>이재명</em></button></li>
+											</ul>
+											<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="titBox">
+								<strong class='tit'>관심키워드 3개 선택</strong>
+							</div>
+							<div class="cont">
+								<span class="srchTagBox">
+									<span class="srchTagItem">이재명 경기도지사 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+									<span class="srchTagItem">윤석열 전 검찰총장 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+									<span class="srchTagItem">이낙연 전 더불어민주당 대표 <button type="button" class="del"><em class="blind">삭제</em></button></span>
+								</span>
+								<div class="interestKeyword">
+									<div class="searchWordBox">
+										<div class="searchWordItem">
+											<span class="inpSrch"><input type="text" title="키워드를 입력하세요" placeholder="키워드를 입력하세요"></span>
+											<div class="autoWordCase" aria-hidden="ture">
+												<ul>
+													<li><button type="button"><em>이재명 경기도지사</em></button></li>
+													<li><button type="button"><em>경기도지사 이재명 지키기 범국민대책위원회</em></button></li>
+													<li><button type="button"><em>이재명 경기도지사 변호인</em></button></li>
+													<li><button type="button"><em>이재명 지지자 비상대책위원회</em></button></li>
+													<li><button type="button"><em>이재명 경기도지사 재판부</em></button></li>
+													<li><button type="button"><em>이재명</em></button></li>
+												</ul>
+												<div class="moreBox"><button class="btnMore"><em>더보기</em></button></div>
+											</div>
+										</div>
+									</div>
+
+									<button type="button" class="btnMid02"><em>검색</em></button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="layerFoot">
+			<div class="btnBundleBox">
+				<button type="button" class="btnLarge02"><em>저장</em></button>
+				<button type="button" class="btnLarge"><em>취소</em></button>
+			</div>
+		</div>
+		<button type="button" class="btnCloseLayer"><em class="blind">닫기</em></button>
+	</div>
+</article>
+<!-- // 설정 -->
+
 
 
 <script type="text/javascript">
@@ -1024,6 +1109,14 @@ var monitoringGraph = new lineChartFn('monitoringGraph', {
 
 $('.linkDailyReport').click(function(e) {e.preventDefault();
 	window.open('pop_daily_report.html', '일일리포트 목록', 'width=1280, height=803, scrollbars=yes, resizeble=no');
+});
+
+$('.interestSetting').click(function(e) {e.preventDefault();
+	window.open('pop_interest_alert.html', '관심사 알림', 'width=1280, height=803, scrollbars=yes, resizeble=no');
+});
+
+$('.dashboardSummaryBox .btnSetting').click(function() {
+	layerOpenFn('#interestsSetPop', this);
 });
 
 </script>
