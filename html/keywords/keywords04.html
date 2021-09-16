@@ -489,6 +489,19 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- 그래프 단독으로 올경우 -->
+			<div class="bundleWrap">
+				<div class="graphBundleBox">
+					<div class="graphBox">
+						<div class="graphCase">
+							<canvas id="mediaNews02"></canvas>
+							<!-- <img src="../../asset/images/temp/temp_graph01_06.png" alt="임시 그래프 이미지" style="width:100%;"> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 그래프 단독으로 올경우 -->
 			<!-- // 뉴스기사 -->
 
 			<div class="bundleFlexBox">
@@ -2292,6 +2305,43 @@ $('#mediaStoryPop .btnReport').click(function(e) {e.preventDefault();
 /* // 퍼블리싱 예제용입니다. */
 
 var mediaNews = new lineChartFn('mediaNews', {
+	legend : false,
+	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
+	datasets : [
+		{
+			label: '전체',
+			data: [600, 650, 215, 342, 200, 1130, 945, 600, 217],
+		},
+		{
+			label: '뉴스기사량',
+			data: [100, 450, 515, 242, 800, 930, 1045, 500, 717],
+		},
+		{
+			label: '뉴스발언량',
+			data: [300, 150, 815, 942, 300, 1000, 745, 200, 417],
+		},
+		{
+			label: 'SNS',
+			data: [500, 250,915, 1142, 1000, 930, 805, 750, 317],
+		},
+		{
+			label: '유튜브',
+			data: [1100, 1050, 415, 742, 1180, 1030, 345, 550, 1117],
+		},
+		{
+			label: '보도자료',
+			data: [768, 234, 777, 1020, 1111, 654, 879, 336, 908],
+		}
+	],
+	scales: {
+		y: {
+			min: 0,
+			max: 1200,
+		}
+	}
+});
+
+var mediaNews02 = new lineChartFn('mediaNews02', {
 	legend : false,
 	labels: ['1:12:03','1:12:04','1:12:05','1:12:06','1:12:07','1:12:08','1:12:09','1:12:10','1:12:11'],
 	datasets : [
