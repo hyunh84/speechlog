@@ -16,7 +16,7 @@
 /* icon flag - 뉴스 */
 .flagNews {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
 .flagNews:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_news.png') no-repeat center;}
-.flagNews em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#51cfa5;}
+.flagNews em {display:block;padding:0 0 0 8px;line-height:40px;font-size:14px;font-weight:bold;color:#071c51;}
 /* icon flag - 트윗터 */
 .flagTwt {display:inline-block;position:relative;height:40px;padding:0 0 0 40px;}
 .flagTwt:before {display:block;content:"";position:absolute;left:0;top:0;width:40px;height:40px;border:1px solid #c2c8d8;border-radius:100%;background-color:#fff;background:url('../images/ico_media_story_twt.png') no-repeat center;}
@@ -900,4 +900,4 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 
 /* 로딩 */
 .loadingPageWrap {display:none;position:fixed;left:0;top:0;right:0;bottom:0;background-color:rgba(0, 0, 0, .4);z-index:210;}
-.loadingPageWrap .processLoading {position:absolute;left:50%;top:50%;width:88px;height:88px;background:url('../images/loading.gif') no-repeat center;transform:translate(-50%, -50%);}
+.loadingPageWrap .processLoading {position:absolute;left:50%;top:50%;width:150px;height:150px;border-radius:100%;background: #fff url('../images/loading.gif') no-repeat center;transform:translate(-50%, -50%);}
