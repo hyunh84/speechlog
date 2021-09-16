@@ -194,11 +194,11 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 [class^="searchWordItem"] .inpText,
 [class^="searchWordItem"] .inpSrch {width:100%;}
 [class^="searchWordItem"] .autoWordCase {display:none;position:absolute;left:0;right:0;top:100%;padding:0 13px;border:1px solid #c2c8d8;border-radius:5px;background-color:#fff;}
-[class^="searchWordItem"] .autoWordCase ul li {margin:0 -13px;}
-[class^="searchWordItem"] .autoWordCase ul li button {width:100%;padding:10px 13px;line-height:20px;}
-[class^="searchWordItem"] .autoWordCase ul li button em {display:block;text-align:left;}
-[class^="searchWordItem"] .autoWordCase ul li button:hover,
-[class^="searchWordItem"] .autoWordCase ul li button:focus {background-color:#f2fbfe;}
+[class^="searchWordItem"] .autoWordCase > ul > li {margin:0 -13px;}
+[class^="searchWordItem"] .autoWordCase > ul > li button {width:100%;padding:10px 13px;line-height:20px;}
+[class^="searchWordItem"] .autoWordCase > ul > li button em {display:block;text-align:left;}
+[class^="searchWordItem"] .autoWordCase > ul > li button:hover,
+[class^="searchWordItem"] .autoWordCase > ul > li button:focus {background-color:#f2fbfe;}
 [class^="searchWordItem"] .autoWordCase .moreBox {border-top:1px solid #c2c8d8;}
 
 /* 검색 - input 버튼 정렬 */
@@ -854,16 +854,16 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .dailyReportWrap .speechListBox ul li .checkItem {position:absolute;left:16px;top:50%;margin:-16px 0 0;}
 
 /* 설정 */
-.trendSettBox ul li {margin:40px 0 0;}
-.trendSettBox ul li:first-child {margin:0;}
-.trendSettBox ul li .titBox .tit {display:inline-block;font-size:16px;color:#4b4d58;}
-.trendSettBox ul li .titBox .srchTagBox {display:inline-block;margin:0 0 0 10px;}
-.trendSettBox ul li .cont {margin:10px 0 0;}
-.trendSettBox ul li .cont .srchTagBox {display:inline-block;margin:0 0 20px;}
-.trendSettBox ul li .cont .srchTagBox .srchTagItem:first-child {margin:0;}
-.trendSettBox ul li .cont .interestKeyword {position:relative;padding:0 70px 0 0;}
-.trendSettBox ul li .cont .interestKeyword .searchWordBox {width:100%;}
-.trendSettBox ul li .cont .interestKeyword .btnMid02 {position:absolute;right:0;top:0;}
+.trendSettBox > ul > li {margin:40px 0 0;}
+.trendSettBox > ul > li:first-child {margin:0;}
+.trendSettBox > ul > li .titBox .tit {display:inline-block;font-size:16px;color:#4b4d58;}
+.trendSettBox > ul > li .titBox .srchTagBox {display:inline-block;margin:0 0 0 10px;}
+.trendSettBox > ul > li .cont {margin:10px 0 0;}
+.trendSettBox > ul > li .cont .srchTagBox {display:inline-block;margin:0 0 20px;}
+.trendSettBox > ul > li .cont .srchTagBox .srchTagItem:first-child {margin:0;}
+.trendSettBox > ul > li .cont .interestKeyword {position:relative;padding:0 70px 0 0;}
+.trendSettBox > ul > li .cont .interestKeyword .searchWordBox {width:100%;}
+.trendSettBox > ul > li .cont .interestKeyword .btnMid02 {position:absolute;right:0;top:0;}
 
 /* 관심사 알림 */
 .interestSettingWrap .copyTxt {position:relative;box-sizing:border-box;min-height:44px;padding:2px 0;line-height:20px;}

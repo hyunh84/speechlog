@@ -140,7 +140,8 @@ $(document).on('click', '.searchWordItem .autoWordCase .btnMore', function() {
 });
 // 리셋함수 - 검색어 자동완성기능
 var resetAutoWordFn = function() {
-	var _searchWordItem = $('.integrSearchBox .searchWordItem, .integrSearchBox .searchWordItem');
+	console.log('resetAutoWordFn');
+	var _searchWordItem = $('.integrSearchBox .searchWordItem, .searchWordBox .searchWordItem');
 	var _autoWordCase = $('.autoWordCase', _searchWordItem);
 	_searchWordItem.css({'z-index' : '0'});
 	_autoWordCase.attr('aria-hidden', 'ture').hide();
