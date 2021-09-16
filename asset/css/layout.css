@@ -154,3 +154,6 @@ body.isPop {overflow:hidden;}
 [class^="pageFixedArea"] .integrSearchBox .btnSrchBox {position:absolute;right:0;bottom:18px;}
 [class^="pageFixedArea"] .integrSearchBox .btnSrchBox button {margin:0 10px 0 0;}
 [class^="pageFixedArea"] .integrSearchBox .btnSrchBox button:last-child {margin:0;}
+
+/* 탑으로 가기 */
+.btnGoTop {position:fixed;right:60px;bottom:30px;box-sizing:border-box;width:48px;height:48px;padding:20px 0 0;font-size:12px;font-weight:700;border:1px solid #071c51;border-radius:100%;text-align:center;background:#fff url('../images/ico_top.png') no-repeat center 7px;box-shadow:1px 4px 10px rgba(41, 56, 90, 0.25);z-index:500;}
