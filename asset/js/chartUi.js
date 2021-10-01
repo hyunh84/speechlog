@@ -49,7 +49,9 @@ var lineChartFn = function(target, options) {
 	}
 
 	//canvas html태그 다시그림
-	if(_canvasW && !_canvasH) {
+	if(!_canvasW && !_canvasH) {
+		_wrap.html('<canvas id="' + target + '"></canvas>');
+	}else if(_canvasW && !_canvasH) {
 		_wrap.html('<canvas id="' + target + '" width="' + _canvasW + '"></canvas>');
 	}else if(!_canvasW && _canvasH) {
 		_wrap.html('<canvas id="' + target + '" height="' + _canvasH + '"></canvas>');
