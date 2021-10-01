@@ -448,7 +448,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .dashboardStateWrap ul li .ico04:after {display:block;content:"";position:absolute;left:-38px;top:-3px;width:32px;height:32px;background:url('../images/ico_dashboard_state04.png') no-repeat center;}
 .dashboardStateWrap ul li .ico05:after {display:block;content:"";position:absolute;left:-38px;top:-3px;width:32px;height:32px;background:url('../images/ico_dashboard_state05.png') no-repeat center;}
 .dashboardStateWrap ul li .ico06:after {display:block;content:"";position:absolute;left:-38px;top:-3px;width:32px;height:32px;background:url('../images/ico_dashboard_state06.png') no-repeat center;}
-.dashboardStateWrap ul li .num {position:absolute;right:0;top:10px;line-height:46px;font-size:36px;font-weight:700;color:#071c51;}
+.dashboardStateWrap ul li .num {position:absolute;right:0;top:10px;line-height:46px;font-size:30px;font-weight:700;color:#071c51;}
 .dashboardStateWrap ul li .num em {display:inline-block;color:#525ddb;}
 .dashboardStateWrap ul li .rate {display:inline-block;height:28px;margin:5px 0 0;padding:0 10px;line-height:28px;font-weight:700;color:#525ddb;border-radius:14px;background-color:#e5ebf9;}
 .dashboardStateWrap ul li .date {position:absolute;left:0;bottom:0;color:#858995;}

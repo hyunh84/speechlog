@@ -1,18 +1,23 @@
 /* LINE CHART UI */
 var lineChartFn = function(target, options) {
 	var _wrap = $('#'+target).parent();
-	var _legendBox;
+	var _legendBox = $('.graphLegendBox', _wrap);
 	var _options = options || {};
 	var _type = _options.type ? _options.type : 'line';
 	var _responsive = _options.responsive !== undefined ? _options.responsive : true;
 	var _legendPos = _options.legendPos || 'right';
 	var _width = _options.width || 300;
 	var _height = _options.height || 300;
+
+	var _canvasW = $('#'+target).attr('width') || _options.width;
+	var _canvasH = $('#'+target).attr('height') || _options.height;
+
 	// line color
 	var charLineColor = _options.customLineColor || ['#ffc14a','#20bac2','#6952db','#001a5c','#0ebb59','#d7c7fe','#fd9c94','#5c0931','#8eddcf','#166440','#e6e6e6','#7394ff','#8b21a6','#bdbdbd','#f56813'];
 
 	// 범례 그리기 함수
 	var creatLegendFn = function() {
+		if(_legendBox.length) _legendBox.remove();
 		var labelItems = chartSet.options.plugins.legend.labels.generateLabels(chartSet);
 		var html = '<div class="graphLegendBox"><ul>';
 		for(var i = 0; i < labelItems.length; i++){
@@ -43,6 +48,15 @@ var lineChartFn = function(target, options) {
 		}
 	}
 
+	//canvas html태그 다시그림
+	if(_canvasW && !_canvasH) {
+		_wrap.html('<canvas id="' + target + '" width="' + _canvasW + '"></canvas>');
+	}else if(!_canvasW && _canvasH) {
+		_wrap.html('<canvas id="' + target + '" height="' + _canvasH + '"></canvas>');
+	}else if(_canvasW && _canvasH) {
+		_wrap.html('<canvas id="' + target + '" width="' + _canvasW + '" height="' + _canvasH + '"></canvas>');
+	}
+	
 	//chart lib
 	var chartSet = new Chart(
 		document.getElementById(target),
