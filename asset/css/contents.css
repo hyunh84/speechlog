@@ -853,6 +853,7 @@ a.tBlank:before {display:block;content:"";position:absolute;left:0;top:2px;width
 .dailyReportWrap .speechListBox ul li {position:relative;padding:0 0 0 60px;border-top:1px solid #ebedf1;}
 .dailyReportWrap .speechListBox ul li:first-child {border-top:none;}
 .dailyReportWrap .speechListBox ul li .checkItem {position:absolute;left:16px;top:50%;margin:-16px 0 0;}
+.dailyReportWrap .speechListBox [class^="listTbl"] table tbody tr:last-child td {border-bottom:none;}
 
 /* 설정 */
 .trendSettBox > ul > li {margin:40px 0 0;}
